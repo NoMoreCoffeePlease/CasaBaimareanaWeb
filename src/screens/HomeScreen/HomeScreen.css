@@ -1,0 +1,15 @@
+.mainFrame {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+
+    background: #FFFFFF;
+}
+
+.menuIcon {
+    position: absolute;
+    width: 3vw;
+    height: 3vw;
+    left: 3vh;
+    top: 3vh;
+}
