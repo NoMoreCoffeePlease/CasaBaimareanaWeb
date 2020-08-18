@@ -5,13 +5,12 @@ import { HomeScreen } from './screens/HomeScreen/HomeScreen';
 import {Provider} from 'react-redux';
 import {store} from './redux/dataStore';
 import DataDispatch from './redux/dataDispatch';
-
 export const App = () => {
   return (
     <Provider store={store}> 
-     
+      
       <div className="App">
-        
+      
         <HomeScreen />
         <DataDispatch />
         <SideBar />
@@ -19,5 +18,6 @@ export const App = () => {
 
     </Provider>
   );
+  
 }
 
