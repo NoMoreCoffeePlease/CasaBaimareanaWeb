@@ -27,8 +27,8 @@ const modalHandler = (bool)=>{
         ><img src={require('./svg/menu-black.svg')} alt = '' className = 'menuIcon' ></img></div>
 
         <HomeScreen modalHandler={modalHandler}/>
-        {shownBar ? 
-          <SideBar barHandler={barHandler} modalHandler={modalHandler}/> : <div></div>}
+
+        <SideBar show={shownBar} barHandler={barHandler} modalHandler={modalHandler} /> : <div></div>
       </div>
 
     </Provider>

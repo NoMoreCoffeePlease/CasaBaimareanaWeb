@@ -58,6 +58,7 @@ const  DateRange = ({startDate, endDate, adults, children, addData})  => {
         focusedInput={state.focusedInput} 
         displayFormat={(selectedDate) => selectedDate.toLocaleDateString()}
         placement = 'top'
+        minBookingDays = '2'
         phrases = {
           { datepickerStartDateLabel: 'Check-in',
             datepickerEndDateLabel: 'Check-out',
@@ -125,9 +126,9 @@ const  DateRange = ({startDate, endDate, adults, children, addData})  => {
     </div></div>
     <div className='Submit'
         onClick = {()=> {
-          addData(state.startDate, state.endDate, state.adults, state.children);
-          console.log(state); 
-          onSubmitPress();
+          addData( state.startDate.setHours(16), state.endDate.setHours(12), state.adults, state.children);
+            console.log(state); 
+            onSubmitPress();
           }}
         >PASUL URMATOR</div>
      </div> 

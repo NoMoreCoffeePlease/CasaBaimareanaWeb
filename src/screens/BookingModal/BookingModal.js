@@ -1,21 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import DateRange from '../../components/DataCalendar/DateRangeInput';
 import './BookingModal.css';
 import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
+    Link,
+    useHistory
 } from "react-router-dom";
 
 export default function BookingModal(props) {
     const [selectedStage, setSelectedStage] = useState(0);
+    const history = useHistory();
+    useEffect(()=>{
+        props.barHandler(false);
+    },[props])
+
     if (props.show === false) return null;
     return <div>
         <div className="ModalContainer"></div>
         <div className='Modal'>
             <div
-                onClick={() => { props.modalHandler(false) }}
+                onClick={() => { props.modalHandler(false);history.push("/") }}
             >
                 <img src={require('../../svg/close-black.svg')} className='closeButton' alt="test" />
             </div>

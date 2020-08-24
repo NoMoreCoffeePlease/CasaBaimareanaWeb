@@ -1,9 +1,11 @@
 .Modal {
+    position: absolute;
+    top:2.5vh;
+    left: 2vw;
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 96vw;
-    margin-left: 2vw;
     height: 95vh;
     flex-direction: column;
     background: rgba(2, 1, 0, 0.85);
