@@ -47,11 +47,10 @@
 
     color: white;
     font-family: 'Baskerville Old Face';
-    font-size: 48px;
-    justify-content: center;
+    font-size: 48px;    
     display: flex;
+    justify-content: flex-start;
     width: 95vw;
-    align-self: flex-start;
 }
 
 .subTitle {

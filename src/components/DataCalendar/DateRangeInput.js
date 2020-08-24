@@ -7,10 +7,6 @@ import {FETCH_DATA_SUCCESS} from '../../redux/dataActions';
 import {connect} from 'react-redux';
 import firebase from '../../firebase/firebase';
 
-
-
-
-
 const  DateRange = ({startDate, endDate, adults, children, addData})  => {
   const [state, setState] = useState({
     focusedInput: null,
@@ -29,8 +25,6 @@ const  DateRange = ({startDate, endDate, adults, children, addData})  => {
     console.log(error.message)
   })
 }
-
-
 
   return (
     <div className='datePicker'>     

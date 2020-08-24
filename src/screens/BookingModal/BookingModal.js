@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import DateRange from '../../components/DataCalendar/DateRangeInput';
-import './BookingModal.css';
+import BookingStage0 from './BookingStage0';
+import './BookingModal.css';    
 import {
     BrowserRouter as Router,
     Switch,
@@ -75,8 +75,7 @@ export default function BookingModal(props) {
                     />
             </Switch></div></Router>
 
-                <div className='subTitle'>Alege datele rezervarii tale!</div>
-                <DateRange />
+            <BookingStage0 />
         </div>
         </div>
         
