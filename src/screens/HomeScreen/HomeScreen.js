@@ -1,13 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './HomeScreen.css';
-import DateRange from '../../components/DataCalendar/DateRangeInput';
+import BookingModal from '../BookingModal/BookingModal';
 
 export const HomeScreen = () => {
+
+    const [shownModal, setShownModal] = useState(false)
+  
+    const modalHandler = (bool)=>{
+        setShownModal(bool)
+    }
+   
     return (
         <div className = 'mainFrame'>
-            <img src='./images/menu_black.png' alt = '' className = 'menuIcon' ></img>
-            <DateRange />
-            
-        </div>
+            <button
+            className="buttonRezerva"
+                onClick = {()=> {                   
+                    setShownModal(true);
+                }}
+            >Rezerva acum</button>
+            <BookingModal show = {shownModal} modalHandler={modalHandler}/>         
+        </div> 
     )
 }

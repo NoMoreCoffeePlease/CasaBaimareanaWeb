@@ -26,6 +26,25 @@
   color: white;
 }
 
+.menuIcon {
+  width: 3vw;
+  height: 3vw;
+  margin-left: 3vh;
+  margin-top: 3vh;
+}
+
+.menuIconContainer{
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 1;
+}
+
+.menuIcon:hover {
+  filter: invert(97%) sepia(15%) saturate(7300%) hue-rotate(309deg) brightness(93%) contrast(79%);
+}
+
+
 .App-link {
   color: #61dafb;
 }

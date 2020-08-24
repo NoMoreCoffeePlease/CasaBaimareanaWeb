@@ -1,16 +1,12 @@
 .mainFrame {
     position: relative;
+    top:0;
+    left:0;
     width: 100vw;
     height: 100vh;
-
-    background: #FFFFFF;
+    z-index: 0;
 }
 
-.menuIcon {
-    position: absolute;
-    width: 3vw;
-    height: 3vw;
-    left: 3vh;
-    top: 3vh;
+.buttonRezerva{
+    margin-left: 20vw;
 }
-

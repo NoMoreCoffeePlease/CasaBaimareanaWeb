@@ -6,21 +6,25 @@ import './DateRangeInput.css'
 import {FETCH_DATA_SUCCESS} from '../../redux/dataActions';
 import {connect} from 'react-redux';
 
-const  DateRange = ({startDate, endDate, addData})  => {
+
+const  DateRange = ({startDate, endDate, adults, children, addData})  => {
   const [state, setState] = useState({
     focusedInput: null,
     startDate:  null, 
-    endDate:  null
+    endDate:  null,
+    adults: '0',
+    children: '0'
   }) 
 
   return (
-    <div className = 'datePicker '><ThemeProvider
+    <div className='datePicker'>     
+      <ThemeProvider
       theme={{
         breakpoints: ["32em", "48em", "64em"],
         reactDatepicker: {
           daySize: [36, 40],
           fontFamily: "Baskerville Old Face",
-          fontSize: "1px",
+          fontSize: "3px",
           colors: {
             accessibility: "#D6A466",
             selectedDay: "rgba(214, 164, 102, 0.7)",
@@ -37,6 +41,7 @@ const  DateRange = ({startDate, endDate, addData})  => {
         endDate={state.endDate} 
         focusedInput={state.focusedInput} 
         displayFormat={(selectedDate) => selectedDate.toLocaleDateString()}
+        placement = 'top'
         phrases = {
           { datepickerStartDateLabel: 'Check-in',
             datepickerEndDateLabel: 'Check-out',
@@ -72,22 +77,53 @@ const  DateRange = ({startDate, endDate, addData})  => {
             default: return;      
         }}}   
         minBookingDate = {startOfToday()}
-      />
-      </ThemeProvider>
-      <button
-        onClick = {()=> {addData(state.startDate, state.endDate); }}
-      >Pasul urmator</button>
-      </div>
+      /></ThemeProvider> 
+      <div className = 'inputPeople'>
+      <div className = 'inputContainer'>   
+           <div className = 'inputLabel'><img src={require('../../svg/people_outline.svg')} alt="" /> 
+           </div> 
+            <input
+                id = "adults"
+                placeholder = "Adulti"
+                autoComplete = "off"
+                className = 'Input'
+                onChange = {(term) => {setState(prevState =>({...prevState, adults: term.target.value}));
+                  term.persist();
+              }}
+            >    
+            </input></div> 
+           <div className = 'inputContainer'>
+            <div className = 'inputLabel'><img src={require('../../svg/person_outline.svg')} alt="" />       
+            </div>
+            <input
+                id = "children"
+                placeholder = "Copii"
+                autoComplete = "off"
+                className = 'Input'
+                onChange = {(term2) => {setState(prevState =>({...prevState, children: term2.target.value}));
+                    term2.persist();
+              }}
+            >    
+            </input>
+
+    </div></div>
+    <div className='Submit'
+        onClick = {()=> {
+          addData( state.startDate, state.endDate, state.adults, state.children);
+          console.log(state); 
+          }}
+        >PASUL URMATOR</div>
+     </div> 
   )
 }
 
 const mapStatetoProps = (state) => {
-  const {startDate, endDate} = state;
-  return {startDate, endDate};
+  const {startDate, endDate, adults, children} = state;
+  return {startDate, endDate, adults, children};
 };
 
 const mapDispatchtoProps = dispatch => ({
-  addData: (startDate, endDate) => dispatch({type: FETCH_DATA_SUCCESS, payload: {startDate:startDate , endDate: endDate}}),
+  addData: (startDate, endDate, adults, children) => dispatch({type: FETCH_DATA_SUCCESS, payload: {startDate:startDate , endDate: endDate, adults: adults, children: children}}),
   
 })
 
