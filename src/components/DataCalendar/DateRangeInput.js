@@ -5,16 +5,32 @@ import { startOfToday } from 'date-fns';
 import './DateRangeInput.css'
 import {FETCH_DATA_SUCCESS} from '../../redux/dataActions';
 import {connect} from 'react-redux';
+import firebase from '../../firebase/firebase';
+
+
+
 
 
 const  DateRange = ({startDate, endDate, adults, children, addData})  => {
   const [state, setState] = useState({
     focusedInput: null,
-    startDate:  null, 
-    endDate:  null,
+    startDate:  '', 
+    endDate:  '',
     adults: '0',
     children: '0'
   }) 
+
+  const onSubmitPress = () => {
+  firebase.db.collection('users').add({adults: adults, children: children , checkIn: startDate, checkOut: endDate})
+  .then(user => {
+    console.log(user.id)
+  })
+  .catch(error => {
+    console.log(error.message)
+  })
+}
+
+
 
   return (
     <div className='datePicker'>     
@@ -109,8 +125,9 @@ const  DateRange = ({startDate, endDate, adults, children, addData})  => {
     </div></div>
     <div className='Submit'
         onClick = {()=> {
-          addData( state.startDate, state.endDate, state.adults, state.children);
+          addData(state.startDate, state.endDate, state.adults, state.children);
           console.log(state); 
+          onSubmitPress();
           }}
         >PASUL URMATOR</div>
      </div> 
