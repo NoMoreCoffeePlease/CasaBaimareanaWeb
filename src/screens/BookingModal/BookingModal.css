@@ -77,7 +77,7 @@
     flex-direction: row;
     justify-content: space-between;
     margin-top: 5vh;
-    margin-bottom: 20vh;
+   
 }
 
 .stageContainer {
@@ -103,4 +103,12 @@
 
 .stageSelected {
     font-weight: bold;
+}
+
+.componentContainer {
+    margin-top: 20vh;
+}
+
+.test {
+    flex-direction: 'column';
 }
