@@ -20,6 +20,7 @@
     "history": "^5.0.0",
     "radium": "^0.26.0",
     "react": "^16.13.1",
+    "react-animated-navigator": "^1.0.38",
     "react-animations": "^1.0.0",
     "react-bootstrap-daterangepicker": "^7.0.0",
     "react-burger-menu": "^2.7.1",

@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    margin-top: 10px;
+    margin-top: 40vh;
     justify-content: center;
     flex:1;
 }
@@ -13,15 +13,21 @@
 }
 
 .Submit {
+    display: flex;
+    align-self: center;
     background-color: #d6a466;
-    padding-left: 20px;
-    padding-right: 20px;
+    border-color: #b78548;
     border-radius: 5px;
     height: 48px;
-    display: flex;
+    width: 15vw;
+    font-family: 'Baskerville Old Face';
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right:20px;
     align-items: center;
     justify-content: center;
-    font-family: 'Baskerville Old Face';
+    margin-left:20px;
+    margin-right:20px;
 }
 
 .Submit:hover {

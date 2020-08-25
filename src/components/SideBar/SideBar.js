@@ -50,7 +50,7 @@ export const SideBar = (props) => {
                             <li key='Despre noi'>
                                 <Link className="sideBar-text" style={{ textDecoration: 'none' }} to='/about-us'>Despre noi</Link></li>
                             <li key='Rezerva acum'>
-                                <Link className="sideBar-book" style={{ textDecoration: 'none' }} to='/book?stage0'>Rezerva acum</Link></li>
+                                <Link className="sideBar-book" style={{ textDecoration: 'none' }} to='/bookstage0'>Rezerva acum</Link></li>
                             <li key={'Contact'}>
                                 <Link className="sideBar-text" style={{ textDecoration: 'none' }} to='/contact'>Contact</Link></li>
                         </ul>
@@ -148,7 +148,7 @@ export const SideBar = (props) => {
                 />
                 <Route
                     key={'Rezerva acum'}
-                    path={'/book'}
+                    path={'/bookstage0'}
                     exact={true}
                     component={() => {
                         console.log('Book?')

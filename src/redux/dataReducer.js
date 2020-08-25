@@ -1,4 +1,5 @@
 import {FETCH_DATA_SUCCESS, FETCH_DATA_FAIL} from './dataActions';
+import { isToday } from 'date-fns';
 
 const initialState = {
     startDate: null,

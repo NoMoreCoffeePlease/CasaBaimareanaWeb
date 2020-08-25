@@ -6,16 +6,21 @@ import './DateRangeInput.css'
 import {FETCH_DATA_SUCCESS} from '../../redux/dataActions';
 import {connect} from 'react-redux';
 import firebase from '../../firebase/firebase';
+import {useHistory} from 'react-router-dom';
 
 const  DateRange = ({startDate, endDate, adults, children, addData})  => {
+
+  const history = useHistory();
+  console.log(adults, "std")
   const [state, setState] = useState({
     focusedInput: null,
-    startDate:  '', 
-    endDate:  '',
-    adults: '0',
-    children: '0'
+    startDate: startDate !== null ? new Date(startDate) : '', 
+    endDate:  endDate !== null ? new Date(endDate) : '',
+    adults: adults,
+    children: children
   }) 
 
+  console.log(state.startDate, 'state')
   const onSubmitPress = () => {
   firebase.db.collection('users').add({adults: adults, children: children , checkIn: startDate, checkOut: endDate})
   .then(user => {
@@ -100,7 +105,9 @@ const  DateRange = ({startDate, endDate, adults, children, addData})  => {
                 className = 'Input'
                 onChange = {(term) => {setState(prevState =>({...prevState, adults: term.target.value}));
                   term.persist();
+                
               }}
+              value={adults!== 0 ? adults : null}
             >    
             </input></div> 
            <div className = 'inputContainer'>
@@ -112,19 +119,21 @@ const  DateRange = ({startDate, endDate, adults, children, addData})  => {
                 autoComplete = "off"
                 className = 'Input'
                 onChange = {(term2) => {setState(prevState =>({...prevState, children: term2.target.value}));
-                    term2.persist();
+                term2.persist();
               }}
+              value = {children!==0 ? children : null}
             >    
             </input>
 
     </div></div>
-    <div className='Submit'
+    <button className='Submit'
         onClick = {()=> {
           addData( state.startDate.setHours(16), state.endDate.setHours(12), state.adults, state.children);
             console.log(state); 
-            onSubmitPress();
+            onSubmitPress();            
+            history.push("/bookstage1");
           }}
-        >PASUL URMATOR</div>
+        >PASUL URMATOR</button>
      </div> 
   )
 }
