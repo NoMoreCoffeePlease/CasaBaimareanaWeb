@@ -3,7 +3,7 @@
     top:2.5vh;
     left: 2vw;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     width: 96vw;
     height: 95vh;
@@ -16,7 +16,6 @@
     backdrop-filter: blur(4px);
     filter: blur(0px);
     border-radius: 7px;
-    padding-top: 10vh;
     z-index:2;
 }
 
