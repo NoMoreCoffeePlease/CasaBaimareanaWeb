@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import BookingStage0 from './BookingStage0';
+import BookingStage2 from './BookingStage2';
 import './BookingModal.css';    
 import {
     BrowserRouter as Router,
@@ -20,13 +21,13 @@ export default function BookingModal(props) {
     return <div>
         <div className="ModalContainer"></div>
         <div className='Modal'>
-            <div
+            <div className='closeButtonContainer'
                 onClick={() => { props.modalHandler(false);history.push("/") }}
             >
                 <img src={require('../../svg/close-black.svg')} className='closeButton' alt="test" />
             </div>
-
-            <div className='title'>REZERVA ACUM</div>
+            <div className = 'bookHeader'>
+            <div className='title'><h1 className='titleText'>REZERVA ACUM</h1></div>
             <Router>
                 <div className='bookNavigator'>
                     <Link style={{ textDecoration: 'none', color: 'black' }} to='/book?stage0'><div className={selectedStage === 0 ? 'stageContainer stageSelected' : 'stageContainer'}>
@@ -73,9 +74,9 @@ export default function BookingModal(props) {
                             return null;
                         }}
                     />
-            </Switch></div></Router>
+            </Switch></div></Router></div>
 
-            <BookingStage0 />
+            <div className = 'componentContainer'><BookingStage0 /></div>
         </div>
         </div>
         
