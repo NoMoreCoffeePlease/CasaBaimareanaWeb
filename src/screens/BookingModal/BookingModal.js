@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import BookingStage0 from './BookingStage0';
 import BookingStage1 from './BookingStage1';
 import BookingStage2 from './BookingStage2';
+import ConfirmationModal from './ConfirmationModal';
 import "./BookingModal.css";
 import {
   BrowserRouter as Router,
@@ -12,6 +13,7 @@ import {
   useHistory,
  
 } from "react-router-dom";
+
 
 export default function BookingModal(props) {
   // const [selectedStage, setSelectedStage] = useState(false);
@@ -31,7 +33,7 @@ export default function BookingModal(props) {
         <div className="ModalContainer"></div>
         <div className='Modal'>
             <div className='closeButtonContainer'
-                // onClick={() => { props.modalHandler(false);history.push("/") }}
+                onClick={() => { props.modalHandler(false);history.push("/") }}
             >
                 {/* <img src={require('../../svg/close-black.svg')} className='closeButton' alt="test" /> */}
             </div>

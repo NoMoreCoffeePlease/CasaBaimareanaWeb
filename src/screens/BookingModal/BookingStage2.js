@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './BookingModal.css';
+import { useHistory } from 'react-router';
 
 export default function BookingStage2() {
+    const history = useHistory();
     const handleMethod = (option) => {
         switch (option) {
             case 'cash': setState(prevState => ({ ...prevState, paymentMethodCash: true })); break
@@ -90,15 +92,32 @@ export default function BookingStage2() {
                 </select> <br></br>
                 <label className='formStatements'><input
                     type="checkbox"
+                    id = 'privacyCheck'
+                    required = {true}
                     checked = {state.terms}
                     onChange = {() =>{setState(prevState => ({ ...prevState, terms: !state.terms }));}}
                 ></input>   Am citit si sunt de acord cu Termenii si conditiile</label> <br></br>
                 <label className='formStatements'><input
                     type="checkbox"
+                    id = 'termsCheck'
+                    required = {true}
                     checked = {state.privacy}
                     onChange = {() =>{setState(prevState => ({ ...prevState, privacy: !state.privacy }));}}
                 ></input>   Am citit si sunt de acord cu prelucrarea datelor cu caracter personal.</label> <br></br>
-                <input className = 'submitButton' type='submit' value='REZERVA'></input>
+                <div className='buttonContainer'>   
+                    <button className='submitButton'
+                        onClick = {()=> {                    
+                            history.push("/bookstage1");
+                        }}
+                        >PASUL ANTERIOR</button>
+                    <input className = 'submitButton' type='submit' value='REZERVA' 
+                        onClick={()=> {
+                            if (state.privacy === true && state.terms === true) history.push("/bookConfirm")
+                            else alert ('Must check Terms and/or Privacy!')
+                        }}
+                    ></input>
+                
+                </div> 
             </form>
         </div>
     </div>

@@ -149,7 +149,7 @@ export const SideBar = (props) => {
                 />
                 <Route
                     key={'Rezerva acum'}
-                    path={'/book'}
+                    path={'/bookstage0'}
                     exact={true}
                     component={() => {
                         console.log('Book?')
