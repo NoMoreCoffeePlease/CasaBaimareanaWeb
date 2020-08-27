@@ -50,7 +50,7 @@ export const SideBar = (props) => {
                             <li key='Despre noi'>
                                 <Link className="sideBar-text" style={{ textDecoration: 'none' }} to='/about-us'>Despre noi</Link></li>
                             <li key='Rezerva acum'>
-                                <Link className="sideBar-book" style={{ textDecoration: 'none' }} to='/book?stage0'>Rezerva acum</Link></li>
+                                <Link className="sideBar-book" style={{ textDecoration: 'none' }} to='/BookingStage00'>Rezerva acum</Link></li>
                             <li key={'Contact'}>
                                 <Link className="sideBar-text" style={{ textDecoration: 'none' }} to='/contact'>Contact</Link></li>
                         </ul>
@@ -83,6 +83,7 @@ export const SideBar = (props) => {
                                     return null;
                                 }}
                             />
+                            
                             <Route
                                 path='/cookies'
                                 exact={true}
@@ -167,6 +168,17 @@ export const SideBar = (props) => {
                         return <ContactModal show={shownModal} barHandler={props.barHandler} modalHandler={modalHandler} />
                     }}
                 />
+            
+                <Route
+                    key={'Rezerva acum'}
+                    path={'/BookingStage00'}
+                    exact={true}
+                    component={() => {
+                        setShownModal(true);
+                        return <BookingModal show={shownModal} barHandler={props.barHandler} modalHandler={modalHandler} />
+                    }}
+                />
+
             </Switch>
         </StyleRoot></Router>
 
