@@ -81,10 +81,10 @@ width: 65vw;
 height: 10vh;
  margin-left: 38vh;
  margin-top: 35vh;
+ z-index: 0;
+ display: flex;
  justify-content: center;
  align-items: center;
- display: flex;
- 
 }
 
 .presentationFrame {
@@ -103,6 +103,7 @@ height: 10vh;
     font-size: 64px;
     font-family: 'Baskerville Old Face';
     padding-top: 74px;
+    
 }
 
 .presentationSubTitle {
@@ -114,7 +115,7 @@ height: 10vh;
 }
 
 .presentationMembersContainer {
-    display: flex;
+    display: flex; 
     justify-content: space-between;
     margin-top: 46px;
  
@@ -125,9 +126,10 @@ height: 10vh;
     height: 275px;
     margin-left: 277px;
     border-radius: 250px;
-    border-color: coral;
+    /* border-color: coral; */
     border-width: 10px;
     box-sizing: border-box;
+    margin-right: 50px;
 }
 .pictureContainerRight {
     margin-right: 277px;
@@ -136,7 +138,9 @@ height: 10vh;
     height: 275px;
     border-width: 10px;
     border-radius: 250px;
-border-color: coral;
+/* border-color: coral; */
+
+
 }
 
 .name {
@@ -159,12 +163,20 @@ border-color: coral;
     height: 2px;
     background-color: black;
     margin-top: 76px;
+
+}
+.test {
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .reviewsContainer {
-    flex-direction: row;
-      justify-content: space-between;   
-      display: flex;
+     flex-direction: row; 
+       justify-content: space-between;   
+      display: flex; 
+      height: 30vh;
 }
 
 .reviewLeft {
@@ -181,4 +193,28 @@ border-color: coral;
     line-height: 54px;
     margin-right: 158px;
     margin-left: 115px;
+}
+
+.presPicture {
+    width: 100vw;
+    height: 500px;
+    background-color: #C4C4C4;
+    z-index: 3;
+   
+
+}
+
+.mapsContainer {
+    width: 100vw;
+    height: 500px;
+    background-color: #D6D6D6;
+    z-index: 3;
+}
+
+.bmStyle {
+    padding-top: 169px;
+    font-size: 64px;
+    text-align: center;
+    font-family: 'Baskerville Old Face';
+    margin-bottom: 32px;
 }
