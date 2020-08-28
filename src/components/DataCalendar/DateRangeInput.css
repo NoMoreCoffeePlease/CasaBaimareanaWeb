@@ -1,11 +1,12 @@
 .datePicker {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
-    margin-top: 40vh;
+    /* align-items: flex-start; */
+    /* margin-top: 40vh; */
     justify-content: center;
     flex:1;
-  
+  align-self: center;
+  align-items: center;
 }
 
 /* Dates font */

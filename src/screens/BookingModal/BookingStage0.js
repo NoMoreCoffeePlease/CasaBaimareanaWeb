@@ -7,6 +7,6 @@ export default function BookingStage0 () {
     return <div className='componentContainer'>
         
     <div className='subTitle'>Alege datele rezervarii tale!</div>
-    <DateRange />
+    <DateRange text={"PASUL URMATOR"}/>
     </div>
 }

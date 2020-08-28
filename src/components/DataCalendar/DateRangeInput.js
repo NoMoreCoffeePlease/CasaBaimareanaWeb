@@ -8,8 +8,8 @@ import {connect} from 'react-redux';
 import firebase from '../../firebase/firebase';
 import {useHistory} from 'react-router-dom';
 
-const  DateRange = ({startDate, endDate, adults, children, addData})  => {
 
+const  DateRange = ({startDate, endDate, adults, children, addData, text, datePickerStyles})  => {
   const history = useHistory();
   console.log(adults, "std")
   const [state, setState] = useState({
@@ -32,6 +32,7 @@ const  DateRange = ({startDate, endDate, adults, children, addData})  => {
 }
 
   return (
+    <div className={datePickerStyles}>
     <div className='datePicker'>     
       <ThemeProvider
       theme={{
@@ -133,8 +134,9 @@ const  DateRange = ({startDate, endDate, adults, children, addData})  => {
             onSubmitPress();            
             history.push("/bookstage1");
           }}
-        >PASUL URMATOR</button>
+        >{text}</button>
      </div> 
+     </div>
   )
 }
 
