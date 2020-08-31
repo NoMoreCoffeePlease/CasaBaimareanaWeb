@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './RoomsModal.css';
-import { useHistory } from "react-router-dom";
+import { useHistory, BrowserRouter as Router, Route, Switch,Link } from "react-router-dom";
+import RoomsHome from './RoomsHome';
+import RoomsSimple from './RoomsSimple';
+import RoomsDouble from './RoomsDouble';
+import RoomsTriple from './RoomsTriple';
+import RoomsApartment from './RoomsApartment';
 
 export default function RoomsModal(props) {
 
@@ -11,19 +16,36 @@ export default function RoomsModal(props) {
 
     if (props.show === false) return null;
     return <div>
+        <Router>
         <div className="ModalContainer"></div>
-        <div className='Modal'>
+
+        <div className='roomsModal'>
             <div
-                onClick={() => { props.modalHandler(false);history.push("/") }}
+                onClick={() => { props.modalHandler(false); history.push("/") }}
             >
                 <img src={require('../../svg/close-black.svg')} className='closeButton' alt="test" />
             </div>
 
-            <div className='title'>CamereTitle test</div>            
-
-            <div className='subTitle'>Subtitlu test</div>
-                
+            
+        <Switch>
+            <Route exact path='/rooms'>
+                <RoomsHome />
+            </Route>
+            <Route exact path='/rooms/simple'>
+                <RoomsSimple />
+            </Route>
+            <Route exact path='/rooms/double'>
+                <RoomsDouble />
+            </Route>
+            <Route exact path='/rooms/triple'>
+                <RoomsTriple />
+            </Route>
+            <Route exact path='/rooms/apartment'>
+                <RoomsApartment />
+            </Route>
+        </Switch>
         </div>
+        </Router>
         </div>
         
 }
