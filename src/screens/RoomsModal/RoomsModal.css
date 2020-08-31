@@ -1,3 +1,13 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 96vw;
+    height: 95vh;
+    flex-direction: column;
+    
+}
+
 .roomsModal {
     position: absolute;
     top:2.5vh;
@@ -64,9 +74,8 @@
 }
 
 .roomsTitle {
-    align-self: flex-start;
-    display: flex;
-    justify-content: center;
+  
+   
     width: 96vw;
 }
 
@@ -74,37 +83,38 @@
     color: white;
     font-family: 'Baskerville Old Face';
     font-size: 48px; 
+    text-align: center;
 }
 
 .roomsSubTitle {
-    justify-content: center; 
-    display: flex;
+ 
     width: 96vw; 
 }
 
 .roomsSubTitle-text {
-    display: flex;
-    align-self: center;
+  
     color: white;
     font-family: 'Baskerville Old Face';
     font-size: 24px;
     margin-bottom: 0vh;
+    text-align: center;
+ 
 }
 
 .roomGrid {
     width: 75vw;
-    display: flex;
+    /* display: flex;
     align-self: center;
-    justify-content: center;    
+    justify-content: center;   */
+  
 }
-
 .roomElement {
-    display: flex;
-    align-items: center;
+    /* display: flex;
+    align-items: center; */
     flex-direction: column;
     border: 0px solid #b78548;
     box-sizing: border-box;
-    width: 35vw;
+    width: 70vw;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     backdrop-filter: blur(4px);
     border-radius: 5px;
@@ -119,6 +129,7 @@
     color: #020100;
     margin-bottom: 30px;
     margin-top: 30px;
+   text-align: center;
 }
 
 .roomButton {
@@ -146,5 +157,7 @@
 .roomRow {
     margin-top: 5vh;
     width: 45vw;
- 
+    justify-content: space-between;
+    display: flex;
+
 }

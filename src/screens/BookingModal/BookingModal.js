@@ -97,13 +97,17 @@ export default function BookingModal(props) {
           <Switch>
 
             <Route exact path="/BookingStage00" >
-            <BookingStage00 />
+            <BookingStage0 />
             </Route>
 
-            <Route exact path="/BookingStage01">  <BookingStage01 /></Route>
+            <Route exact path="/BookingStage01">  <BookingStage1 /></Route>
 
             <Route exact path="/BookingStage02" >
-            <BookingStage02 />
+            <BookingStage2 />
+            </Route>
+
+            <Route exact path='/bookConfirm'> 
+              <ConfirmationModal />
             </Route>
           </Switch>
         </div>
@@ -124,24 +128,3 @@ function BookingStage00() {
 }
 
 
-function BookingStage01() {
-    return (
-      <div>
-      <div className="infosContainer">
-        {" "}
-        <BookingStage1 />{" "}
-      </div>
-    </div>
-    )
-}
-
-function BookingStage02() {
-  return(
-    <div>
-    <div className="infosContainer">
-      {" "}
-      <BookingStage2 />{" "}
-    </div>
-  </div>
-  )
-}

@@ -3,7 +3,7 @@ import {Link, useHistory} from 'react-router-dom';
 
 export default function RoomsHome () {
 
-    return <div>
+    return <div className='container'>
         
             <div className='roomsTitle'><p className='roomsTitle-text'>CAMERE</p></div>            
 
@@ -11,8 +11,8 @@ export default function RoomsHome () {
             <div className='roomGrid'>
                 <div className='roomRow'>
                 <div className = 'roomElement'>
-                     {/* Musai de rezolvat alinierea astora*/}   
-                        <span className = 'roomElement-title'>Camera simpla</span>
+                     
+                        <div className = 'roomElement-title'>Camera simpla</div>
                         <Link
                             style={{ textDecoration: "none", color: "black" }}
                             to="/rooms/simple"
@@ -24,7 +24,7 @@ export default function RoomsHome () {
                     </div>  
                 <div className = 'roomElement'>
                        
-                        <span className = 'roomElement-title'>Camera tripla</span>
+                        <div className = 'roomElement-title'>Camera tripla</div>
                         <Link
                             style={{ textDecoration: "none", color: "black" }}
                             to="/rooms/triple"
@@ -33,10 +33,11 @@ export default function RoomsHome () {
                             
                             className='roomButton'
                         >Detalii</button> </Link>
-                    </div></div>
+                    </div>
+                    </div>
                 <div className='roomRow'>
                 <div className = 'roomElement'>                        
-                        <span className = 'roomElement-title'>Camera dubla</span>
+                        <div className = 'roomElement-title'>Camera dubla</div>
                         <Link
                             style={{ textDecoration: "none", color: "black" }}
                             to="/rooms/double"
@@ -48,7 +49,7 @@ export default function RoomsHome () {
                     </div>
                 <div className = 'roomElement'>
                         
-                        <span className = 'roomElement-title'>Apartament</span>
+                        <div className = 'roomElement-title'>Apartament</div>
                         <Link
                             style={{ textDecoration: "none", color: "black" }}
                             to="/rooms/apartment"

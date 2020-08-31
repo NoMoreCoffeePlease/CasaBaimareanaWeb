@@ -22,7 +22,7 @@ export const HomeScreen = () => {
                 <div className='dateRangeContainer'>
                 
                    
-                <DateRange   text={"REZERVA ACUM"} />
+                <DateRange   datePosition={'top'}  text={"REZERVA ACUM"} />
             
                 </div>
             
@@ -85,7 +85,7 @@ export const HomeScreen = () => {
       
                 </div> 
                 <div className="presPicture">
-                    <span >POZA DE PREZENTARE</span>
+                    <div className="bmContainer"><span className='bmStyle'>POZA DE PREZENTARE</span></div>
                     </div> 
 
                     <div className="mapsContainer">
@@ -93,10 +93,10 @@ export const HomeScreen = () => {
                     </div>
 
                     <div className="presPicture">
-                        <div className="bmStyle">BAIA MARE</div>
+                        <div className="bmContainer"><span className='bmStyle'>BAIA MARE</span></div>
                         <div className="test">
                         <button
-                        onClick={()=> history.push('/rooms')}
+                        onClick={()=> history.push('/city')}
                         className='detailButton'
                     >Descopera</button>
                     </div>

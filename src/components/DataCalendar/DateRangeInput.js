@@ -9,7 +9,7 @@ import firebase from '../../firebase/firebase';
 import {useHistory} from 'react-router-dom';
 
 
-const  DateRange = ({startDate, endDate, adults, children, addData, text, datePickerStyles})  => {
+const  DateRange = ({startDate, endDate, adults, children, addData, text, datePosition, datePickerStyles})  => {
   const history = useHistory();
   console.log(adults, "std")
   const [state, setState] = useState({
@@ -57,7 +57,7 @@ const  DateRange = ({startDate, endDate, adults, children, addData, text, datePi
         endDate={state.endDate} 
         focusedInput={state.focusedInput} 
         displayFormat={(selectedDate) => selectedDate.toLocaleDateString()}
-        placement = 'top'
+        placement = {datePosition}
         minBookingDays = '2'
         phrases = {
           { datepickerStartDateLabel: 'Check-in',
@@ -132,7 +132,7 @@ const  DateRange = ({startDate, endDate, adults, children, addData, text, datePi
           addData( state.startDate.setHours(16), state.endDate.setHours(12), state.adults, state.children);
             console.log(state); 
             onSubmitPress();            
-            history.push("/bookstage1");
+            history.push("/BookingStage01");
           }}
         >{text}</button>
      </div> 

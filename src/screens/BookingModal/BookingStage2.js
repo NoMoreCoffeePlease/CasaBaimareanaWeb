@@ -107,7 +107,7 @@ export default function BookingStage2() {
                 <div className='buttonContainer'>   
                     <button className='submitButton'
                         onClick = {()=> {                    
-                            history.push("/bookstage1");
+                            history.push("/BookingStage01");
                         }}
                         >PASUL ANTERIOR</button>
                     <input className = 'submitButton' type='submit' value='REZERVA' 

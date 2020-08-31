@@ -16,13 +16,13 @@ export default function BookingStage1 () {
         <div className='buttonContainer'>
             <button className='submitButton'
             onClick = {()=> {                    
-                history.push("/bookstage0");
+                history.push("/BookingStage00");
             }}
             >PASUL ANTERIOR</button>
         
         <button className='submitButton'
         onClick = {()=> {            
-            history.push("/bookstage2");
+            history.push("/BookingStage02");
         }}
         >PASUL URMATOR</button></div>
     </div>
