@@ -3,6 +3,8 @@ import './HomeScreen.css';
 import DateRange from '../../components/DataCalendar/DateRangeInput';
 import {useHistory} from 'react-router-dom';
 
+
+
 import MapSection from '../../components/GoogleMap/Map'
 
 const location = {
@@ -12,36 +14,38 @@ const location = {
   }
 // TO DO : Fix center align for buttons 
 
-export const HomeScreen = () => {
+export const HomeScreen = (props) => {
    const history = useHistory();
+
+
+  
     return (
         <div className = 'mainFrame'>
             <div
                 className='datePickerContainer'
             >
                 <div className='dateRangeContainer'>
-                
-                   
-                <DateRange   datePosition={'top'}  text={"REZERVA ACUM"} />
-            
+                    <DateRange   datePosition={'top'}  text={"REZERVA ACUM"}  navigateToRoute={"/BookingStage00"}   />
                 </div>
             
             <div className = 'roomDetailContainer'>
                 <div className = 'detailElement'>
                 <img src = 'https://picsum.photos/460/200' alt='' ></img>
                     <span className = 'detailElement-title'>Camere</span>
+                    
                     <button
-                        onClick={()=> history.push('/rooms')}
+                       
                         className='detailButton'
-                    >Detalii</button>
+                    ><a  href="/rooms">Detalii</a></button>
                 </div>
                 <div className = 'detailElement'>
                     <img src = 'https://picsum.photos/460/200' alt='' ></img>
                     <span className = 'detailElement-title'>Restaurant</span>
                     <button
-                        onClick={()=> history.push('/food')}
+                        
                         className='detailButton'
-                    >Detalii</button>
+                    ><a 
+                    href="/food">Detalii</a></button>
                 </div>
             </div>     
             </div>  
@@ -68,9 +72,10 @@ export const HomeScreen = () => {
                      <div className="presentationSubTitle">Descriere despre facilitati, despre tot ceea ce gasiti wow la voi.</div>
                      <div className="test">
                      <button
-                        onClick={()=> history.push('/rooms')}
+                        
                         className='detailButton'
-                    >Detalii</button>
+                    ><a 
+                    href="/about-us">Detalii</a></button>
                     </div>
                     <div className="reviewsContainer">
                         <div className="reviewLeft">"A pleasant surprise. Great conditions for a low price. Nice room, very friendly hosts, good breakfast. "  -Alex</div>
@@ -98,10 +103,12 @@ export const HomeScreen = () => {
                         <button
                         onClick={()=> history.push('/city')}
                         className='detailButton'
-                    >Descopera</button>
+                    ><a 
+                    href="/city">Descopera</a></button>
                     </div>
                     </div> 
                 
         </div> 
     )
 }
+

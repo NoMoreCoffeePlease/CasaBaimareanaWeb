@@ -1,0 +1,12 @@
+.aboutContainer {
+    width: 96vw;
+    height: 83vh;
+   z-index: 1;
+}
+
+.aboutTitle {
+    text-align: center;
+   color: wheat;
+}
+
+

@@ -95,13 +95,12 @@ export default function BookingModal(props) {
                
           </div>
           <Switch>
-
             <Route exact path="/BookingStage00" >
-            <BookingStage0 />
+              <BookingStage0 />
             </Route>
-
-            <Route exact path="/BookingStage01">  <BookingStage1 /></Route>
-
+            <Route exact path="/BookingStage01"> 
+             <BookingStage1 />
+            </Route>
             <Route exact path="/BookingStage02" >
             <BookingStage2 />
             </Route>

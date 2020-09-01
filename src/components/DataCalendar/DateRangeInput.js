@@ -9,7 +9,9 @@ import firebase from '../../firebase/firebase';
 import {useHistory} from 'react-router-dom';
 
 
-const  DateRange = ({startDate, endDate, adults, children, addData, text, datePosition, datePickerStyles})  => {
+
+
+const  DateRange = ({  navigateToRoute ,startDate, endDate, adults, children, addData, text, datePosition, datePickerStyles})  => {
   const history = useHistory();
   console.log(adults, "std")
   const [state, setState] = useState({
@@ -19,6 +21,7 @@ const  DateRange = ({startDate, endDate, adults, children, addData, text, datePo
     adults: adults,
     children: children
   }) 
+
 
   console.log(state.startDate, 'state')
   const onSubmitPress = () => {
@@ -129,12 +132,13 @@ const  DateRange = ({startDate, endDate, adults, children, addData, text, datePo
     </div></div>
     <button className='Submit'
         onClick = {()=> {
-          addData( state.startDate.setHours(16), state.endDate.setHours(12), state.adults, state.children);
+          addData( state.startDate, state.endDate, state.adults, state.children);
             console.log(state); 
             onSubmitPress();            
-            history.push("/BookingStage01");
+            // history.push("/BookingStage01");
+           
           }}
-        >{text}</button>
+        ><a  href={navigateToRoute}>{text}</a></button>
      </div> 
      </div>
   )

@@ -22,18 +22,7 @@ export default function RoomsHome () {
                             className='roomButton'
                         >Detalii</button> </Link>
                     </div>  
-                <div className = 'roomElement'>
-                       
-                        <div className = 'roomElement-title'>Camera tripla</div>
-                        <Link
-                            style={{ textDecoration: "none", color: "black" }}
-                            to="/rooms/triple"
-                        > 
-                        <button
-                            
-                            className='roomButton'
-                        >Detalii</button> </Link>
-                    </div>
+              
                     </div>
                 <div className='roomRow'>
                 <div className = 'roomElement'>                        
@@ -47,6 +36,18 @@ export default function RoomsHome () {
                             className='roomButton'
                         >Detalii</button> </Link>
                     </div>
+                    <div className = 'roomElement'>
+                       
+                       <div className = 'roomElement-title'>Camera tripla</div>
+                       <Link
+                           style={{ textDecoration: "none", color: "black" }}
+                           to="/rooms/triple"
+                       > 
+                       <button
+                           
+                           className='roomButton'
+                       >Detalii</button> </Link>
+                   </div>
                 <div className = 'roomElement'>
                         
                         <div className = 'roomElement-title'>Apartament</div>

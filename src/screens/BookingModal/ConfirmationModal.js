@@ -5,6 +5,12 @@ import { useHistory } from "react-router-dom";
 export default function ConfirmationModal(props) {
 
     const history = useHistory();
+
+    // useEffect(() => {
+    //     props.barHandler(false);
+    //   }, [props]);
+    
+     
     
     if (props.show === false) return null;
     return <div>
@@ -21,8 +27,9 @@ export default function ConfirmationModal(props) {
                 </p></div>
              
             <button className='confirmationButton'
-                onClick={() => { props.modalHandler(false);history.push("/");props.closeModal(); }}
-            >ACASA</button>   
+               
+            ><a 
+            href="/">ACASA</a></button>   
         </div>
         </div>
         

@@ -13,6 +13,8 @@ import BookingModal from '../../screens/BookingModal/BookingModal';
 import FoodModal from '../../screens/FoodModal/FoodModal';
 import CityModal from '../../screens/CityModal/CityModal';
 import ContactModal from '../../screens/ContactModal/ContactModal';
+import AboutUsModal from '../../screens/AboutUsModal/AboutUsModal';
+import BookingStage1 from '../../screens/BookingModal/BookingStage1'
 
 export const SideBar = (props) => {
     const styles = {
@@ -53,6 +55,9 @@ export const SideBar = (props) => {
                                 <Link className="sideBar-book" style={{ textDecoration: 'none' }} to='/BookingStage00'>Rezerva acum</Link></li>
                             <li key={'Contact'}>
                                 <Link className="sideBar-text" style={{ textDecoration: 'none' }} to='/contact'>Contact</Link></li>
+                                {/* <li key={'Alege Camera'} >
+                                    <Link className="sideBar-book" style={{ textDecoration: 'none'}} to='/BookingStage01'>Alege camera</Link>
+                                </li> */}
                         </ul>
 
                     </div>
@@ -108,6 +113,16 @@ export const SideBar = (props) => {
 
                     }}
                 />
+                {/* <Route 
+                key={'Alege Camera'}
+                path={'/BookingStage01'}
+                exact={true}
+                component={() => {
+                    setShownModal(true);
+                    return <BookingStage1 show={shownModal} barHandle={props.barHandler} modalHandler={modalHandler} />
+                }}
+                /> */}
+
                 <Route
                     key={'Camere'}
                     path={'/rooms'}
@@ -143,19 +158,18 @@ export const SideBar = (props) => {
                     path={'/about-us'}
                     exact={true}
                     component={() => {
+                        setShownModal(true);
                         console.log('About');
-                        return null;
+                        return  <AboutUsModal show={shownModal} barHandler={props.barHandler} modalHandler={modalHandler} />;
                     }}
                 />
                 <Route
                     key={'Rezerva acum'}
-                    path={'/bookstage0'}
+                    path={'/BookingStage01'}
                     exact={true}
                     component={() => {
-                        console.log('Book?')
                         setShownModal(true);
-                        return <BookingModal show={shownModal} barHandler={props.barHandler} modalHandler={modalHandler} />;
-
+                        return <BookingModal show={shownModal} barHandler={props.barHandler} modalHandler={modalHandler} />
                     }}
                 />
                 <Route

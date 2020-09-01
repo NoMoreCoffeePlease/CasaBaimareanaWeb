@@ -84,6 +84,8 @@
     font-family: 'Baskerville Old Face';
     font-size: 48px; 
     text-align: center;
+    margin-bottom: 10vh;
+    
 }
 
 .roomsSubTitle {
@@ -98,6 +100,7 @@
     font-size: 24px;
     margin-bottom: 0vh;
     text-align: center;
+    
  
 }
 
@@ -141,12 +144,9 @@
     width: 10vw;
     font-family: 'Baskerville Old Face';
     font-size: 20px;
-    padding-left: 20px;
-    padding-right:20px;
     align-items: center;
     justify-content: center;
-    margin-left:20px;
-    margin-right:20px;
+   margin-left: 4px;
     margin-bottom: 30px;
 }
 
@@ -160,4 +160,24 @@
     justify-content: space-between;
     display: flex;
 
+}
+
+.roomsContainer {
+    z-index: 1;
+     width: 93vw;
+    height: 83vh;  
+    
+}
+
+.roomsPhotos {
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60vh;
+}
+
+.carouselContainer {
+   
+    width: 60vw;
 }
