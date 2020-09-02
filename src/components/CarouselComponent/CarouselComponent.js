@@ -1,12 +1,23 @@
 import React from 'react';
-import './CarouselComponent.css';
-import Carousel from 'react-elastic-carousel';
+import Carousel, {consts} from 'react-elastic-carousel';
+import theme from './CarouselComponent.css';
+
+// TO DO : Fix renderArrow!
+
+function myArrow({type, onClick, isEdge}) {
+  const pointer = type = consts.PREV ? <div><img src={require('../../svg/next-black.svg')} alt className="roomBackButton" /> </div> : <div><img src={require('../../svg/next-black.svg')} alt  className="roomNextButton" /> </div>
+  return (
+    <div onClick={onClick} disabled={isEdge}>
+      {pointer}
+    </div>
+  )
+}
 
 export default function CarouselComponent (props) {
-  
+ 
    
 return <div >
-<Carousel  itemsToScroll={1} itemsToShow={1}  renderPagination={({ pages, activePage, onClick }) => {
+<Carousel  renderArrow={myArrow} theme={theme} itemsToScroll={1} itemsToShow={1}  renderPagination={({ pages, activePage, onClick }) => {
     return (
       <div className='paginationRow'>
         {pages.map((item, index) => {

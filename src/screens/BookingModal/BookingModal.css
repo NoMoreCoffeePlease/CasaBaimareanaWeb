@@ -233,8 +233,9 @@
     opacity:0.7;
 }
 .componentContainer {
-    padding-bottom: 3vh;
+    /* padding-bottom: 3vh; */
     height: 62vh;
+    /* background-color: wheat; */
 }
 
 .SubmitStage {
@@ -265,11 +266,53 @@
 }
 
 .roomGrid {
-    width: 60vh;
+    width: 60vw;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-self: center;
     margin-bottom: 40px;
+    
+}
+
+.bookingButton {
+    align-self: center;
+    background-color: #d6a466;
+    border-color: #b78548;
+    border-radius: 5px;
+    height: 48px;
+    width: 10vw;
+    font-family: 'Baskerville Old Face';
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+   margin-left: 4px;
+   
+}
+
+.counterText {
+text-align: center;
+background-color: wheat;
+width: 2vw;
+}
+
+.counterContainer {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  margin-bottom: 1vh;
+   height: 2vh;
+ 
+}
+
+.roomElementBooking {
+    background-color: rgba(255,255,255,0.2);
+    width: 200px;
+    border-radius: 5px;
+    height: 38vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .roomElement {

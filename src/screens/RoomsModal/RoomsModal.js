@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import './RoomsModal.css';
 import { useHistory, BrowserRouter as Router, Route, Switch,Link } from "react-router-dom";
 import RoomsHome from './RoomsHome';
 import RoomsSimple from './RoomsSimple';
 import RoomsDouble from './RoomsDouble';
 import RoomsTriple from './RoomsTriple';
 import RoomsApartment from './RoomsApartment';
+import './RoomsModal.css';
 
 export default function RoomsModal(props) {
 
@@ -21,7 +21,11 @@ export default function RoomsModal(props) {
 
         <div className='roomsModal'>
             <div
-                onClick={() => { props.modalHandler(false); history.push("/") }}
+                  onClick={() => { 
+                    let urlToGo = window.location.href.split('/');
+                    urlToGo.pop();
+                    props.modalHandler(false); history.push(urlToGo.join('/').split(document.location.origin)[1])
+                }}
             >
                 <img src={require('../../svg/close-black.svg')} className='closeButton' alt="test" />
             </div>
