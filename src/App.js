@@ -3,7 +3,9 @@ import './App.css';
 import {SideBar} from './components/SideBar/SideBar.js';
 import { HomeScreen } from './screens/HomeScreen/HomeScreen';
 import {Provider} from 'react-redux';
-import {store} from './redux/dataStore';
+import {store, persistor} from './redux/dataStore';
+import { PersistGate } from 'redux-persist/integration/react';
+
 
 
 export const App = () => {
@@ -20,7 +22,8 @@ const modalHandler = (bool)=>{
   
   return (
     <Provider store={store}> 
-      
+            <PersistGate loading={null} persistor={persistor}>
+
       <div className="App">
         <div className= "menuIconContainer"
           onClick = {() => {barHandler(true)}}
@@ -30,6 +33,7 @@ const modalHandler = (bool)=>{
 
         <SideBar show={shownBar} barHandler={barHandler} modalHandler={modalHandler} /> : <div></div>
       </div>
+      </PersistGate>
 
     </Provider>
   );

@@ -293,6 +293,14 @@
 text-align: center;
 background-color: wheat;
 width: 2vw;
+
+}
+
+.disableCounterText{
+    text-align: center;
+background-color: wheat;
+width: 2vw;
+pointer-events: none;
 }
 
 .counterContainer {

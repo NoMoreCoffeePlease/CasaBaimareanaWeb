@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import './BookingModal.css';
 import { useHistory } from 'react-router';
+import firebase from '../../firebase/firebase';
 
-export default function BookingStage2() {
+
+export default function BookingStage2({startDate, endDate, adults, children}) {
     const history = useHistory();
     const handleMethod = (option) => {
         switch (option) {
@@ -21,12 +23,28 @@ export default function BookingStage2() {
         postalCode: '',
         paymentMethodCash: false,
         privacy: false,
-        terms: false
+        terms: false,
+            startDate: startDate !== null ? new Date(startDate) : '',
+            endDate: endDate !== null ? new Date(endDate) : '',
+            adults: adults,
+            children: children
     });
+
+    const onSubmitPress = () => {
+      console.log(state)
+        firebase.db.collection('books').add({ adults: state.adults, children: state.children, checkIn: state.startDate.toString('dddd, MMMM, yyyy'), checkOut: state.endDate.toString('dddd, MMMM, yyyy') })
+          .then(user => {
+            history.push("/bookConfirm");
+          })
+          .catch(error => {
+            console.log(error.message)
+          })
+      }
+
     return <div >
         <div className='subTitle'><p className='subTitleText'>Completeaza datele personale si alege modalitatea de plata pentru finalizarea comenzii!</p></div>
         <div className='formContainer'>
-            <form
+            <div
                 onChange={console.log(state)}
                 className = 'formStyle'
             >
@@ -110,15 +128,15 @@ export default function BookingStage2() {
                             history.push("/BookingStage01");
                         }}
                         >PASUL ANTERIOR</button>
-                    <input className = 'submitButton' type='submit' value='REZERVA' 
+                    <button className = 'submitButton' value='REZERVA' 
                         onClick={()=> {
-                            if (state.privacy === true && state.terms === true) history.push("/bookConfirm")
+                            if (state.privacy === true && state.terms === true) {  onSubmitPress() ; }
                             else alert ('Must check Terms and/or Privacy!')
                         }}
-                    ></input>
+                    >REZERVA</button>
                 
                 </div> 
-            </form>
+            </div>
         </div>
     </div>
 }

@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from "react";
+import { connect } from 'react-redux';
 import BookingStage0 from './BookingStage0';
 import BookingStage1 from './BookingStage1';
 import BookingStage2 from './BookingStage2';
@@ -15,10 +16,21 @@ import {
 } from "react-router-dom";
 
 
-export default function BookingModal(props) {
+ const BookingModal = (props) => {
+   console.log(props, 'props')
   // const [selectedStage, setSelectedStage] = useState(false);
+
+  const [state, setState] = useState ({
+    startDate: props.startDate !== null ? new Date(props.startDate) : '',
+    endDate: props.endDate !== null ? new Date(props.endDate) : '',
+    adults: props.adults,
+    children: props.children
+  })
+
   const history = useHistory();
+
   useEffect(() => {
+    console.log(props)
     props.barHandler(false);
   }, [props]);
 
@@ -102,7 +114,8 @@ export default function BookingModal(props) {
              <BookingStage1 />
             </Route>
             <Route exact path="/BookingStage02" >
-            <BookingStage2 />
+
+            <BookingStage2 adults={props.adults}  children={props.children}  startDate={props.startDate} endDate={props.endDate}/>
             </Route>
 
             <Route exact path='/bookConfirm'> 
@@ -119,11 +132,16 @@ function BookingStage00() {
   return (
     <div>
       <div className="infosContainer">
-        {" "}
-        <BookingStage0 />{" "}
+        <BookingStage0 />
       </div>
     </div>
   );
 }
 
 
+const mapStatetoProps = (state) => {
+  const { startDate, endDate, adults, children } = state;
+  return { startDate, endDate, adults, children };
+};
+
+export default connect(mapStatetoProps, null)(BookingModal);

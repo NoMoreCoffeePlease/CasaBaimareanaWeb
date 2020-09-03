@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { DateRangeInput } from '@datepicker-react/styled'
 import { ThemeProvider } from 'styled-components';
-import { startOfToday } from 'date-fns';
+import { startOfToday, add } from 'date-fns';
 import './DateRangeInput.css'
 import { FETCH_DATA_SUCCESS } from '../../redux/dataActions';
 import { connect } from 'react-redux';
@@ -15,13 +15,13 @@ const DateRange = ({ navigateToRoute, startDate, endDate, adults, children, addD
   const history = useHistory();
   const [state, setState] = useState({
     focusedInput: null,
-    startDate: startDate !== null ? new Date(startDate) : '',
-    endDate: endDate !== null ? new Date(endDate) : '',
+    startDate: startDate !== '' ? new Date(startDate) : '',
+    endDate: endDate !== '' ? new Date(endDate) : '',
     adults: adults,
     children: children
   })
   const [unavailableDates, setUnavailableDates] = useState();
-
+console.log('start', startDate !== null)
   const fetchData = async()=>{
     const dates = []
     const bookings = await firebase.db.collection('books');
@@ -42,15 +42,16 @@ const DateRange = ({ navigateToRoute, startDate, endDate, adults, children, addD
     fetchData();
   }, [])
 
-  const onSubmitPress = () => {
-    firebase.db.collection('books').add({ adults: state.adults, children: state.children, checkIn: state.startDate.toString(), checkOut: state.endDate.toString() })
-      .then(user => {
-        console.log(user.id)
-      })
-      .catch(error => {
-        console.log(error.message)
-      })
-  }
+  // const onSubmitPress = () => {
+  //   console.log(add)
+  //   firebase.db.collection('books').add({ adults: state.adults, children: state.children, checkIn: state.startDate.toString(), checkOut: state.endDate.toString() })
+  //     .then(user => {
+  //       history.push("/BookingStage01");
+  //     })
+  //     .catch(error => {
+  //       console.log(error.message)
+  //     })
+  // }
 
   return (
     <div className={datePickerStyles}>
@@ -158,12 +159,9 @@ const DateRange = ({ navigateToRoute, startDate, endDate, adults, children, addD
         <button className='Submit'
           onClick={() => {
             addData(state.startDate, state.endDate, state.adults, state.children);
-            console.log(state);
-            onSubmitPress();
-            // history.push("/BookingStage01");
-
-          }}
-        ><a href={navigateToRoute}>{text}</a></button>
+            window.location.href=navigateToRoute;
+          }}>
+          {text}</button>
       </div>
     </div>
   )
@@ -171,12 +169,12 @@ const DateRange = ({ navigateToRoute, startDate, endDate, adults, children, addD
 
 const mapStatetoProps = (state) => {
   const { startDate, endDate, adults, children } = state;
+  console.log('dateRange picker redux',state)
   return { startDate, endDate, adults, children };
 };
 
 const mapDispatchtoProps = dispatch => ({
   addData: (startDate, endDate, adults, children) => dispatch({ type: FETCH_DATA_SUCCESS, payload: { startDate: startDate, endDate: endDate, adults: adults, children: children } }),
-
 })
 
 export default connect(mapStatetoProps, mapDispatchtoProps)(DateRange);
