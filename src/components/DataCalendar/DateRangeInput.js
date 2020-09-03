@@ -175,6 +175,7 @@ const mapStatetoProps = (state) => {
 
 const mapDispatchtoProps = dispatch => ({
   addData: (startDate, endDate, adults, children) => dispatch({ type: FETCH_DATA_SUCCESS, payload: { startDate: startDate, endDate: endDate, adults: adults, children: children } }),
+
 })
 
 export default connect(mapStatetoProps, mapDispatchtoProps)(DateRange);
