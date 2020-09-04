@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import './HomeScreen.css';
 import DateRange from '../../components/DataCalendar/DateRangeInput';
-import {useHistory} from 'react-router-dom';
 
 
 
@@ -15,16 +14,14 @@ const location = {
 // TO DO : Fix center align for buttons 
 
 export const HomeScreen = (props) => {
-   const history = useHistory();
-
-
-  
+   
     return (
         <div className = 'mainFrame'>
             <div
                 className='datePickerContainer'
             >
                 <div className='dateRangeContainer'>
+                    <DateRange navigateToRoute={'/BookingStage01'} datePosition={'top'}  text={"REZERVA"}/>
                 </div>
             
             <div className = 'roomDetailContainer'>

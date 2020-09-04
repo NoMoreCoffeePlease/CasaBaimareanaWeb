@@ -13,10 +13,11 @@ firebase.initializeApp({
     measurementId: "G-67VBMZZ83J"
 });
 
+const FieldValue = firebase.firestore.FieldValue;
 
 
 let db = firebase.firestore();
 
 
 
-export default {firebase, db };
+export default {FieldValue,firebase, db };

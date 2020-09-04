@@ -5,10 +5,10 @@ import {useHistory} from 'react-router-dom';
 
 
 export default function BookingStage0 () {
-    // const history = useHistory();
+    const history = useHistory();
     return <div className='componentContainer'>
         <div className="dateRangeInputPosition">
-        <DateRange   datePosition={'top'}  text={"REZERVA ACUM"}  navigateToRoute={"/BookingStage01"}   />
+        <DateRange navigateToRoute={'/BookingStage01'} datePosition={'top'}  text={"REZERVA ACUM"}/>
         </div>
     </div>
 }

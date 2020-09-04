@@ -9,7 +9,7 @@ import { RESET_DATA_SUCCESS } from '../../redux/dataActions';
 
 
 function BookingStage2({startDate, endDate, adults, children, resetStartDate, resetEndDate, resetAdults, resetChildren, resetData, simpleValue, doubleValue, tripleValue, aptValue}) {
-
+    console.log(startDate,endDate);
     const history = useHistory();
     const handleMethod = (option) => {
         switch (option) {
@@ -47,11 +47,22 @@ function BookingStage2({startDate, endDate, adults, children, resetStartDate, re
 
         firebase.db.collection('books').add({ adults: state.adults, children: state.children, checkIn: state.startDate.toString('dddd, MMMM, yyyy'), checkOut: state.endDate.toString('dddd, MMMM, yyyy'), simpleValue: state.simpleValue, doubleValue: state.doubleValue, tripleValue: state.tripleValue, aptValue: state.aptValue })
           .then(user => {
-            history.push("/bookConfirm");
+            
+            
           })
           .catch(error => {
             console.log(error.message)
           })
+
+          const rooms = firebase.db.collection("room_type").doc("available-rooms");
+            rooms.update({
+                apartment: firebase.FieldValue.increment(-state.aptValue),
+                simple: firebase.FieldValue.increment(-state.simpleValue),
+                double: firebase.FieldValue.increment(-state.doubleValue),
+                triple: firebase.FieldValue.increment(-state.tripleValue)
+            }).then(()=>{
+                history.push("/bookConfirm");
+            })
       }
 
     return <div className="componentContainer">
@@ -143,7 +154,6 @@ function BookingStage2({startDate, endDate, adults, children, resetStartDate, re
                         >PASUL ANTERIOR</button>
                     <button className = 'submitButton' value='REZERVA' 
                         onClick={()=> {
-                            resetData();
                             if (state.privacy === true && state.terms === true) {  onSubmitPress() ; }
                             else alert ('Must check Terms and/or Privacy!')
                         }}
@@ -155,9 +165,14 @@ function BookingStage2({startDate, endDate, adults, children, resetStartDate, re
     </div>
 }
 
+const mapStatetoProps = (state) => {
+    const { startDate, endDate, adults, children, simpleValue, doubleValue, tripleValue, aptValue } = state;
+    console.log('redux', state);
+    return { startDate, endDate, adults, children, simpleValue, doubleValue, tripleValue, aptValue };
+  };
+
 const mapDispatchtoProps = dispatch => ({
     resetData: () => dispatch({ type: RESET_DATA_SUCCESS, payload:{} }),
-  
   })
   
-  export default connect(null, mapDispatchtoProps)(BookingStage2);
+  export default connect(mapStatetoProps, mapDispatchtoProps)(BookingStage2);

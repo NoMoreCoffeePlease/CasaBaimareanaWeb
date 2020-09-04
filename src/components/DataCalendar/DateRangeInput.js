@@ -77,8 +77,8 @@ const DateRange = ({ resetData,navigateToRoute, startDate, endDate, adults, chil
             unavailableDates={unavailableDates}
             onDatesChange={data => setState(data)}
             onFocusChange={focusedInput => setState(prevState => ({ ...prevState, focusedInput: focusedInput }))}
-            startDate={state.startDate}
-            endDate={state.endDate}
+            startDate={state.startDate?state.startDate:null}
+            endDate={state.endDate?state.endDate:null}
             focusedInput={state.focusedInput}
             displayFormat={(selectedDate) => selectedDate.toLocaleDateString()}
             placement={datePosition}
@@ -160,9 +160,9 @@ const DateRange = ({ resetData,navigateToRoute, startDate, endDate, adults, chil
         <button className='Submit'
           onClick={() => {
             addData(state.startDate, state.endDate, state.adults, state.children);
-            window.location.href=navigateToRoute;
-          }}>
-          {text}</button>
+            history.push(navigateToRoute);
+          }}>{text}
+        </button>
       </div>
     </div>
   )
@@ -176,7 +176,6 @@ const mapStatetoProps = (state) => {
 
 const mapDispatchtoProps = dispatch => ({
   addData: (startDate, endDate, adults, children) => dispatch({ type: FETCH_DATA_SUCCESS, payload: { startDate: startDate, endDate: endDate, adults: adults, children: children } }),
-  resetData: () => dispatch({ type: RESET_DATA_SUCCESS, payload:{} }),
 })
 
 export default connect(mapStatetoProps, mapDispatchtoProps)(DateRange);

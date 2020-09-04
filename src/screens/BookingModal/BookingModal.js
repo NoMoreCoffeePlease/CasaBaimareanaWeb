@@ -116,7 +116,7 @@ import {
              <BookingStage1 />
             </Route>
             <Route exact path="/BookingStage02" >
-            <BookingStage2 adults={props.adults}  children={props.children}  startDate={props.startDate} endDate={props.endDate} simpleValue={props.simpleValue} doubleValue={props.doubleValue} tripleValue={props.tripleValue} aptValue={props.aptValue}/>
+            <BookingStage2 />
             </Route>
 
             <Route exact path='/bookConfirm'> 
@@ -129,19 +129,9 @@ import {
   );
 }
 
-function BookingStage00() {
-  return (
-    <div>
-      <div className="infosContainer">
-        <BookingStage0 />
-      </div>
-    </div>
-  );
-}
-
-
 const mapStatetoProps = (state) => {
   const { startDate, endDate, adults, children, simpleValue, doubleValue, tripleValue, aptValue } = state;
+  console.log('booking modal',state)
   return { startDate, endDate, adults, children, simpleValue, doubleValue, tripleValue, aptValue };
 };
 

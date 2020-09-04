@@ -11,7 +11,6 @@ import RoomsApartment from '../RoomsModal/RoomsApartment';
 
 
 function BookingStage1(props) {
-  
   const history = useHistory();
   
   const [simpleValue, setSimpleValue] = useState(0);
@@ -19,6 +18,7 @@ function BookingStage1(props) {
   const [tripleValue, setTripleValue] = useState(0);
   const [availableRooms, setAvailableRooms] = useState({});
   const [aptValue, setAptValue] = useState(0);
+  const totalPlaceToOcuppy = simpleValue+doubleValue*2+tripleValue*3+aptValue*4;
 
   const fetchData = async () => {
     const roomsAvailable = firebase.db
@@ -36,13 +36,13 @@ function BookingStage1(props) {
       apartment: apartment,
     });
   };
-
+  console.log(totalPlaceToOcuppy,(parseInt(props.adults)+(parseInt(props.children))));
   useEffect(() => {
     fetchData();
   }, []);
 
   return (<div>
-    <Router>
+
     <div className="componentContainer">
      
       <div className="roomGrid">
@@ -267,39 +267,28 @@ function BookingStage1(props) {
             props.addRoomNumbers(simpleValue, doubleValue, tripleValue, aptValue)
             history.push("/BookingStage02");
           }}
+          disabled={!((parseInt(props.adults)+(parseInt(props.children)))<=totalPlaceToOcuppy)}
         >
           PASUL URMATOR
         </button>
       </div>
             
-      <Switch>
-            {/* <Route exact path='/BookingStage01'>
-                <BookingStage1 />
-            </Route> */}
-            <Route  path='/rooms/simple'>
-                <RoomsSimple />
-            </Route>
-            <Route  path='/rooms/double'>
-                <RoomsDouble />
-            </Route>
-            <Route  path='/rooms/triple'>
-                <RoomsTriple />
-            </Route>
-            <Route  path='/rooms/apartment'>
-                <RoomsApartment />
-            </Route>
-        </Switch>
+    
     </div>
-    </Router>
+
     </div>
     
   );
 }
 
+const mapStatetoProps = (state) => {
+  const { adults, children} = state;
+  return { adults, children };
+};
 
 const mapDispatchtoProps = dispatch => ({
   addRoomNumbers: (simpleValue, doubleValue, tripleValue, aptValue) => dispatch({ type: ADD_ROOM_NUMBERS, payload: { simpleValue: simpleValue, doubleValue: doubleValue, tripleValue: tripleValue, aptValue: aptValue } }),
 
 })
 
-export default connect(null, mapDispatchtoProps)(BookingStage1);
+export default connect(mapStatetoProps, mapDispatchtoProps)(BookingStage1);
