@@ -1,16 +1,23 @@
-import {FETCH_DATA_SUCCESS, FETCH_DATA_FAIL} from './dataActions';
+import {FETCH_DATA_SUCCESS, FETCH_DATA_FAIL, RESET_DATA_SUCCESS, ADD_ROOM_NUMBERS} from './dataActions';
 import { isToday } from 'date-fns';
 
 const initialState = {
-    startDate: null,
-    endDate: null,
+    startDate: undefined,
+    endDate: undefined,
     adults: 0,
     children: 0,
-    fail: false
+    fail: false,
+    resetStartDate: undefined,
+    resetEndDate: undefined,
+    resetAdults: 0,
+    resetChildren: 0,
+    simpleValue: 0,
+    doubleValue: 0,
+    tripleValue: 0,
+    aptValue: 0,
 };
 
 export default function dataReducer (state = initialState, action) {
-    console.log(action);
     switch (action.type) {
         case FETCH_DATA_SUCCESS: {
             return {
@@ -28,6 +35,24 @@ export default function dataReducer (state = initialState, action) {
                 fail: true
             }
         };
+        case RESET_DATA_SUCCESS: {
+            return {
+                ...state,
+                startDate: initialState.resetStartDate,
+                endDate: initialState.resetEndDate,
+                adults: initialState.resetAdults,
+                children: initialState.resetChildren,
+            }
+        };
+        case ADD_ROOM_NUMBERS: {
+            return {
+                ...state,
+                simpleValue: action.payload.simpleValue,
+                doubleValue: action.payload.doubleValue,
+                tripleValue: action.payload.tripleValue,
+                aptValue: action.payload.aptValue,
+            }
+        }
         default: return state;
     }
 }

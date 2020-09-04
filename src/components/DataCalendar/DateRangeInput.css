@@ -21,16 +21,16 @@
     background-color: #d6a466;
     border-color: #b78548;
     border-radius: 5px;
-    height: 48px;
+    height: 5vh;
     width: 15vw;
     font-family: 'Baskerville Old Face';
     font-size: 20px;
-    padding-left: 20px;
-    padding-right:20px;
+    padding-left: 1vw;
+    padding-right:1vw;
     align-items: center;
     justify-content: center;
-    margin-left:20px;
-    margin-right:20px;
+    margin-left:1vw;
+    margin-right:1vw;
 }
 
 .Submit:hover {
@@ -53,8 +53,8 @@
 .inputPeople {
     display: flex;
     flex-direction: row;
-    padding-left: 10px;
-    padding-right: 20px;
+    padding-left: 0.5vw;
+    padding-right: 1vw;
 }
 
 .inputLabel {
@@ -63,14 +63,14 @@
 }
 
 .inputContainer {
-    margin-left: 10px;
+    margin-left: 0.5vw;
     border: 1px solid #BCBEC0;
     border-radius: 2px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    height: 46px;
+    height: 4.8vh;
     width: 8vw;
     background-color: #ffffff;
 }

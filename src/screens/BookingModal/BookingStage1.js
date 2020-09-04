@@ -1,9 +1,19 @@
 import React, { state, useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, BrowserRouter as Router, Route, Switch,Link } from "react-router-dom";
 import firebase from "../../firebase/firebase";
+import { ADD_ROOM_NUMBERS } from "../../redux/dataActions";
+import { connect } from 'react-redux';
+import RoomsSimple from '../RoomsModal/RoomsSimple';
+import RoomsDouble from '../RoomsModal/RoomsDouble';
+import RoomsTriple from '../RoomsModal/RoomsTriple';
+import RoomsApartment from '../RoomsModal/RoomsApartment';
 
-export default function BookingStage1(props) {
+
+
+function BookingStage1(props) {
+  
   const history = useHistory();
+  
   const [simpleValue, setSimpleValue] = useState(0);
   const [doubleValue, setDoubleValue] = useState(0);
   const [tripleValue, setTripleValue] = useState(0);
@@ -31,9 +41,10 @@ export default function BookingStage1(props) {
     fetchData();
   }, []);
 
-  return (
-    <div>
-      {/* <div className='subTitle'>Alege camerele pentru sejurul vostru!</div> */}
+  return (<div>
+    <Router>
+    <div className="componentContainer">
+     
       <div className="roomGrid">
         {availableRooms.simple && (
           <div className="roomElementBooking">
@@ -51,9 +62,15 @@ export default function BookingStage1(props) {
             <div className="elementPrice-container">
               <p className="elementPrice">150 RON</p>
             </div>
-            <button className="bookingButton">
-              <a href="/rooms/simple">Detalii</a>
-            </button>
+            <Link
+              style={{ textDecoration: "none", color: "black" }}
+                        to="/rooms/simple"
+                    >
+            <button className="bookingButton"
+              // onClick={()=>   window.location.href='/rooms/simple'}
+            >
+             Detalii
+            </button> </Link>
             <div className="counterContainer">
                 {simpleValue > 0 ?  <div
                 className="counterText"
@@ -98,9 +115,13 @@ export default function BookingStage1(props) {
             <div className="elementPrice-container">
               <p className="elementPrice">250 RON</p>
             </div>
+            <Link
+              style={{ textDecoration: "none", color: "black" }}
+                        to="/rooms/double"
+                    >
             <button className="bookingButton">
-              <a href="/rooms/simple">Detalii</a>
-            </button>
+              Detalii
+            </button> </Link>
             <div className="counterContainer">
             {doubleValue > 0 ?  <div
                 className="counterText"
@@ -144,9 +165,13 @@ export default function BookingStage1(props) {
             <div className="elementPrice-container">
               <p className="elementPrice">350 RON</p>
             </div>
+            <Link
+              style={{ textDecoration: "none", color: "black" }}
+                        to="/rooms/triple"
+                    >
             <button className="bookingButton">
-              <a href="/rooms/simple">Detalii</a>
-            </button>
+              Detalii
+            </button> </Link>
             <div className="counterContainer">
             {tripleValue > 0 ?  <div
                 className="counterText"
@@ -190,9 +215,13 @@ export default function BookingStage1(props) {
             <div className="elementPrice-container">
               <p className="elementPrice">500 RON</p>
             </div>
+            <Link
+              style={{ textDecoration: "none", color: "black" }}
+                        to="/rooms/apartment"
+                    >
             <button className="bookingButton">
-              <a href="/rooms/simple">Detalii</a>
-            </button>
+            Detalii
+            </button> </Link>
             <div className="counterContainer">
             {aptValue > 0 ?  <div
                 className="counterText"
@@ -235,12 +264,42 @@ export default function BookingStage1(props) {
         <button
           className="submitButton"
           onClick={() => {
+            props.addRoomNumbers(simpleValue, doubleValue, tripleValue, aptValue)
             history.push("/BookingStage02");
           }}
         >
           PASUL URMATOR
         </button>
       </div>
+            
+      <Switch>
+            {/* <Route exact path='/BookingStage01'>
+                <BookingStage1 />
+            </Route> */}
+            <Route  path='/rooms/simple'>
+                <RoomsSimple />
+            </Route>
+            <Route  path='/rooms/double'>
+                <RoomsDouble />
+            </Route>
+            <Route  path='/rooms/triple'>
+                <RoomsTriple />
+            </Route>
+            <Route  path='/rooms/apartment'>
+                <RoomsApartment />
+            </Route>
+        </Switch>
     </div>
+    </Router>
+    </div>
+    
   );
 }
+
+
+const mapDispatchtoProps = dispatch => ({
+  addRoomNumbers: (simpleValue, doubleValue, tripleValue, aptValue) => dispatch({ type: ADD_ROOM_NUMBERS, payload: { simpleValue: simpleValue, doubleValue: doubleValue, tripleValue: tripleValue, aptValue: aptValue } }),
+
+})
+
+export default connect(null, mapDispatchtoProps)(BookingStage1);

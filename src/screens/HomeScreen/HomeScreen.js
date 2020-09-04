@@ -25,7 +25,6 @@ export const HomeScreen = (props) => {
                 className='datePickerContainer'
             >
                 <div className='dateRangeContainer'>
-                    <DateRange   datePosition={'top'}  text={"REZERVA ACUM"}  navigateToRoute={"/BookingStage00"}   />
                 </div>
             
             <div className = 'roomDetailContainer'>
@@ -34,18 +33,17 @@ export const HomeScreen = (props) => {
                     <span className = 'detailElement-title'>Camere</span>
                     
                     <button
-                       
+                         onClick={()=>   window.location.href='/rooms'}
                         className='detailButton'
-                    ><a  href="/rooms">Detalii</a></button>
+                    >Detalii</button>
                 </div>
                 <div className = 'detailElement'>
                     <img src = 'https://picsum.photos/460/200' alt='' ></img>
                     <span className = 'detailElement-title'>Restaurant</span>
                     <button
-                        
+                          onClick={()=>   window.location.href='/food'}
                         className='detailButton'
-                    ><a 
-                    href="/food">Detalii</a></button>
+                    >Detalii</button>
                 </div>
             </div>     
             </div>  
@@ -72,10 +70,9 @@ export const HomeScreen = (props) => {
                      <div className="presentationSubTitle">Descriere despre facilitati, despre tot ceea ce gasiti wow la voi.</div>
                      <div className="test">
                      <button
-                        
+                          onClick={()=>   window.location.href='/about-us'}
                         className='detailButton'
-                    ><a 
-                    href="/about-us">Detalii</a></button>
+                    >Detalii</button>
                     </div>
                     <div className="reviewsContainer">
                         <div className="reviewLeft">"A pleasant surprise. Great conditions for a low price. Nice room, very friendly hosts, good breakfast. "  -Alex</div>
@@ -83,7 +80,7 @@ export const HomeScreen = (props) => {
                     </div>
                     <div className="test">
                     <button
-                        onClick={()=> history.push('/rooms')}
+                    //    onClick={()=>   window.location.href='/city'}
                         className='detailButton'
                     >Vezi si alte review-uri</button>
                     </div>
@@ -101,10 +98,9 @@ export const HomeScreen = (props) => {
                         <div className="bmContainer"><span className='bmStyle'>BAIA MARE</span></div>
                         <div className="test">
                         <button
-                        onClick={()=> history.push('/city')}
+                        onClick={()=>   window.location.href='/city'}
                         className='detailButton'
-                    ><a 
-                    href="/city">Descopera</a></button>
+                    >DESCOPERA</button>
                     </div>
                     </div> 
                 

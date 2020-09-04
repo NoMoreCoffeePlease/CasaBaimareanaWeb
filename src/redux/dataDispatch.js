@@ -13,7 +13,7 @@ const mapStatetoProps = (state) => {
 
 const mapDispatchtoProps = dispatch => ({
     addData: (startDate, endDate) => dispatch({type: FETCH_DATA_SUCCESS, payload: {startDate, endDate}}),
-    errorData: (error) => dispatch ({type: FETCH_DATA_FAIL, payload: error})
+    errorData: (error) => dispatch ({type: FETCH_DATA_FAIL, payload: error}),
 })
 
 export default connect (mapStatetoProps, mapDispatchtoProps)(dataFunction);

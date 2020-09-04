@@ -5,7 +5,7 @@ import theme from "./CarouselComponent.css";
 // TO DO : Fix renderArrow!
 
 function myArrow({ type, onClick, isEdge }) {
-  console.log(type);
+
   const pointer = (type === 'PREV' ? (
     <div>
       <img

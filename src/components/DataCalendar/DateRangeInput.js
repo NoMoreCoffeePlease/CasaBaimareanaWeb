@@ -3,7 +3,7 @@ import { DateRangeInput } from '@datepicker-react/styled'
 import { ThemeProvider } from 'styled-components';
 import { startOfToday, add } from 'date-fns';
 import './DateRangeInput.css'
-import { FETCH_DATA_SUCCESS } from '../../redux/dataActions';
+import { FETCH_DATA_SUCCESS, RESET_DATA_SUCCESS } from '../../redux/dataActions';
 import { connect } from 'react-redux';
 import firebase from '../../firebase/firebase';
 import { useHistory } from 'react-router-dom';
@@ -11,17 +11,18 @@ import { useHistory } from 'react-router-dom';
 
 
 
-const DateRange = ({ navigateToRoute, startDate, endDate, adults, children, addData, text, datePosition, datePickerStyles }) => {
+const DateRange = ({ resetData,navigateToRoute, startDate, endDate, adults, children, addData, text, datePosition, datePickerStyles }) => {
   const history = useHistory();
+
   const [state, setState] = useState({
     focusedInput: null,
-    startDate: startDate !== '' ? new Date(startDate) : '',
-    endDate: endDate !== '' ? new Date(endDate) : '',
+    startDate: (startDate===null||startDate===undefined)?undefined: new Date(startDate),
+    endDate: (endDate===null || endDate===undefined)?undefined:new Date(endDate),
     adults: adults,
     children: children
   })
+  console.log(state);
   const [unavailableDates, setUnavailableDates] = useState();
-console.log('start', startDate !== null)
   const fetchData = async()=>{
     const dates = []
     const bookings = await firebase.db.collection('books');
@@ -29,7 +30,7 @@ console.log('start', startDate !== null)
       snapshot.forEach(async doc => {
         const checkIn = await doc.data().checkIn;
         const checkOut = await doc.data().checkOut;
-        console.log(checkIn,checkOut)
+  
         for (let d = new Date(checkIn); d <= new Date(checkOut); d.setDate(d.getDate() + 1)) {
           dates.push(new Date(d));
         }
@@ -175,7 +176,7 @@ const mapStatetoProps = (state) => {
 
 const mapDispatchtoProps = dispatch => ({
   addData: (startDate, endDate, adults, children) => dispatch({ type: FETCH_DATA_SUCCESS, payload: { startDate: startDate, endDate: endDate, adults: adults, children: children } }),
-
+  resetData: () => dispatch({ type: RESET_DATA_SUCCESS, payload:{} }),
 })
 
 export default connect(mapStatetoProps, mapDispatchtoProps)(DateRange);

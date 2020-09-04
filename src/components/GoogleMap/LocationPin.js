@@ -3,7 +3,11 @@ import { Icon } from '@iconify/react'
 import locationIcon from '@iconify/icons-mdi/map-marker'
 
 const LocationPin = ({ text }) => (
-  <div className="pin">
+  <div className="pin" onClick={
+    ()=>{
+      window.open('https://goo.gl/maps/ezGuSzQkrDDum1AJ7','_blank');
+    }
+  }>
    <div className="row">
       <img src={require('../../svg/right-arrow.svg')} className="pinArrow" />
       <div className="pinHeader">

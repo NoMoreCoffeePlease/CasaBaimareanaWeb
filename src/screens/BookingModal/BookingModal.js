@@ -17,20 +17,22 @@ import {
 
 
  const BookingModal = (props) => {
-   console.log(props, 'props')
   // const [selectedStage, setSelectedStage] = useState(false);
 
   const [state, setState] = useState ({
     startDate: props.startDate !== null ? new Date(props.startDate) : '',
     endDate: props.endDate !== null ? new Date(props.endDate) : '',
     adults: props.adults,
-    children: props.children
+    children: props.children,
+    simpleValue: props.simpleValue,
+    doubleValue: props.doubleValue,
+    tripleValue: props.tripleValue,
+    aptValue: props.aptValue
   })
 
   const history = useHistory();
 
   useEffect(() => {
-    console.log(props)
     props.barHandler(false);
   }, [props]);
 
@@ -114,8 +116,7 @@ import {
              <BookingStage1 />
             </Route>
             <Route exact path="/BookingStage02" >
-
-            <BookingStage2 adults={props.adults}  children={props.children}  startDate={props.startDate} endDate={props.endDate}/>
+            <BookingStage2 adults={props.adults}  children={props.children}  startDate={props.startDate} endDate={props.endDate} simpleValue={props.simpleValue} doubleValue={props.doubleValue} tripleValue={props.tripleValue} aptValue={props.aptValue}/>
             </Route>
 
             <Route exact path='/bookConfirm'> 
@@ -140,8 +141,8 @@ function BookingStage00() {
 
 
 const mapStatetoProps = (state) => {
-  const { startDate, endDate, adults, children } = state;
-  return { startDate, endDate, adults, children };
+  const { startDate, endDate, adults, children, simpleValue, doubleValue, tripleValue, aptValue } = state;
+  return { startDate, endDate, adults, children, simpleValue, doubleValue, tripleValue, aptValue };
 };
 
 export default connect(mapStatetoProps, null)(BookingModal);

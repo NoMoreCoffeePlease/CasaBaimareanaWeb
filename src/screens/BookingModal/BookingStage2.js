@@ -2,9 +2,14 @@ import React, { useState } from 'react';
 import './BookingModal.css';
 import { useHistory } from 'react-router';
 import firebase from '../../firebase/firebase';
+import { connect } from 'react-redux';
+import { RESET_DATA_SUCCESS } from '../../redux/dataActions';
 
 
-export default function BookingStage2({startDate, endDate, adults, children}) {
+
+
+function BookingStage2({startDate, endDate, adults, children, resetStartDate, resetEndDate, resetAdults, resetChildren, resetData, simpleValue, doubleValue, tripleValue, aptValue}) {
+
     const history = useHistory();
     const handleMethod = (option) => {
         switch (option) {
@@ -27,12 +32,20 @@ export default function BookingStage2({startDate, endDate, adults, children}) {
             startDate: startDate !== null ? new Date(startDate) : '',
             endDate: endDate !== null ? new Date(endDate) : '',
             adults: adults,
-            children: children
+            children: children,
+            resetStartDate: resetStartDate,
+            resetEndDate: resetEndDate,
+            resetAdults: resetAdults,
+            resetChildren: resetChildren,
+            simpleValue: simpleValue, 
+            doubleValue: doubleValue,
+            tripleValue: tripleValue, 
+            aptValue: aptValue,
     });
 
     const onSubmitPress = () => {
-      console.log(state)
-        firebase.db.collection('books').add({ adults: state.adults, children: state.children, checkIn: state.startDate.toString('dddd, MMMM, yyyy'), checkOut: state.endDate.toString('dddd, MMMM, yyyy') })
+
+        firebase.db.collection('books').add({ adults: state.adults, children: state.children, checkIn: state.startDate.toString('dddd, MMMM, yyyy'), checkOut: state.endDate.toString('dddd, MMMM, yyyy'), simpleValue: state.simpleValue, doubleValue: state.doubleValue, tripleValue: state.tripleValue, aptValue: state.aptValue })
           .then(user => {
             history.push("/bookConfirm");
           })
@@ -41,11 +54,11 @@ export default function BookingStage2({startDate, endDate, adults, children}) {
           })
       }
 
-    return <div >
+    return <div className="componentContainer">
         <div className='subTitle'><p className='subTitleText'>Completeaza datele personale si alege modalitatea de plata pentru finalizarea comenzii!</p></div>
         <div className='formContainer'>
             <div
-                onChange={console.log(state)}
+               
                 className = 'formStyle'
             >
                 <div ><input
@@ -130,6 +143,7 @@ export default function BookingStage2({startDate, endDate, adults, children}) {
                         >PASUL ANTERIOR</button>
                     <button className = 'submitButton' value='REZERVA' 
                         onClick={()=> {
+                            resetData();
                             if (state.privacy === true && state.terms === true) {  onSubmitPress() ; }
                             else alert ('Must check Terms and/or Privacy!')
                         }}
@@ -140,3 +154,10 @@ export default function BookingStage2({startDate, endDate, adults, children}) {
         </div>
     </div>
 }
+
+const mapDispatchtoProps = dispatch => ({
+    resetData: () => dispatch({ type: RESET_DATA_SUCCESS, payload:{} }),
+  
+  })
+  
+  export default connect(null, mapDispatchtoProps)(BookingStage2);
