@@ -40,6 +40,7 @@ color: var(--main-blue);
 
 .pinHeaderText{
     font-size: 30px;
+    font-family: 'Baskerville Old Face'
 }
 
 .pinArrow{
@@ -67,6 +68,7 @@ font-size: 1.3em;
 
 .pinBodyText{
     font-size: 20px;
+    font-family: 'Baskerville Old Face'
 }
 
 .pinFooter{
@@ -86,6 +88,7 @@ font-size: 1.3em;
 
 .pinFooterText{
     font-size: 30px;
+    font-family: 'Baskerville Old Face'
 }
 
 @media screen and (min-width: 799px) {
