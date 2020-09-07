@@ -80,7 +80,7 @@
     border-radius: 10px;
     width: 99vw;
     height: 10vh;
-    margin-top: 35vh;
+    margin-top: 20vh;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -233,4 +233,18 @@
     justify-content: center;
     margin-bottom: 5vh;
 
+}
+
+
+.titleAnimation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.textAnimationStyle {
+    font-size: 100px;
+    color: white;
+    background-color: black;
 }
