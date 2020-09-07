@@ -39,7 +39,7 @@ color: var(--main-blue);
 }
 
 .pinHeaderText{
-    font-size: 30px;
+    font-size: 36px;
     font-family: 'Baskerville Old Face'
 }
 
@@ -80,14 +80,14 @@ font-size: 1.3em;
     background-color: #D6A466;
     padding: 1vh;
     padding-top: 2vh;
-    margin-top: -2vh;
+    margin-top: -1vh;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
     margin-right: 1.5vw;
 }
 
 .pinFooterText{
-    font-size: 30px;
+    font-size: 20px;
     font-family: 'Baskerville Old Face'
 }
 
@@ -105,6 +105,5 @@ font-size: 1.3em;
     width: fit-content;
 }
 
-.pin-icon {
-}
+
 }

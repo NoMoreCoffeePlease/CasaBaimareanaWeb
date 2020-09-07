@@ -6,6 +6,9 @@ import RoomsDouble from './RoomsDouble';
 import RoomsTriple from './RoomsTriple';
 import RoomsApartment from './RoomsApartment';
 import './RoomsModal.css';
+import {fadeIn} from 'react-animations';
+import Radium, {StyleRoot} from 'radium';
+import slideInRight from 'react-animations/lib/slide-in-right';
 
 export default function RoomsModal(props) {
 
@@ -13,13 +16,25 @@ export default function RoomsModal(props) {
     useEffect(()=>{
         props.barHandler(false);
     },[props])
+    const [isClose,setIsClose] = useState(true);
+    const styles= {
+        fadeIn:{
+            animation: "x 0.27s",
+            animationName: Radium.keyframes(fadeIn, "fadeIn"),
+        },
+        slideInRight: {
+            animation: "x 0.5s",
+            animationName: Radium.keyframes(slideInRight, 'slideInRight')
+        }
+    };
 
     if (props.show === false) return null;
     return <div>
         <Router>
+        <StyleRoot>
         <div className="ModalContainer"></div>
 
-        <div className='roomsModal'>
+        <div className='roomsModal' style={styles.fadeIn}>
             <div
                   onClick={() => { 
                     let urlToGo = window.location.href.split('/');
@@ -27,28 +42,44 @@ export default function RoomsModal(props) {
                     props.modalHandler(false); history.push(urlToGo.join('/').split(document.location.origin)[1])
                 }}
             >
-                <img src={require('../../svg/close-black.svg')} className='closeButton' alt="test" />
+                <img src={isClose?require('../../svg/close-black.svg'):require('../../svg/back-black.svg')} className='closeButton' alt="test" />
             </div>
 
             
         <Switch>
-            <Route exact path='/rooms'>
-                <RoomsHome />
+            <Route exact path='/rooms'component={()=>{
+                setIsClose(true);
+                 return <RoomsHome />
+            }}>
+                
             </Route>
-            <Route exact path='/rooms/simple'>
-                <RoomsSimple />
+            <Route exact path='/rooms/simple'component={()=>{
+                setIsClose(false);
+                 return <RoomsSimple />
+            }}>
+                
             </Route>
-            <Route exact path='/rooms/double'>
-                <RoomsDouble />
+            <Route exact path='/rooms/double'component={()=>{
+                setIsClose(false);
+                 return <RoomsDouble />
+            }}>
+                
             </Route>
-            <Route exact path='/rooms/triple'>
-                <RoomsTriple />
+            <Route exact path='/rooms/triple'component={()=>{
+                setIsClose(false);
+                 return <RoomsTriple />
+            }}>
+                
             </Route>
-            <Route exact path='/rooms/apartment'>
-                <RoomsApartment />
+            <Route exact path='/rooms/apartment'component={()=>{
+                setIsClose(false);
+                 return <RoomsApartment />
+            }}>
+                
             </Route>
         </Switch>
         </div>
+        </StyleRoot>
         </Router>
         </div>
         

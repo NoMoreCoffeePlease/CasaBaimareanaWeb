@@ -5,13 +5,20 @@ import emailjs from "emailjs-com";
 import { id } from "date-fns/locale";
 import ConfirmContactModal from "./ConfirmContactModal";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {fadeIn} from 'react-animations';
+import Radium, {StyleRoot} from 'radium';
 
 export default function ContactModal(props) {
   const history = useHistory();
   useEffect(() => {
     props.barHandler(false);
   }, [props]);
-
+  const styles= {
+    fadeIn:{
+        animation: "x 0.27s",
+        animationName: Radium.keyframes(fadeIn, "fadeIn"),
+    },
+};
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -31,7 +38,7 @@ export default function ContactModal(props) {
 
   return (
     <div>
-        <Router>
+        <Router><StyleRoot>
       {/* <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
         <script type="text/javascript">
             {(function(){
@@ -39,7 +46,8 @@ export default function ContactModal(props) {
             })}();
         </script> */}
       {/* <div className="ModalContainer"></div> */}
-      <div className="Modal">
+      <div className="ModalContainer"></div>
+      <div className="Modal" style={styles.fadeIn}>
         
           <Switch>
             {" "}
@@ -56,15 +64,7 @@ export default function ContactModal(props) {
         <div className="formContainerContact">
           <span className="telefonStyle">Telefon</span>
           <div className="ContactinputContainer">
-            <input
-              // id = "adults"
-              placeholder="+40-7xx-xxx-xxx"
-              autoComplete="off"
-              className="ContactInput"
-              // onChange = {id}
-
-              //   value={adults!== 0 ? adults : null}
-            ></input>
+            <p className='phoneNumber'>+40-7xx-xxx-xxx</p>
           </div>
 
           <div className="contactSeparator"></div>
@@ -151,7 +151,7 @@ export default function ContactModal(props) {
                 <input type="submit" value="Send" />   
             </form> */}
       </div>
-      </Router>
+      </StyleRoot></Router>
     </div>
   );
 }

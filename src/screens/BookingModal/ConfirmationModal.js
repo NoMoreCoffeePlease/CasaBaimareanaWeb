@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './ConfirmationModal.css';
 import { useHistory } from "react-router-dom";
+import {fadeIn} from 'react-animations';
+import Radium, {StyleRoot} from 'radium';
 
 export default function ConfirmationModal(props) {
 
@@ -10,12 +12,18 @@ export default function ConfirmationModal(props) {
     //     props.barHandler(false);
     //   }, [props]);
     
-     
+    const styles= {
+        fadeIn:{
+            animation: "x 0.27s",
+            animationName: Radium.keyframes(fadeIn, "fadeIn"),
+        },
+    };
     
     if (props.show === false) return null;
     return <div>
+        <StyleRoot>
         <div className="ConfirmationContainer"></div>
-        <div className='Confirmation'>
+        <div className='Confirmation' style={styles.fadeIn}>
 
             <div className='confirmationTitle'>REZERVARE CONFIRMATA</div>            
 
@@ -31,6 +39,7 @@ export default function ConfirmationModal(props) {
             ><a 
             href="/">ACASA</a></button>   
         </div>
+        </StyleRoot>
         </div>
         
 }

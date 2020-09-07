@@ -1,6 +1,38 @@
+/* .carouselMainContainer{
+    margin-top:15vh;
+} */
+
 .roomPic {
     width: 78vw;
     height: 52vh;
+    display: flex;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-items: flex-end;
+}
+
+.carouselBackButton {
+    width: 3vw;
+    height: 3vw;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(224deg) brightness(104%) contrast(101%);  
+    transform: rotate(180deg);
+    margin-top: 22.5vh;
+}
+
+.carouselBackButton:hover {
+    filter: invert(97%) sepia(15%) saturate(7300%) hue-rotate(309deg) brightness(93%) contrast(79%);
+}
+
+.carouselNextButton {
+    width: 3vw;
+    height: 3vw;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(224deg) brightness(104%) contrast(101%);  
+    margin-top: 22.5vh;
+}
+
+.carouselNextButton:hover {
+    filter: invert(97%) sepia(15%) saturate(7300%) hue-rotate(309deg) brightness(93%) contrast(79%);
 }
 
 .paginationPic {
@@ -34,4 +66,32 @@
 
 .rec-carousel > .rec-arrow-left{
     color: wheat;
+}
+
+.imageCaptionContainer {
+    background-color: rgba(214, 164, 102, 0.75);
+    width: 100%;
+    height: 12vh;
+    display: flex;
+    flex-direction: column;  
+    justify-content: space-evenly; 
+    padding: 1vh;
+}
+
+.imageCaptionTitle {
+    font-family: 'Baskerville Old Face';
+    padding-left: 3vw;
+    padding-right: 3vw;
+    margin-top:0px;
+    margin-bottom: 0px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.imageCaptionSubtitle {
+    font-family: 'Baskerville Old Face';
+    padding-left: 3vw;
+    padding-right: 3vw;
+    margin-top:0px;
+    margin-bottom: 0px;
 }

@@ -28,8 +28,7 @@ export default function RoomsSimple () {
 </div>
 
         <div onClick = {()=>history.push('/rooms/double')}><img src={require('../../svg/next-black.svg')} alt= '' className='roomNextButton' /></div>
-</div>
-       
+</div>      
          
        
     </div>
