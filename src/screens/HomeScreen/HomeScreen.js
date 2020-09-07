@@ -1,10 +1,17 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './HomeScreen.css';
 import DateRange from '../../components/DataCalendar/DateRangeInput';
-
-
+import TextTransition, { presets } from "react-text-transition";
 
 import MapSection from '../../components/GoogleMap/Map'
+
+const TEXTS = [
+    "Baimareana",
+    "ta de vacanta",
+   
+  ];
+
+  
 
 const location = {
     address: 'Strada Vasile Alecsandri 39, Baia Mare 430302',
@@ -14,12 +21,32 @@ const location = {
 // TO DO : Fix center align for buttons 
 
 export const HomeScreen = (props) => {
+    const [index, setIndex] = useState(0);
+
+    useEffect(() => {
+        const intervalId = setInterval(() =>
+          setIndex(index => (index + 1)% TEXTS.length),
+          6000 // every 3 seconds
+        );
+      },[]);
    
     return (
         <div className = 'mainFrame'>
             <div
                 className='datePickerContainer'
             >
+            <div className='titleAnimation'> 
+            <span className="textAnimationStyle">Casa</span>
+            <span className="textAnimationStyle"> .. </span>
+                 <span>
+                     <TextTransition
+                    text={ TEXTS[index] }
+                    springConfig={ presets.default }
+                    className="textAnimationStyle"
+                    />
+                 </span>
+            </div>
+
                 <div className='dateRangeContainer'>
                     <DateRange navigateToRoute={'/BookingStage01'} datePosition={'top'}  text={"REZERVA"}/>
                 </div>
