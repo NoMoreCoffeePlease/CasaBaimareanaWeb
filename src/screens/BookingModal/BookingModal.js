@@ -14,11 +14,18 @@ import {
   useHistory,
  
 } from "react-router-dom";
+import {fadeIn} from 'react-animations';
+import Radium, {StyleRoot} from 'radium';
 
 
  const BookingModal = (props) => {
   // const [selectedStage, setSelectedStage] = useState(false);
-
+  const styles= {
+    fadeIn:{
+        animation: "x 0.27s",
+        animationName: Radium.keyframes(fadeIn, "fadeIn"),
+    },
+};
   const [state, setState] = useState ({
     startDate: props.startDate !== null ? new Date(props.startDate) : '',
     endDate: props.endDate !== null ? new Date(props.endDate) : '',
@@ -43,9 +50,10 @@ import {
   return (
     <div>
       {/* {selectedStage === true ? <div className="stageSelected"> </div> : <div className="stageContainer"> </div>  } */}
+      <StyleRoot>
       <Router>
         <div className="ModalContainer"></div>
-        <div className='Modal'>
+        <div className='Modal' style ={styles.fadeIn}>
             <div className='closeButtonContainer'
                 onClick={() => { props.modalHandler(false);history.push("/") }}
             >
@@ -124,7 +132,8 @@ import {
             </Route>
           </Switch>
         </div>
-      </Router>
+        
+      </Router></StyleRoot>
     </div>
   );
 }

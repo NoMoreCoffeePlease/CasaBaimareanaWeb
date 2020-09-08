@@ -8,7 +8,7 @@ export default function RoomsHome() {
         <div className='roomsTitle'><p className='roomsTitle-text'>CAMERE</p></div>
 
         <div className='roomsSubTitle'><p className='roomsSubTitle-text'>Vezi oferta noastra si alege ce ti se potriveste cel mai bine!</p></div>
-        <div className='roomGrid'>
+        <div className='roomsGrid'>
             <div className='roomRow'>
                 <div className='roomElement'>
 

@@ -43,7 +43,7 @@
     filter: invert(97%) sepia(15%) saturate(7300%) hue-rotate(309deg) brightness(93%) contrast(79%);
 }
 
-.CityTitle {
+.CookiesTitle {
 
     color: white;
     font-family: 'Baskerville Old Face';
@@ -53,15 +53,4 @@
     width: 95vw;
     align-self: flex-start;
 
-}
-
-.CitySubTitle {
-
-    color: white;
-    font-family: 'Baskerville Old Face';
-    font-size: 24px;
-    justify-content: center;
-    display: flex;
-    width: 95vw;
-    align-self: flex-start;
 }

@@ -1,22 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import './AboutUsModal.css';
+import './CookiesModal.css';
 import { useHistory } from "react-router-dom";
 import {fadeIn} from 'react-animations';
 import Radium, {StyleRoot} from 'radium';
-import CarouselComponent from '../../components/CarouselComponent/CarouselComponent'
 
 
-export default function AboutUsModal(props) {
-
-    const roomPics =[
-        require('../../svg/room.jfif'),
-        require('../../svg/room.jfif'),
-        require('../../svg/room.jfif'),
-        require('../../svg/room.jfif'),
-        require('../../svg/room.jfif'),
-        require('../../svg/room.jfif'),
-        require('../../svg/room.jfif')
-    ]
+export default function CookiesModal(props) {
 
     const history = useHistory();
     useEffect(()=>{
@@ -39,12 +28,8 @@ export default function AboutUsModal(props) {
                 <img src={require('../../svg/close-black.svg')} className='closeButton' alt="test" />
             </div>
 
-            <div className='title'>CE VA OFERIM?</div>            
-
-            <div className="carouselContainer">
-                <CarouselComponent roomPics = {roomPics}/>
-            </div>
-                
+            <div className='CookiesTitle'>Cookies</div>            
+               
         </div>
         </StyleRoot>
         </div>

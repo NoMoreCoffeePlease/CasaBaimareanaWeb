@@ -69,13 +69,14 @@
  border-width: 0px;
  
 }
-
+.phoneNumber {
+    font-family: 'Baskerville Old Face';
+    color: white;
+    font-size: 36px;
+}
 .ContactinputContainer {
     margin-left: 18.4vw;
     margin-top: 4px;
-    
-   
-   
 }
 
 .contactSeparator {
@@ -116,12 +117,11 @@
 }
 
 .ConfirmContact {
-position: absolute;
-align-self: center;
-display: flex;
-justify-content: center;
-align-items: center;
-
+    position: absolute;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 95vw;
     height: 95vh;
     z-index: 6;
@@ -167,9 +167,9 @@ align-items: center;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  width: 40vw;
-  height: 26.4vh;
-  border: 5px solid #b78548;
+    width: 40vw;
+    height: 26.4vh;
+    border: 5px solid #b78548;
     box-sizing: border-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     filter: blur(0px);

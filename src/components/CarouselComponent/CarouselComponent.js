@@ -11,7 +11,7 @@ function myArrow({ type, onClick, isEdge }) {
       <img
         src={require("../../svg/next-black.svg")}
         alt
-        className="roomBackButton"
+        className="carouselBackButton"
       />
     </div>
   ) : (
@@ -19,7 +19,7 @@ function myArrow({ type, onClick, isEdge }) {
       <img
         src={require("../../svg/next-black.svg")}
         alt
-        className="roomNextButton"
+        className="carouselNextButton"
       />
     </div>
   ));
@@ -32,7 +32,7 @@ function myArrow({ type, onClick, isEdge }) {
 
 export default function CarouselComponent(props) {
   return (
-    <div>
+    <div className='carouselMainContainer'>
       <Carousel
         renderArrow={myArrow}
         theme={theme}
@@ -58,7 +58,12 @@ export default function CarouselComponent(props) {
         }}
       >
         {props.roomPics.map((item) => {
-          return <img src={item} alt="" className="roomPic" />;
+          return <div className="roomPic" style={{backgroundImage:'url('+ item +')'}}>
+            <div className='imageCaptionContainer'>
+              <p className='imageCaptionTitle'>Descriere</p>
+              <p className='imageCaptionSubtitle'>Descriere despre poza afisata. Lorem ipsum dolor sit amet</p>
+            </div>
+          </div>;
         })}
       </Carousel>
     </div>

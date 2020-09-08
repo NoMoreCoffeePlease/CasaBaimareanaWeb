@@ -290,14 +290,21 @@
     align-items: center;
     justify-content: center;
    margin-left: 4px;
-   
+   margin-bottom:1vh;
 }
 
 .counterText {
 text-align: center;
-background-color: wheat;
 width: 2vw;
+font-family: 'Baskerville Old Face';
+font-weight: bold;
+font-size: 1.4em;
+color: #d6a466
+}
 
+.counterText:hover {
+  color: #b78548;
+  
 }
 
 .disableCounterText{
@@ -313,7 +320,9 @@ pointer-events: none;
   flex-direction: row;
   margin-bottom: 1vh;
    height: 2vh;
- 
+   border-color: #b78548;
+   border-width: 5px;
+   border-radius: 5px;
 }
 
 
@@ -325,7 +334,7 @@ pointer-events: none;
     height: 38vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 

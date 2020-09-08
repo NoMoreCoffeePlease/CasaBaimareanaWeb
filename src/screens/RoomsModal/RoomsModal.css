@@ -27,6 +27,7 @@
     border-radius: 7px;
     z-index:2;
     padding: 20px;
+    padding-top:0px;
 }
 
 .ModalContainer {
@@ -75,17 +76,17 @@
 
 .roomsTitle {
   
-   
     width: 96vw;
 }
 
 .roomsTitle-text {
     color: white;
     font-family: 'Baskerville Old Face';
-    font-size: 48px; 
-    text-align: center;
-    margin-bottom: 10vh;
-    
+    font-size: 48px;
+    justify-content: center;
+    display: flex;
+    width: 95vw;
+    align-self: flex-start;
 }
 
 .roomsSubTitle {
@@ -104,11 +105,10 @@
  
 }
 
-.roomGrid {
-    width: 75vw;
-    /* display: flex;
-    align-self: center;
-    justify-content: center;   */
+.roomsGrid {
+    display: flex;
+    justify-content: center;
+    vertical-align: baseline;
   
 }
 .roomElement {
@@ -122,8 +122,10 @@
     backdrop-filter: blur(4px);
     border-radius: 5px;
     background-color: rgba(214, 164, 102, 0.2);
-    margin: 3vh;
-    margin-bottom: 6vh;
+    /* margin: 3vh;
+    margin-bottom: 6vh; */
+    vertical-align: baseline;
+
 }
 
 .roomElement-title {
@@ -181,3 +183,11 @@
    
     width: 60vw;
 }
+
+.switch-wrapper {
+    position: relative;
+  }
+   
+  .switch-wrapper > div {
+    position: absolute;
+  }

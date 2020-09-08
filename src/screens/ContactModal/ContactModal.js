@@ -4,6 +4,8 @@ import { useHistory } from "react-router-dom";
 import ConfirmContactModal from "./ConfirmContactModal";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import firebase from '../../firebase/firebase';
+import {fadeIn} from 'react-animations';
+import Radium, {StyleRoot} from 'radium';
 
 export default function ContactModal(props) {
 
@@ -13,23 +15,42 @@ export default function ContactModal(props) {
   useEffect(() => {
     props.barHandler(false);
   }, [props]);
+  const styles= {
+    fadeIn:{
+        animation: "x 0.27s",
+        animationName: Radium.keyframes(fadeIn, "fadeIn"),
+    },
+};
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-  const sendEmail = () => {
-    firebase.db.collection('books').add({to: 'xd.norbii@gmail.com',
-    message: {
-      subject: 'Hello from Firebase!',
-      text: 'This is the plaintext section of the email body.',
-      html: 'This is the <code>HTML</code> section of the email body.',
-    }})
+    emailjs
+      .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", e.target, "YOUR_USER_ID")
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
 
   if (props.show === false) return null;
 
   return (
     <div>
-      <Router>
-        <div className="Modal">
-
+        <Router><StyleRoot>
+      {/* <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+        <script type="text/javascript">
+            {(function(){
+                emailjs.init("user_n8V5KhYCmL3WOCFlNIWxw");
+            })}();
+        </script> */}
+      {/* <div className="ModalContainer"></div> */}
+      <div className="ModalContainer"></div>
+      <div className="Modal" style={styles.fadeIn}>
+        
           <Switch>
             {" "}
             <Route exact path="/contactConfirm">
@@ -40,21 +61,13 @@ export default function ContactModal(props) {
               </div>
             </Route>
           </Switch>
-
-          <div className="title">CONTACT</div>
-          <div className="formContainerContact">
-            <span className="telefonStyle">Telefon</span>
-            <div className="ContactinputContainer">
-              <input
-                // id = "adults"
-                placeholder="+40-7xx-xxx-xxx"
-                autoComplete="off"
-                className="ContactInput"
-              // onChange = {id}
-
-              //   value={adults!== 0 ? adults : null}
-              ></input>
-            </div>
+        
+        <div className="title">CONTACT</div>
+        <div className="formContainerContact">
+          <span className="telefonStyle">Telefon</span>
+          <div className="ContactinputContainer">
+            <p className='phoneNumber'>+40-7xx-xxx-xxx</p>
+          </div>
 
             <div className="contactSeparator"></div>
             <span className="emailStyle">Trimite-ne un e-mail</span>
@@ -129,13 +142,12 @@ export default function ContactModal(props) {
             />
           </div>
         </div>
-      </Router>
-      <div>
         
           <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
           <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"/>
         
-      </div>
+    
+      </StyleRoot></Router>
     </div>
   );
 }

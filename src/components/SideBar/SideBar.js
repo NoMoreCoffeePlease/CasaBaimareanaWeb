@@ -11,6 +11,9 @@ import ContactModal from "../../screens/ContactModal/ContactModal";
 import AboutUsModal from "../../screens/AboutUsModal/AboutUsModal";
 import BookingStage1 from "../../screens/BookingModal/BookingStage1";
 import { HomeScreen } from "../../screens/HomeScreen/HomeScreen";
+import ReviewModal from "../../screens/AboutUsModal/ReviewModal";
+import PrivacyModal from "../../screens/PrivacyModal/PrivacyModal";
+import CookiesModal from "../../screens/CookiesModal/CookiesModal";
 
 export const SideBar = (props) => {
   const styles = {
@@ -32,7 +35,6 @@ export const SideBar = (props) => {
           <Switch>
           <Route
                   path="/"
-                  exact={true}
                   key="Home"
                   component={() => {
                     return <HomeScreen modalHandler={props.modalHandler} />;
@@ -92,7 +94,7 @@ export const SideBar = (props) => {
                     style={{ textDecoration: "none" }}
                     to="/about-us"
                   >
-                    Despre noi
+                    Facilitati
                   </Link>
                 </li>
                 <li key="Rezerva acum">
@@ -118,7 +120,7 @@ export const SideBar = (props) => {
                                 </li> */}
               </ul>
             </div>
-            <a href="https://www.facebook.com/casa.baimareana.75">
+            <a href="https://www.facebook.com/casa.baimareana.75" target="_blank">
               <img
                 src={require("../../svg/facebook-black.svg")}
                 className="fb_icon"
@@ -129,7 +131,7 @@ export const SideBar = (props) => {
               <ul>
                 <li key="anpc">
                   <a
-                    href="https://anpc.ro/"
+                    href="https://anpc.ro/" target="_blank"
                     className="sideBar-footer"
                     style={{ textDecoration: "none" }}
                     to="/anpc"
@@ -306,6 +308,54 @@ export const SideBar = (props) => {
               setShownModal(true);
               return (
                 <BookingModal
+                  show={shownModal}
+                  barHandler={props.barHandler}
+                  modalHandler={modalHandler}
+                />
+              );
+            }}
+          />
+          <Route
+            key={"Review"}
+            path={"/reviews"}
+            exact={true}
+            component={() => {
+              setShownModal(true);
+             
+              return (
+                <ReviewModal
+                  show={shownModal}
+                  barHandler={props.barHandler}
+                  modalHandler={modalHandler}
+                />
+              );
+            }}
+          />
+
+        <Route
+            key={"Privacy"}
+            path={"/privacy"}
+            exact={true}
+            component={() => {              
+              setShownModal(true);
+              return (
+                <PrivacyModal
+                  show={shownModal}
+                  barHandler={props.barHandler}
+                  modalHandler={modalHandler}
+                />
+              );
+            }}
+          />
+
+        <Route
+            key={"Cookies"}
+            path={"/cookies"}
+            exact={true}
+            component={() => {              
+              setShownModal(true);
+              return (
+                <CookiesModal
                   show={shownModal}
                   barHandler={props.barHandler}
                   modalHandler={modalHandler}
