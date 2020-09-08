@@ -32,15 +32,7 @@ export const SideBar = (props) => {
     <Router>
       {" "}
       <StyleRoot>
-          <Switch>
-          <Route
-                  path="/"
-                  key="Home"
-                  component={() => {
-                    return <HomeScreen modalHandler={props.modalHandler} />;
-                  }}
-                />
-          </Switch>
+      <HomeScreen modalHandler={props.modalHandler} />
         {props.show ? (
           <div className="sideBar-frame" style={styles.slideInLeft}>
             <div onClick={() => props.barHandler(false)}>
