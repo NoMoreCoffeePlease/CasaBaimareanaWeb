@@ -32,13 +32,10 @@
     filter: invert(97%) sepia(15%) saturate(7300%) hue-rotate(309deg) brightness(93%) contrast(79%);
 }
 
-.title {
-
+.contactTitle {
     color: white;
     font-family: 'Baskerville Old Face';
     font-size: 64px;
-    
-    
 }
 
 .formContainerContact {
@@ -46,14 +43,16 @@
     z-index: 2;
     width: 68vw;
     height: 83vh;
- display: flex;
- flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 
 }
 
 .telefonStyle {
-    margin-top: 4vh;
-    margin-left: 18.4vw;
+ 
+    
     font-family: 'Baskerville Old Face';
     font-size: 48px;
     color: #d6a466
@@ -67,6 +66,7 @@
  background-color:rgba(2, 1, 0, 0.01);
  color: white;
  border-width: 0px;
+ border-bottom-width: 2px;
  
 }
 .phoneNumber {
@@ -75,40 +75,37 @@
     font-size: 36px;
 }
 .ContactinputContainer {
-    margin-left: 18.4vw;
+    
     margin-top: 4px;
 }
 
-.contactSeparator {
-    background-color: white;
-    height: 0.3vh;
-    width: 31.7vw;
-    margin-top: 18px;
-    margin-left: 18vw ;
-    margin-bottom: 1.9vh;
+.phoneSeparator { 
+    border-bottom: 0.4vh solid white;
+    width: 26vw;
 }
 
 .emailStyle {
-    margin-top: 8vh;
-    margin-left: 18.4vw;
+    margin-top: 3vh;
+    
     font-family: 'Baskerville Old Face';
     font-size: 48px;
     color: #d6a466
 }
 
 .ContactInputContainerEnd {
-    margin-left: 18.4vw;
+   
     margin-top: 8.3vh;
 }
 
 .ContactSmallerInput {
     font-family: 'Baskerville Old Face';
     font-size: 24px;
- width: 26vw;
- height: 3.8vh;
- background-color:rgba(2, 1, 0, 0.01);
- color: white;
- border-width: 0px;
+    width: 26vw;
+    height: 5.8vh;
+    background-color:rgba(2, 1, 0, 0.01);
+    color: white;
+    border-width: 0px;
+    border-bottom-width: 2px;
 }
 
 .contactButtonContainer {
@@ -143,7 +140,6 @@
 }
 
 .confirmContactButton {
-    display: flex;
     align-self: center;
     background-color: #d6a466;
     border-color: #b78548;
@@ -152,13 +148,43 @@
     width: 15vw;
     font-family: 'Baskerville Old Face';
     font-size: 20px;
+    color: black;
     padding-left: 1vw;
     padding-right:1vw;
     align-items: center;
     justify-content: center;
     margin-left:1vw;
     margin-right:1vw;
-    margin-top: 2.2vh;
+    margin-bottom: 3.1vh;
+    margin-top: 4vh;
+}
+
+.confirmContactButton:hover {
+    opacity: 0.5;
+}
+
+.sendButton {
+    align-self: center;
+    background-color: #d6a466;
+    border-color: #b78548;
+    border-radius: 5px;
+    height: 5vh;
+    width: 15vw;
+    font-family: 'Baskerville Old Face';
+    font-size: 20px;
+    color: black;
+    padding-left: 1vw;
+    padding-right:1vw;
+    align-items: center;
+    justify-content: center;
+    margin-left:1vw;
+    margin-right:1vw;
+    margin-bottom: 3.1vh;
+    margin-top: 4vh;
+}
+
+.sendButton:hover {
+    opacity: 0.7;
 }
 
 .confirmContactInner {
@@ -174,6 +200,7 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     filter: blur(0px);
     border-radius: 7px;
+    padding-top: 5vh;
 }
 
 .confirmMessageStyle{

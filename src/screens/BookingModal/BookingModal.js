@@ -60,20 +60,9 @@ import Radium, {StyleRoot} from 'radium';
                 {/* <img src={require('../../svg/close-black.svg')} className='closeButton' alt="test" /> */}
             </div>
 
-          <div
-            onClick={() => {
-              props.modalHandler(false);
-              history.push("/");
-            }}
-          >
-            <img
-              src={require("../../svg/close-black.svg")}
-              className="closeButton"
-              alt="test"
-            />
-          </div>
+          
 
-          <div className="title">REZERVA ACUM</div>
+          <div className="bookingTitle">REZERVA ACUM</div>
 
           <div className="bookNavigator">
                 <Link
@@ -114,7 +103,18 @@ import Radium, {StyleRoot} from 'radium';
                     <span className="subStage">Informatii personale.</span>
                 </div>
                 </Link>
-               
+                <div
+            onClick={() => {
+              props.modalHandler(false);
+              history.push("/");
+            }}
+          >
+            <img
+              src={require("../../svg/close-black.svg")}
+              className="closeButton"
+              alt="test"
+            />
+          </div>
           </div>
           <Switch>
             <Route exact path="/BookingStage00" >
@@ -128,7 +128,7 @@ import Radium, {StyleRoot} from 'radium';
             </Route>
 
             <Route exact path='/bookConfirm'> 
-              <ConfirmationModal />
+              <ConfirmationModal modalHandler={props.modalHandler} />
             </Route>
           </Switch>
         </div>

@@ -251,10 +251,13 @@ function BookingStage1(props) {
           </div>
         ):null}
       </div>
-      {!((parseInt(props.adults)+(parseInt(props.children)))<=totalPlaceToOcuppy) &&
-      <span className="selectMore">Nu ati ocupat destule camere.</span>}
-      
-      <div className="buttonContainer">
+
+      <div className='bottomContainerBook  specialSpacing'>
+        {!((parseInt(props.adults)+(parseInt(props.children)))<=totalPlaceToOcuppy) &&
+          <span className="selectMore">Nu ati ocupat destule camere.</span>}
+        
+        <div className="buttonContainer">
+        
         <button
           className="submitButton"
           onClick={() => {
@@ -274,7 +277,7 @@ function BookingStage1(props) {
         >
           PASUL URMATOR
         </button>
-      </div>
+      </div></div>
             
     
     </div>

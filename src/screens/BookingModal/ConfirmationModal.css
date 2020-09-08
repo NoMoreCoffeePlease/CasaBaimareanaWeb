@@ -1,5 +1,5 @@
 .Confirmation {
-
+    position: absolute;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -17,6 +17,9 @@
     border-radius: 7px;
     z-index:3;
     padding-top: 1.5vh;
+    align-self: flex-start;
+    top:40vh;
+    left:20vw;
 }
 
 .ConfirmationContainer {

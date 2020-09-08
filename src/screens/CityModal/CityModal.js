@@ -33,16 +33,17 @@ export default function CityModal(props) {
         <StyleRoot>
         <div className="ModalContainer"></div>
         <div className='Modal' style = {styles.fadeIn}>
-            <div
-                onClick={() => { props.modalHandler(false);history.push("/") }}
-            >
-                <img src={require('../../svg/close-black.svg')} className='closeButton' alt="test" />
-            </div>
+            
 
             <div className='CityTitle'>Descopera orasul</div>            
 
             <div className="carouselContainer">
                 <CarouselComponent roomPics = {roomPics}/>
+            </div>
+            <div
+                onClick={() => { props.modalHandler(false);history.push("/") }}
+            >
+                <img src={require('../../svg/close-black.svg')} className='closeButton' alt="test" />
             </div>
                 
         </div>

@@ -22,14 +22,14 @@ export default function CookiesModal(props) {
         <StyleRoot>
         <div className="ModalContainer"></div>
         <div className='Modal' style = {styles.fadeIn}>
+            
+
+            <div className='CookiesTitle'>Cookies</div>            
             <div
                 onClick={() => { props.modalHandler(false);history.push("/") }}
             >
                 <img src={require('../../svg/close-black.svg')} className='closeButton' alt="test" />
-            </div>
-
-            <div className='CookiesTitle'>Cookies</div>            
-               
+            </div>   
         </div>
         </StyleRoot>
         </div>

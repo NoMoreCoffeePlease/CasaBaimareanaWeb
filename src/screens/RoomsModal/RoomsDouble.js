@@ -20,12 +20,12 @@ export default function RoomsDouble () {
     const history = useHistory();
     return <div className='roomsContainer'>
         
-        <div className='roomsTitle-text'>CAMERA DUBLA</div>
+        <div className='roomsTitle-page'>CAMERA DUBLA</div>
         
         <div className="roomsPhotos">
 
         <div onClick = {()=>history.push('/rooms/simple')}><img src={require('../../svg/next-black.svg')} alt= '' className='roomBackButton' /></div>
-<div className="carouselContainer">
+<div className="roomCarouselContainer">
 <CarouselComponent roomPics={roomPics}/>
 </div>
 

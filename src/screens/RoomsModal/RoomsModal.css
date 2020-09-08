@@ -8,7 +8,7 @@
     
 }
 
-.roomsModal {
+.Modal {
     position: absolute;
     top:2.5vh;
     left: 2vw;
@@ -57,7 +57,8 @@
     width: 3vw;
     height: 3vw;
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(224deg) brightness(104%) contrast(101%);  
-    transform: rotate(180deg)
+    transform: rotate(180deg);
+
 }
 
 .roomBackButton:hover {
@@ -68,6 +69,7 @@
     width: 3vw;
     height: 3vw;
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(224deg) brightness(104%) contrast(101%);  
+
 }
 
 .roomNextButton:hover {
@@ -75,8 +77,13 @@
 }
 
 .roomsTitle {
-  
-    width: 96vw;
+    color: white;
+    font-family: 'Baskerville Old Face';
+    font-size: 64px;
+}
+
+.firstTitle-spacing {
+    margin-left: 38.7vw;
 }
 
 .roomsTitle-text {
@@ -109,36 +116,43 @@
     display: flex;
     justify-content: center;
     vertical-align: baseline;
-  
+    
 }
-.roomElement {
+.roomsElement {
     /* display: flex;
     align-items: center; */
     flex-direction: column;
     border: 0px solid #b78548;
     box-sizing: border-box;
-    width: 70vw;
+    width: 20vw;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     backdrop-filter: blur(4px);
     border-radius: 5px;
-    background-color: rgba(214, 164, 102, 0.2);
+    background-color:rgba(255, 255, 255, 0.6); 
     /* margin: 3vh;
     margin-bottom: 6vh; */
     vertical-align: baseline;
+    display: flex;
+    justify-content: center;
 
 }
 
-.roomElement-title {
+.roomsElement-title {
+    margin-top: 3vh;
+    text-align: center;
     font-family: 'Baskerville Old Face';
-    font-size: 24px;
-    color: #020100;
-    margin-bottom: 3.1vh;
-    margin-top: 3.1vh;
-   text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.roomsElement-subTitle {
+    margin: 3vh;
+    font-family: 'Baskerville Old Face';
+    font-size: 1.5em;
+    text-align: center;
 }
 
 .roomButton {
-    align-self: center;
     background-color: #d6a466;
     border-color: #b78548;
     border-radius: 5px;
@@ -148,7 +162,7 @@
     font-size: 20px;
     align-items: center;
     justify-content: center;
-   margin-left: 4px;
+    margin-left: 5vw; 
     margin-bottom: 3.1vh;
 }
 
@@ -157,31 +171,37 @@
 }
 
 .roomRow {
-    margin-top: 5vh;
-    width: 45vw;
+    margin-top: 15vh;
+    width: 85vw;
     justify-content: space-between;
     display: flex;
-
+    
 }
 
 .roomsContainer {
-    z-index: 1;
+   
      width: 93vw;
     height: 83vh;  
     
 }
 
 .roomsPhotos {
-    z-index: 1;
+   
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 60vh;
 }
 
-.carouselContainer {
-   
-    width: 60vw;
+.roomCarouselContainer {
+    margin-top: 20vh;
+}
+
+.roomsTitle-page {
+    color: white;
+    font-family: 'Baskerville Old Face';
+    font-size: 64px;
+    margin-left: 15vw; 
 }
 
 .switch-wrapper {

@@ -22,14 +22,14 @@ export default function ReviewModal(props) {
         <StyleRoot>
         <div className="ModalContainer"></div>
         <div className='miniModal' style = {styles.fadeIn}>
+                  
+            <div className='reviewTitle'>REVIEW</div>             
+            
             <div
                 onClick={() => { props.modalHandler(false);history.push("/") }}
             >
                 <img src={require('../../svg/close-black.svg')} className='closeButton' alt="test" />
-            </div>
-
-            <div className='ReviewTitle'>Descopera orasul</div>            
-               
+            </div>    
         </div>
         </StyleRoot>
         </div>

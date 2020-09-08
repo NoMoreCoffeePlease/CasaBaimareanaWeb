@@ -18,12 +18,12 @@ export default function EvenimentePhotos () {
     const history = useHistory();
     return <div className='foodMenuContainer'>
         
-        <div className='roomsTitle-text'>Evenimente</div>
+        <div className='foodTitle-element' >EVENIMENTE</div> 
         
         <div className="roomsPhotos">
 
         {/* <div onClick = {()=>history.push('/rooms/apartment')}><img src={require('../../svg/next-black.svg')} alt= '' className='roomBackButton' /></div> */}
-<div className="carouselContainer">
+<div className="foodCarouselContainer">
 <CarouselComponent roomPics = {roomPics}/>
 </div>
 

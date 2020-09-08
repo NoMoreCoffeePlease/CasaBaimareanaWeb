@@ -33,11 +33,14 @@ export default function ConfirmationModal(props) {
                     >Rezervarea dumneavoastra fost inregistrata cu succes. In scurt timp veti primi un e-mail cu confirmarea rezervarii si toate detaliile legate de aceasta. Abia asteptam sa ne vedem!
                     
                 </p></div>
-             
+        <a 
+            href="/"> 
             <button className='confirmationButton'
-               
-            ><a 
-            href="/">ACASA</a></button>   
+                // onClick = { ()=> {
+                //     history.push('/')
+                //     props.modalHandler(false)
+                // }} 
+            >ACASA</button> </a>  
         </div>
         </StyleRoot>
         </div>

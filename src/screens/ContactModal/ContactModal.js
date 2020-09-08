@@ -21,10 +21,10 @@ export default function ContactModal(props) {
         animationName: Radium.keyframes(fadeIn, "fadeIn"),
     },
 };
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-  };
+  // const sendEmail = (e) => {
+  //   e.preventDefault();
+    
+  // };
 
   if (props.show === false) return null;
 
@@ -52,14 +52,12 @@ export default function ContactModal(props) {
             </Route>
           </Switch>
         
-        <div className="title">CONTACT</div>
+        <div className="contactTitle">CONTACT</div>
         <div className="formContainerContact">
           <span className="telefonStyle">Telefon</span>
-          <div className="ContactinputContainer">
+          <div className="ContactinputContainer phoneSeparator">
             <p className='phoneNumber'>+40-7xx-xxx-xxx</p>
-          </div>
-
-            <div className="contactSeparator"></div>
+          </div>            
             <span className="emailStyle">Trimite-ne un e-mail</span>
             <div className="ContactinputContainer">
               <input
@@ -111,8 +109,8 @@ export default function ContactModal(props) {
             <div className="contactSeparator"></div>
             <Link className="contactButtonContainer" to="/contactConfirm">
               <button
-                onClick={() => sendEmail()}
-                className="detailButton"
+                //onClick={() => sendEmail()}
+                className="sendButton"
               >
                 TRIMITE MESAJUL
             </button>

@@ -18,17 +18,17 @@ export default function MeniuPhotos () {
     const history = useHistory();
     return <div className='foodMenuContainer'>
         
-        <div className='roomsTitle-text'>Meniu</div>
+        <div className='foodTitle-element' >MENIU</div>  
         
         <div className="roomsPhotos">
 
         {/* <div onClick = {()=>history.push('/rooms/apartment')}><img src={require('../../svg/next-black.svg')} alt= '' className='roomBackButton' /></div> */}
-<div className="carouselContainer">
-<CarouselComponent roomPics = {roomPics}/>
-</div>
+        <div className="foodCarouselContainer">
+            <CarouselComponent roomPics = {roomPics}/>
+        </div>
 
         {/* <div onClick = {()=>history.push('/rooms/double')}><img src={require('../../svg/next-black.svg')} alt= '' className='roomNextButton' /></div> */}
-</div>
+        </div>
        
          
        

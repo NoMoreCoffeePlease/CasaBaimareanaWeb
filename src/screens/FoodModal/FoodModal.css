@@ -42,15 +42,13 @@
     filter: invert(97%) sepia(15%) saturate(7300%) hue-rotate(309deg) brightness(93%) contrast(79%);
 }
 
-.title {
+.foodTitle {
 
     color: white;
     font-family: 'Baskerville Old Face';
-    font-size: 48px;
-    justify-content: center;
-    display: flex;
-    width: 95vw;
-    align-self: flex-start;
+    font-size: 64px;
+    margin-left: 5vw;
+    
 }
 
 .foodSubTitle {
@@ -67,32 +65,33 @@
 }
 
 .foodInnerModal {
-    width: 66vw;
-    height: 68vh;
+    width: 70vw;
+    margin-top: 5vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
+    padding-top: 15vh;
+    margin-bottom: 40vh;
 
 }
 
 .foodCard {
     width: 21vw;
-    height: 68vh;
+    /* height: 68vh; */
 
 }
 
 .foodHalfCard {
-    height: 38vh;
+    height: 43vh;
     width: 21vw;
-    background-color:rgba(255, 255, 255, 0.6); ;
-    margin-top: 30vh;
+    background-color:rgba(255, 255, 255, 0.6); 
+    /* margin-top: 30vh; */
     display: flex;
     flex-direction: column;
 }
 
 .foodModalTitle {
-    margin-top: 6vh;
+    margin-top: 3vh;
     text-align: center;
     font-family: 'Baskerville Old Face';
     font-size: 3em;
@@ -100,7 +99,7 @@
 }
 
 .foodModalSubTitle {
-    margin-top: 1vh;
+    margin: 3vh;
     font-family: 'Baskerville Old Face';
     font-size: 1.5em;
     text-align: center;
@@ -116,10 +115,21 @@
     font-family: 'Baskerville Old Face';
     font-weight: bold;
     font-size: 1.5em;
-   margin-top: 8vh;
+
    margin-left: 3vw;
     
    
+}
+
+.foodCarouselContainer {
+    margin-top: 20vh;
+}
+
+.foodTitle-element {
+    color: white;
+    font-family: 'Baskerville Old Face';
+    font-size: 64px;
+    margin-left: 4vw; 
 }
 
 .foodModal {

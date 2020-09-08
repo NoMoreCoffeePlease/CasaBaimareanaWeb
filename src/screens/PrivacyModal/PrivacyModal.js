@@ -22,14 +22,14 @@ export default function PrivacyModal(props) {
         <StyleRoot>
         <div className="ModalContainer"></div>
         <div className='Modal' style = {styles.fadeIn}>
+            
+
+            <div className='PrivacyTitle'>Politica de confidentialitate</div>            
             <div
                 onClick={() => { props.modalHandler(false);history.push("/") }}
             >
                 <img src={require('../../svg/close-black.svg')} className='closeButton' alt="test" />
-            </div>
-
-            <div className='PrivacyTitle'>Politica de confidentialitate</div>            
-               
+            </div>  
         </div>
         </StyleRoot>
         </div>

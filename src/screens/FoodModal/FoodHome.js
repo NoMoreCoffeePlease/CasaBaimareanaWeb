@@ -7,10 +7,11 @@ export default function FoodHome() {
 
 
    
-    return <div>
+    return <div >
        
-      
+       <div className='foodTitle' >GASTRONOMIA BAIMAREANA</div>   
             <div className='foodInnerModal'> 
+              
                 <div className='foodCard'> 
                     <div className='foodHalfCard'>   
                         <h0 className='foodModalTitle'>Meniu</h0>

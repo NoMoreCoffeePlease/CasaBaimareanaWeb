@@ -34,18 +34,8 @@ export default function RoomsModal(props) {
         <StyleRoot>
         <div className="ModalContainer"></div>
 
-        <div className='roomsModal' style={styles.fadeIn}>
-            <div
-                  onClick={() => { 
-                    let urlToGo = window.location.href.split('/');
-                    urlToGo.pop();
-                    props.modalHandler(false); history.push(urlToGo.join('/').split(document.location.origin)[1])
-                }}
-            >
-                <img src={isClose?require('../../svg/close-black.svg'):require('../../svg/back-black.svg')} className='closeButton' alt="test" />
-            </div>
-
-            
+        <div className='Modal' style={styles.fadeIn}>
+                        
         <Switch>
             <Route exact path='/rooms'component={()=>{
                 setIsClose(true);
@@ -78,6 +68,15 @@ export default function RoomsModal(props) {
                 
             </Route>
         </Switch>
+        <div
+                  onClick={() => { 
+                    let urlToGo = window.location.href.split('/');
+                    urlToGo.pop();
+                    props.modalHandler(false); history.push(urlToGo.join('/').split(document.location.origin)[1])
+                }}
+            >
+                <img src={isClose?require('../../svg/close-black.svg'):require('../../svg/back-black.svg')} className='closeButton' alt="test" />
+            </div>
         </div>
         </StyleRoot>
         </Router>

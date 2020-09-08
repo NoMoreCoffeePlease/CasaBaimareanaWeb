@@ -5,8 +5,11 @@
 }
 
 .aboutTitle {
-    text-align: center;
-   color: wheat;
+    
+    color: white;
+    font-family: 'Baskerville Old Face';
+    font-size: 64px;
+    
 }
 
 

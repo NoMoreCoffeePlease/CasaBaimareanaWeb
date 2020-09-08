@@ -47,10 +47,6 @@
 
     color: white;
     font-family: 'Baskerville Old Face';
-    font-size: 48px;
-    justify-content: center;
-    display: flex;
-    width: 95vw;
-    align-self: flex-start;
+    font-size: 64px;
 
 }

@@ -47,11 +47,12 @@
     filter: invert(97%) sepia(15%) saturate(7300%) hue-rotate(309deg) brightness(93%) contrast(79%);
 }
 
-.title {   
-    display: flex;
-    justify-content: flex-start;
-    width: 95vw;
-    margin-top: 0vh;
+.bookingTitle {   
+    
+    color: white;
+    font-family: 'Baskerville Old Face';
+    font-size: 64px;
+    
 }
 
 .titleText {
@@ -66,7 +67,7 @@
     justify-content: center;
     display: flex;
     width: 96vw;    
-    margin-bottom: 15vh;
+    margin-bottom: 5vh;
     margin-left:2vw;
     margin-top: 2vh;
 }
@@ -265,17 +266,31 @@
     padding-left:1vw;
 }
 
+.specialSpacing {
+    padding-top: 5vh;
+}
+
 .roomGrid {
     width: 60vw;
     display: flex;
     justify-content: space-between;
     align-self: center;
-    margin-bottom: 4vh;
-    
+    margin-bottom: 5vh;
+    margin-top: 5vh;
 }
 
 .selectMore{
     color:white;
+    font-family: 'Baskerville Old Face';
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 2vh;
+}
+.bottomContainerBook {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 }
 
 .bookingButton {
@@ -289,8 +304,8 @@
     font-size: 20px;
     align-items: center;
     justify-content: center;
-   margin-left: 4px;
-   margin-bottom:1vh;
+    margin-left: 4px;
+    margin-bottom:1vh;
 }
 
 .counterText {
@@ -377,9 +392,6 @@ pointer-events: none;
     width: 10.4;
 }
 
-.componentContainer {
-    /* margin-top: 20vh; */
-}
 
 .test {
     flex-direction: 'column';
@@ -394,7 +406,7 @@ pointer-events: none;
 }
 
 .dateRangeInputPosition {
-    margin-top: 20vh;
+    margin-top: 40vh;
 }
 
 .bookingStage1Modal {
