@@ -45,7 +45,7 @@ export const HomeScreen = (props) => {
             </div>     
             </div>  
             <div className="presentationFrame">
-                     <div className="presentationTitle">CINE SUNTEM NOI?</div>
+                     <div id='aboutUs' className="presentationTitle">CINE SUNTEM NOI?</div>
                      <div className="presentationSubTitle">Descriere despre voi, misiune, obiectiv, text atractiv.</div>
                      <div className="presentationMembersContainer">
                            <div className="pictureContainerLeft"></div>

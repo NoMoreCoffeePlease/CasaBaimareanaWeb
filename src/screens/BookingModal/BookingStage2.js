@@ -9,7 +9,6 @@ import { RESET_DATA_SUCCESS } from '../../redux/dataActions';
 
 
 function BookingStage2({startDate, endDate, adults, children, resetStartDate, resetEndDate, resetAdults, resetChildren, resetData, simpleValue, doubleValue, tripleValue, aptValue}) {
-    console.log(startDate,endDate);
     const history = useHistory();
     const handleMethod = (option) => {
         switch (option) {
@@ -24,30 +23,59 @@ function BookingStage2({startDate, endDate, adults, children, resetStartDate, re
         email: '',
         address: '',
         city: '',
-        county: '',
+        country: '',
         postalCode: '',
         paymentMethodCash: false,
         privacy: false,
         terms: false,
-            startDate: startDate !== null ? new Date(startDate) : '',
-            endDate: endDate !== null ? new Date(endDate) : '',
-            adults: adults,
-            children: children,
-            resetStartDate: resetStartDate,
-            resetEndDate: resetEndDate,
-            resetAdults: resetAdults,
-            resetChildren: resetChildren,
-            simpleValue: simpleValue, 
-            doubleValue: doubleValue,
-            tripleValue: tripleValue, 
-            aptValue: aptValue,
+        startDate: startDate !== null ? new Date(startDate) : '',
+        endDate: endDate !== null ? new Date(endDate) : '',
+        adults: adults,
+        children: children,
+        simpleValue: simpleValue, 
+        doubleValue: doubleValue,
+        tripleValue: tripleValue, 
+        aptValue: aptValue,
     });
+    
+    console.log(state)
+    const [errorMessage, setErrorMessage] = useState('');
+
+    const formValid = () =>{
+        if(state.firstName ==='' || state.lastName === '')
+        {
+            setErrorMessage('Campurile nume si prenume sunt obligatorii');
+            return false;
+        }
+        if(state.email === '')
+        {
+            setErrorMessage('Campul email este obligatoriu');
+            return false;
+        }
+        if(state.address==='')
+        {
+            setErrorMessage('Campul adresa este obligatoriu');
+            return false;
+        }
+        if(state.country ==='' || state.city==='' || state.postalCode === '')
+        {
+            setErrorMessage('Campurile tara, oras si cod postal sunt obligatorii');
+            return false;
+        }
+        if(!state.privacy || !state.terms)
+        {
+            setErrorMessage('Trebuie sa acceptati termenii si conditiile');
+            return false;
+        }
+        console.log(state,errorMessage);
+        return true;
+
+    }
 
     const onSubmitPress = () => {
 
-        firebase.db.collection('books').add({ adults: state.adults, children: state.children, checkIn: state.startDate.toString('dddd, MMMM, yyyy'), checkOut: state.endDate.toString('dddd, MMMM, yyyy'), simpleValue: state.simpleValue, doubleValue: state.doubleValue, tripleValue: state.tripleValue, aptValue: state.aptValue })
+        firebase.db.collection('books').add({personalInfo:{firstName: state.firstName, lastName: state.lastName, email: state.email, address: state.address, country:state.country, city: state.city, postalCode: state.postalCode}, adults: state.adults, children: state.children, checkIn: state.startDate.toString('dddd, MMMM, yyyy'), checkOut: state.endDate.toString('dddd, MMMM, yyyy'), simpleValue: state.simpleValue, doubleValue: state.doubleValue, tripleValue: state.tripleValue, aptValue: state.aptValue })
           .then(user => {
-            
             
           })
           .catch(error => {
@@ -109,18 +137,20 @@ function BookingStage2({startDate, endDate, adults, children, resetStartDate, re
                         term4.persist();
                     }}
                 ></input><br></br>
-               <div><input
+               <div>
+               <input
+                    type='text'
+                    className = 'formTextInput'
+                    placeholder='Tara'
+                    onChange={term6 => { setState(prevState => ({ ...prevState, country: term6.target.value })); term6.persist(); }}
+                ></input>
+                   <input
                     type='text'
                     className = 'formTextInput'
                     placeholder='Oras'
                     onChange={term5 => { setState(prevState => ({ ...prevState, city: term5.target.value })); term5.persist(); }}
                 ></input>
-                <input
-                    type='text'
-                    className = 'formTextInput'
-                    placeholder='Judet'
-                    onChange={term6 => { setState(prevState => ({ ...prevState, county: term6.target.value })); term6.persist(); }}
-                ></input>
+               
                 <input
                     type='text'
                     className = 'formTextInput'
@@ -135,14 +165,12 @@ function BookingStage2({startDate, endDate, adults, children, resetStartDate, re
                 <label className='formStatements'><input
                     type="checkbox"
                     id = 'privacyCheck'
-                    required = {true}
                     checked = {state.terms}
                     onChange = {() =>{setState(prevState => ({ ...prevState, terms: !state.terms }));}}
                 ></input>   Am citit si sunt de acord cu Termenii si conditiile</label> <br></br>
                 <label className='formStatements'><input
                     type="checkbox"
                     id = 'termsCheck'
-                    required = {true}
                     checked = {state.privacy}
                     onChange = {() =>{setState(prevState => ({ ...prevState, privacy: !state.privacy }));}}
                 ></input>   Am citit si sunt de acord cu prelucrarea datelor cu caracter personal.</label> <br></br>
@@ -154,8 +182,8 @@ function BookingStage2({startDate, endDate, adults, children, resetStartDate, re
                         >PASUL ANTERIOR</button>
                     <button className = 'submitButton' value='REZERVA' 
                         onClick={()=> {
-                            if (state.privacy === true && state.terms === true) {  onSubmitPress() ; }
-                            else alert ('Must check Terms and/or Privacy!')
+                            if (formValid()) {  onSubmitPress() ; }
+                            else alert (errorMessage);
                         }}
                     >REZERVA</button>
                 

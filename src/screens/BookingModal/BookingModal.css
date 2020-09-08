@@ -274,6 +274,10 @@
     
 }
 
+.selectMore{
+    color:white;
+}
+
 .bookingButton {
     align-self: center;
     background-color: #d6a466;
@@ -311,6 +315,8 @@ pointer-events: none;
    height: 2vh;
  
 }
+
+
 
 .roomElementBooking {
     background-color: rgba(255,255,255,0.2);

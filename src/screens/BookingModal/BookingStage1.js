@@ -46,7 +46,7 @@ function BookingStage1(props) {
     <div className="componentContainer">
      
       <div className="roomGrid">
-        {availableRooms.simple && (
+        {availableRooms.simple ? (
           <div className="roomElementBooking">
             <img
               src={require("../../svg/room.jfif")}
@@ -98,8 +98,8 @@ function BookingStage1(props) {
              
             </div>
           </div>
-        )}
-        {availableRooms.double && (
+        ):null}
+        {availableRooms.double ? (
           <div className="roomElementBooking">
             <img
               src={require("../../svg/room.jfif")}
@@ -148,8 +148,8 @@ function BookingStage1(props) {
               </div>}
             </div>
           </div>
-        )}
-        {availableRooms.triple && (
+        ):null}
+        {availableRooms.triple ? (
           <div className="roomElementBooking">
             <img
               src={require("../../svg/room.jfif")}
@@ -198,8 +198,8 @@ function BookingStage1(props) {
               </div>}
             </div>
           </div>
-        )}
-        {availableRooms.apartment && (
+        ):null}
+        {availableRooms.apartment ? (
           <div className="roomElementBooking">
             <img
               src={require("../../svg/room.jfif")}
@@ -249,8 +249,11 @@ function BookingStage1(props) {
               </div>}
             </div>
           </div>
-        )}
+        ):null}
       </div>
+      {!((parseInt(props.adults)+(parseInt(props.children)))<=totalPlaceToOcuppy) &&
+      <span className="selectMore">Nu ati ocupat destule camere.</span>}
+      
       <div className="buttonContainer">
         <button
           className="submitButton"
