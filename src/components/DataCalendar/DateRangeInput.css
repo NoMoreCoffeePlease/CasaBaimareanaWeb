@@ -12,7 +12,7 @@
 
 /* Dates font */
 .sc-AxirZ{
-    font-size: 20px;
+    font-size: 1.25em;
 }
 
 .Submit {
@@ -24,13 +24,15 @@
     height: 5vh;
     width: 15vw;
     font-family: 'Baskerville Old Face';
-    font-size: 20px;
+    font-size: 1.25em;
     padding-left: 1vw;
     padding-right:1vw;
     align-items: center;
     justify-content: center;
     margin-left:1vw;
     margin-right:1vw;
+    transition: 0.3s;
+    cursor:pointer;
 }
 
 .Submit:hover {
@@ -40,14 +42,14 @@
 .Input {
     border-width: 0px;
     font-family: 'Baskerville Old Face';
-    font-size: 16px;
+    font-size:  1em;
     width: 4vw;
     height: 3vh;
 }
 
 .Input::placeholder {
     color: #9c9fa1;
-    font-size: 14px;
+    font-size: 0.875em;
 }
 
 .inputPeople {
@@ -59,7 +61,7 @@
 
 .inputLabel {
     filter: invert(69%) sepia(7%) saturate(124%) hue-rotate(161deg) brightness(92%) contrast(84%);
-    padding-left: 3px;
+    padding-left: 0.2vw;
 }
 
 .inputContainer {

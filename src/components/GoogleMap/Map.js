@@ -1,14 +1,15 @@
-import React from 'react'
+import React, {useState} from 'react'
 import GoogleMapReact from 'google-map-react'
 import './map.css'
-import LocationPin from './LocationPin'
+import LocationPin from './LocationPin';
+import SecondaryPin from './SecondaryPin';
 
-
-
-const Map = ({ location, zoomLevel }) => {
+// TO DO: Pins in maps.
+const Map = ({ location, zoomLevel, secondary }) => {
   const MAP_OPTIONS = {
     scrollwheel: false,
   }
+
   return (
     <div className="map">
       {/* <h2 className="map-h2">Come Visit Us At Our Campus</h2> */}
@@ -21,11 +22,22 @@ const Map = ({ location, zoomLevel }) => {
           yesIWantToUseGoogleMapApiInternals
           options={MAP_OPTIONS}
         >
+          
+          {secondary.map(item=> <SecondaryPin 
+            lat={item.lat}
+            lng={item.lng}
+            title={item.title}
+            address={item.address}
+            image={item.image}
+            mapLink={item.mapLink}
+          />)}
           <LocationPin
             lat={location.lat}
             lng={location.lng}
             text={location.address}
           />
+
+             
         </GoogleMapReact>
       </div>
     </div>)

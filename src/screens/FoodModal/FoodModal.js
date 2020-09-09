@@ -62,7 +62,7 @@ export default function FoodModal(props) {
                     props.modalHandler(false); history.push(urlToGo.join('/').split(document.location.origin)[1])
                 }}
             >
-                <img src={isClose?require('../../svg/close-black.svg'):require('../../svg/back-black.svg')} className='closeButton' alt="test" />
+                <img src={isClose?require('../../svg/close-black.svg'):require('../../svg/arrowBack-black.svg')} className='closeButton' alt="test" />
             </div>   
         </div></StyleRoot>
         </Router>

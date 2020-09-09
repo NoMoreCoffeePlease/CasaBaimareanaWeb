@@ -9,7 +9,6 @@ import RoomsTriple from '../RoomsModal/RoomsTriple';
 import RoomsApartment from '../RoomsModal/RoomsApartment';
 
 
-
 function BookingStage1(props) {
   const history = useHistory();
   
@@ -40,8 +39,10 @@ function BookingStage1(props) {
   useEffect(() => {
     fetchData();
   }, []);
-
+  
   return (<div>
+
+    {/* TO DO: Fix links to room modals */}
 
     <div className="componentContainer">
      
@@ -62,15 +63,12 @@ function BookingStage1(props) {
             <div className="elementPrice-container">
               <p className="elementPrice">150 RON</p>
             </div>
-            <Link
-              style={{ textDecoration: "none", color: "black" }}
-                        to="/rooms/simple"
-                    >
+            
             <button className="bookingButton"
-              // onClick={()=>   window.location.href='/rooms/simple'}
+              onClick={()=>  history.push('/rooms/simple')}
             >
              Detalii
-            </button> </Link>
+            </button>
             <div className="counterContainer">
                 {simpleValue > 0 ?  <div
                 className="counterText"

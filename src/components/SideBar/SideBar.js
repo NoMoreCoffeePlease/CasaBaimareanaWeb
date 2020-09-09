@@ -14,7 +14,7 @@ import { HomeScreen } from "../../screens/HomeScreen/HomeScreen";
 import ReviewModal from "../../screens/AboutUsModal/ReviewModal";
 import PrivacyModal from "../../screens/PrivacyModal/PrivacyModal";
 import CookiesModal from "../../screens/CookiesModal/CookiesModal";
-
+// TO DO: Click outside sidebar closes it
 export const SideBar = (props) => {
   const styles = {
     slideInLeft: {
@@ -34,7 +34,7 @@ export const SideBar = (props) => {
       <StyleRoot>
       <HomeScreen modalHandler={props.modalHandler} />
         {props.show ? (
-          <div className="sideBar-frame" style={styles.slideInLeft}>
+          <div className="sideBar-frame" style={styles.slideInLeft} >
             <div onClick={() => props.barHandler(false)}>
               <img
                 src={require("../../svg/close-black.svg")}
@@ -43,7 +43,7 @@ export const SideBar = (props) => {
               ></img>
             </div>
             <div className="sideBar-textFrame">
-              <ul>
+              <ul className='listResetStyle'>
                 <li key="Home">
                   <Link
                     className="sideBar-text"
@@ -120,7 +120,7 @@ export const SideBar = (props) => {
               ></img>
             </a>
             <div className="sideBar-footerContainer">
-              <ul>
+              <ul className='listResetStyle'>
                 <li key="anpc">
                   <a
                     href="https://anpc.ro/" target="_blank"

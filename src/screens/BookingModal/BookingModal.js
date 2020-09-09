@@ -17,6 +17,8 @@ import {
 import {fadeIn} from 'react-animations';
 import Radium, {StyleRoot} from 'radium';
 
+// TO DO: Booking.com link
+// TO DO: Animations
 
  const BookingModal = (props) => {
   // const [selectedStage, setSelectedStage] = useState(false);

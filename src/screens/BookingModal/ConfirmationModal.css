@@ -36,7 +36,7 @@
 
     color: black;
     font-family: 'Baskerville Old Face';
-    font-size: 42px;
+    font-size: 2.625em;
     justify-content: center;
     display: flex;
 
@@ -56,7 +56,7 @@
 
 .text-confirmationSubTitle {
     font-family: 'Baskerville Old Face';
-    font-size: 24px;
+    font-size:  1.5em;
     align-self:center;
     text-align: center;
 }
@@ -70,13 +70,15 @@
     height: 5vh;
     width: 15vw;
     font-family: 'Baskerville Old Face';
-    font-size: 20px;
+    font-size: 1.25em;
     padding-left: 1vw;
     padding-right:1vw;
     align-items: center;
     justify-content: center;
     margin-left:1vw;
     margin-right:1vw;
+    transition: 0.3s;
+    cursor:pointer;
 }
 
 .confirmationButton:hover {

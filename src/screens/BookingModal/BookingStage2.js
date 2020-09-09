@@ -5,8 +5,8 @@ import firebase from '../../firebase/firebase';
 import { connect } from 'react-redux';
 import { RESET_DATA_SUCCESS } from '../../redux/dataActions';
 
-
-
+// TO DO: Requirements delayed, requirements for stages
+// TO DO: Mail confirmare
 
 function BookingStage2({startDate, endDate, adults, children, resetStartDate, resetEndDate, resetAdults, resetChildren, resetData, simpleValue, doubleValue, tripleValue, aptValue}) {
     const history = useHistory();

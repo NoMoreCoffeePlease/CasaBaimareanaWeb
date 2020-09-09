@@ -21,12 +21,10 @@ export default function RoomsTriple () {
         
         <div className="roomsPhotos">
 
-        <div onClick = {()=>history.push('/rooms/double')}><img src={require('../../svg/next-black.svg')} alt= '' className='roomBackButton' /></div>
 <div className="roomCarouselContainer">
 <CarouselComponent roomPics={roomPics}/>
 </div>
 
-        <div onClick = {()=>history.push('/rooms/apartment')}><img src={require('../../svg/next-black.svg')} alt= '' className='roomNextButton' /></div>
 </div>
        
          

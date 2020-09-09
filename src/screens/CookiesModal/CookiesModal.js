@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import {fadeIn} from 'react-animations';
 import Radium, {StyleRoot} from 'radium';
 
+// TO DO: Privacy Policy
 
 export default function CookiesModal(props) {
 

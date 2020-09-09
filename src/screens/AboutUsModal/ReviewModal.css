@@ -1,4 +1,4 @@
-.miniModal {
+.Modal {
     position: absolute;
     top:2.5vh;
     left: 2vw;
@@ -17,7 +17,7 @@
     filter: blur(0px);
     border-radius: 7px;
     z-index:2;
-    padding-bottom: 4vh;
+    padding-bottom: 4vh; 
 }
 
 .ModalContainer {
@@ -36,6 +36,7 @@
     left: 3vh;
     top: 3vh;
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(224deg) brightness(104%) contrast(101%);
+    cursor:pointer;
     
 }
 
@@ -47,6 +48,79 @@
     
     color: white;
     font-family: 'Baskerville Old Face';
-    font-size: 64px;   
+    font-size: 4em;   
     margin-top: 2vh;
+}
+
+.reviewGrid {
+    display: grid;
+}
+
+.reviewRow {
+    display: flex ;
+    margin-bottom: 5vh;
+}
+
+.reviewElement {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width:min-content;
+    text-align: justify;
+    opacity: 0.3;
+    transition: 0.5s;
+    border-radius: 15px;
+    margin-left:2.5vw;
+    margin-right: 2.5vw;
+    padding:2vh;
+}
+
+.reviewElement:hover {
+    opacity:1;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: rgba(214,164,102, 0.75);
+}
+
+.reviewContent {
+    font-family: 'Candara';
+    font-style: italic;
+    color: white;
+    font-size: 1.75em;
+    line-height: 5vh;
+    width: 20vw;
+}
+
+.reviewAuthor {
+    font-family: 'Baskerville Old Face';
+
+    color: white;
+    font-size: 1.375em;
+    line-height: 7vh;
+}
+
+.review1 {
+    margin-left: -3vw;
+}
+
+.review2 {
+    margin-top: 4vh;
+    margin-left: 5vw
+}
+
+.review3 {
+    margin-left: 12vw;
+    margin-top:-3vh; 
+}
+
+.review4 {
+    margin-top:-10vh;
+}
+
+.review5 {
+    margin-left: 8vw;
+    margin-top: -15vh;
+}
+
+.review6 {
+    margin-top: -3vh;
 }

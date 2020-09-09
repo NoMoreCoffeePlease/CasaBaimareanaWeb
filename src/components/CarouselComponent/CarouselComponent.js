@@ -2,8 +2,6 @@ import React from "react";
 import Carousel from "react-elastic-carousel";
 import theme from "./CarouselComponent.css";
 
-// TO DO : Fix renderArrow!
-
 function myArrow({ type, onClick, isEdge }) {
 
   const pointer = (type === 'PREV' ? (

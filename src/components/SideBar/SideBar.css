@@ -17,10 +17,10 @@
 }
 .sideBar-text {
     text-transform: capitalize;
-    font-family: Baskerville Old Face;
+    font-family: 'Baskerville Old Face';
     font-style: normal;
     font-weight: normal;
-    font-size: 36px;
+    font-size: 2.25em;
     display: flex;
     flex-direction: column;
     margin-bottom: 4vh;
@@ -30,6 +30,7 @@
     color: #000000;
     list-style: none;
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(224deg) brightness(104%) contrast(101%);
+    cursor:pointer;
 }
 
 .sideBar-text:hover {
@@ -40,8 +41,8 @@
     font-family: Baskerville Old Face;
     font-style: normal;
     font-weight: normal;
-    font-size: 20px;
-    margin-bottom: 7px;
+    font-size: 1.25em;
+    margin-bottom: 0.92vh;
     display: flex;
     flex-direction: column;
     
@@ -51,6 +52,7 @@
     color: #000000;
     list-style:none ;
     filter: invert(73%) sepia(41%) saturate(14%) hue-rotate(116deg) brightness(99%) contrast(94%);
+    cursor:pointer;
 }
 
 .sideBar-footer:hover {
@@ -70,7 +72,7 @@
     font-family: Baskerville Old Face;
     font-style: normal;
     font-weight: normal;
-    font-size: 48px;
+    font-size: 3em;
     display: flex;
     flex-direction: column;
     margin-bottom: 4vh;
@@ -80,6 +82,7 @@
     color: #000000;
     list-style: none;
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(224deg) brightness(104%) contrast(101%);
+    cursor:pointer;
 }
 
 .sideBar-book:hover {
@@ -89,8 +92,8 @@
     font-family: Baskerville Old Face;
     font-style: normal;
     font-weight: normal;
-    font-size: 48px;
-    line-height: 48px;
+    font-size: 3em;
+    line-height: 3em;
     display: flex;
     align-items: center;
     text-align: center;
@@ -107,6 +110,7 @@
     left: 3vh;
     top: 3vh;
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(224deg) brightness(104%) contrast(101%);
+    cursor:pointer;
     
 }
 
@@ -127,3 +131,6 @@
     filter: invert(69%) sepia(76%) saturate(299%) hue-rotate(345deg) brightness(89%) contrast(87%);
 }
 
+.listResetStyle{
+    list-style-type: none;
+}

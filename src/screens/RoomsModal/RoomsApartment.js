@@ -22,12 +22,10 @@ export default function RoomsApartment () {
         
         <div className="roomsPhotos">
 
-        <div onClick = {()=>history.push('/rooms/triple')}><img src={require('../../svg/next-black.svg')} alt= '' className='roomBackButton' /></div>
 <div className="roomCarouselContainer">
 <CarouselComponent roomPics={roomPics}/>
 </div>
 
-        <div onClick = {()=>history.push('/rooms/simple')}><img src={require('../../svg/next-black.svg')} alt= '' className='roomNextButton' /></div>
 </div>
        
          

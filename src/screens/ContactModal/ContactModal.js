@@ -11,6 +11,7 @@ export default function ContactModal(props) {
 
   const history = useHistory();
 
+  // TO DO: Mail sent.
 
   useEffect(() => {
     props.barHandler(false);

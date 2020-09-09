@@ -10,6 +10,8 @@ import {fadeIn} from 'react-animations';
 import Radium, {StyleRoot} from 'radium';
 import slideInRight from 'react-animations/lib/slide-in-right';
 
+// TO DO: Animations, prea multe sageeeeti ?
+
 export default function RoomsModal(props) {
 
     const history = useHistory();
@@ -75,7 +77,7 @@ export default function RoomsModal(props) {
                     props.modalHandler(false); history.push(urlToGo.join('/').split(document.location.origin)[1])
                 }}
             >
-                <img src={isClose?require('../../svg/close-black.svg'):require('../../svg/back-black.svg')} className='closeButton' alt="test" />
+                <img src={isClose?require('../../svg/close-black.svg'):require('../../svg/arrowBack-black.svg')} className='closeButton' alt="test" />
             </div>
         </div>
         </StyleRoot>

@@ -15,7 +15,7 @@ const roomPics =[
 
 
 export default function MeniuPhotos () {
-    const history = useHistory();
+    const history = useHistory();  
     return <div className='foodMenuContainer'>
         
         <div className='foodTitle-element' >MENIU</div>  
