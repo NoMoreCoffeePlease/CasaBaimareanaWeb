@@ -4,6 +4,8 @@ import DateRange from '../../components/DataCalendar/DateRangeInput';
 import TextTransition, { presets } from "react-text-transition";
 import { useHistory } from 'react-router-dom';
 import MapSection from '../../components/GoogleMap/Map';
+import {slideInDown} from 'react-animations';
+import Radium, {StyleRoot} from 'radium';
 
 // TO DO: Teste pe mai multe ecrane
 const TEXTS = [
@@ -125,10 +127,12 @@ const secondary = [{
     mapLink: 'https://goo.gl/maps/DvN6XXC3T7sNx27V8'
 },
 ]
-
-const scrollTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
+const styles= {
+    slideInDown:{
+        animation: "x 0.27s",
+        animationName: Radium.keyframes(slideInDown, "slideInDown"),
+    },
+};
 
 export const HomeScreen = (props) => {
     const [index, setIndex] = useState(0);
@@ -139,20 +143,22 @@ export const HomeScreen = (props) => {
             6000 // every 3 seconds
         );
     }, []);
-    const [showScroll, setShowScroll] = useState(false)
-    const checkScrollTop = () => {
-        if (!showScroll && window.pageYOffset > 400) {
-            setShowScroll(true)
-        } else if (showScroll && window.pageYOffset <= 400) {
-            setShowScroll(false)
-        }
-    };
-    window.addEventListener('scroll', checkScrollTop)
-
+    
     return (
-        <div className='mainFrame'>
+        <div className='mainFrame'
+        id="mainFrame"
+        onScroll={()=>{
+            const top = document.getElementById('mainFrame');
+            const scrollButton = document.getElementById('scrollTop');
+            if(top.scrollTop > 200)
+                scrollButton.style.display = 'flex';
+            else{
+                scrollButton.style.display = 'none';
+            }
+        }}>
             <div
                 className='datePickerContainer'
+                id='top'
             >
                 <div className='titleAnimation'>
                     <span className="textAnimationStyle">Casa</span>
@@ -190,7 +196,8 @@ export const HomeScreen = (props) => {
                     </div>
                 </div>
             </div>
-            <div className="presentationFrame">
+            {/* <Element name="myScrollToElement"> */}
+                <div className="presentationFrame">
                 <div id='aboutUs' className="presentationTitle">CINE SUNTEM NOI?</div>
                 <div className="presentationSubTitle">Descriere despre voi, misiune, obiectiv, text atractiv.</div>
                 <div className="presentationMembersContainer">
@@ -204,7 +211,7 @@ export const HomeScreen = (props) => {
                         <div className="rightFunction">Functie</div>
                     </div>
                     <div className="pictureContainerRight"></div>
-                    {/* TO DO: Story time! */}
+
                 </div>
                 <div className='storyContainer'>
                     <div className='storyParagraphContainer'>
@@ -267,8 +274,9 @@ export const HomeScreen = (props) => {
                         className='detailButton'
                     >Vezi si alte review-uri</button>
                 </div>
-
+                
             </div>
+            {/* </Element> */}
             <div className="presPicture">
                 <div className="bmContainer"><span className='bmStyle'>BAIA MARE</span></div>
                 <div className="test">
@@ -282,8 +290,7 @@ export const HomeScreen = (props) => {
             <div className="mapsContainer">
                 <MapSection location={location} zoomLevel={14} secondary={secondary} />
             </div>
-            {/* TO DO: Pointer change on hover */}
-
+  
             <div className="presPicture">
                 <div className="presCaptionContainer"><span className='bmStyle'>VA ASTEPTAM LA NOI!</span></div>
             </div>
@@ -297,7 +304,7 @@ export const HomeScreen = (props) => {
                                     style={{ textDecoration: "none" }}
                                 >ANPC</a>
                             </li>
-                            <li className='menuFooter-miniItem' onClick={() => history.push('/cookies')}>Cookies Policy</li>
+                            <li className='menuFooter-miniItem' onClick={() => history.push('/cookies')}>Termeni și condiții</li>
                             <li className='menuFooter-miniItem' onClick={() => history.push('/privacy')}>Politică de confidențialitate</li><br></br>
                             <li className='menuFooter-item center-item' onClick={() => history.push('/BookingStage00')}>Rezervă acum</li>
                             <li className='menuFooter-item center-item' onClick={() => history.push('/rooms')}>Camere</li>
@@ -323,11 +330,15 @@ export const HomeScreen = (props) => {
                 <div className='finalSeparator'></div>
             </div>
             {/* TO DO: Back to top button. Scroll to about. */}
-            {/* <button
+            <StyleRoot>
+            <button
+                style={styles.slideInDown}
                 className="scrollTop"
-                onClick={scrollTop}
-                style={{ width: '70vw', display: showScroll ? 'flex' : 'none' }}
-            >Top</button> */}
+                onClick={()=> document.getElementById('top').scrollIntoView({behavior: 'smooth'})}
+                id='scrollTop'
+            >
+                <img src={require('../../svg/arrowBack-black.svg')} alt='' className='scrollTopIcon' />
+                </button></StyleRoot>
         </div>
     )
 }

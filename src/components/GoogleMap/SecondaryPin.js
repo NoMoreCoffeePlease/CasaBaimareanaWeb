@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { styles } from 'react-animations/lib/swing';
 import {fadeIn} from 'react-animations';
 import Radium, {StyleRoot} from 'radium';
-
+//TO DO: fix info showing under the other pins
 const stylesAnimations= {
   fadeIn:{
       animation: "x 0.4s",

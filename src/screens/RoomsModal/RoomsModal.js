@@ -10,7 +10,7 @@ import {fadeIn} from 'react-animations';
 import Radium, {StyleRoot} from 'radium';
 import slideInRight from 'react-animations/lib/slide-in-right';
 
-// TO DO: Animations, prea multe sageeeeti ?
+// TO DO: Animations
 
 export default function RoomsModal(props) {
 

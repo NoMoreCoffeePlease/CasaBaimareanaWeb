@@ -14,6 +14,7 @@ import { HomeScreen } from "../../screens/HomeScreen/HomeScreen";
 import ReviewModal from "../../screens/AboutUsModal/ReviewModal";
 import PrivacyModal from "../../screens/PrivacyModal/PrivacyModal";
 import CookiesModal from "../../screens/CookiesModal/CookiesModal";
+
 // TO DO: Click outside sidebar closes it
 export const SideBar = (props) => {
   const styles = {
@@ -23,7 +24,7 @@ export const SideBar = (props) => {
     },
   };
   const [shownModal, setShownModal] = useState(true);
-
+  const [isScrolled, setIsScrolled]= useState(false);
   const modalHandler = (bool) => {
     setShownModal(bool);
   };
@@ -32,7 +33,7 @@ export const SideBar = (props) => {
     <Router>
       {" "}
       <StyleRoot>
-      <HomeScreen modalHandler={props.modalHandler} />
+      <HomeScreen modalHandler={props.modalHandler} isScrolled={isScrolled} />
         {props.show ? (
           <div className="sideBar-frame" style={styles.slideInLeft} >
             <div onClick={() => props.barHandler(false)}>
@@ -44,15 +45,7 @@ export const SideBar = (props) => {
             </div>
             <div className="sideBar-textFrame">
               <ul className='listResetStyle'>
-                <li key="Home">
-                  <Link
-                    className="sideBar-text"
-                    style={{ textDecoration: "none" }}
-                    to="/"
-                  >
-                    Home
-                  </Link>
-                </li>
+                
                 <li key="Camere">
                   <Link
                     className="sideBar-text"
@@ -70,6 +63,14 @@ export const SideBar = (props) => {
                   >
                     Restaurant
                   </Link>
+                </li>
+                <li key="Home">
+                  <span
+                    className="sideBar-text"
+                    onClick = {()=> document.getElementById('aboutUs').scrollIntoView({behavior: 'smooth'})}
+                  >
+                    Despre noi                    
+                  </span>
                 </li>
                 <li key="Baia Mare">
                   <Link
@@ -146,7 +147,7 @@ export const SideBar = (props) => {
                     style={{ textDecoration: "none" }}
                     to="/cookies"
                   >
-                    Cookies Policy
+                    T{'&'}C
                   </Link>
                 </li>
               </ul>

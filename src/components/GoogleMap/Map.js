@@ -4,7 +4,7 @@ import './map.css'
 import LocationPin from './LocationPin';
 import SecondaryPin from './SecondaryPin';
 
-// TO DO: Pins in maps.
+
 const Map = ({ location, zoomLevel, secondary }) => {
   const MAP_OPTIONS = {
     scrollwheel: false,

@@ -45,6 +45,7 @@
     font-size:  1em;
     width: 4vw;
     height: 3vh;
+    cursor: pointer;
 }
 
 .Input::placeholder {
@@ -57,6 +58,7 @@
     flex-direction: row;
     padding-left: 0.5vw;
     padding-right: 1vw;
+    cursor: pointer;
 }
 
 .inputLabel {

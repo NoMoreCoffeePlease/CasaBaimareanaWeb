@@ -4,8 +4,6 @@ import { useHistory } from "react-router-dom";
 import {fadeIn} from 'react-animations';
 import Radium, {StyleRoot} from 'radium';
 
-// TO DO: Privacy Policy
-
 export default function CookiesModal(props) {
 
     const history = useHistory();
@@ -25,7 +23,7 @@ export default function CookiesModal(props) {
         <div className='Modal' style = {styles.fadeIn}>
             
 
-            <div className='CookiesTitle'>Cookies</div>            
+            <div className='CookiesTitle'>Termeni și condiții</div>            
             <div
                 onClick={() => { props.modalHandler(false);history.push("/") }}
             >

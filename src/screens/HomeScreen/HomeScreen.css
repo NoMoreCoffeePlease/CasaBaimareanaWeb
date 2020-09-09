@@ -472,16 +472,35 @@
     filter: invert(69%) sepia(76%) saturate(299%) hue-rotate(345deg) brightness(89%) contrast(87%);
 }
 
-/* .scrollTop {
+.scrollTop {
+    display: none;
     position: fixed; 
-    width: 100%;
-    bottom: 20px;
+    background-color: #d6a466;
+    border-color: #b78548;
+    border-radius: 55px;
+    height: 10vh;
+    width: 5vw;
+    top:5vh;
+    right:5vw;
+    font-family: 'Baskerville Old Face';
+    font-size: 20px;
+    padding-left: 1vw;
+    padding-right:1vw;
     align-items: center;
-    height: 20px;
     justify-content: center;
     z-index: 1000;
     cursor: pointer;
-    animation: fadeIn 0.3s;
-    transition: opacity 0.4s;
-    opacity: 0.5;
-  } */
+    transition: 0.3s;
+    opacity: 0.7;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  } 
+
+  .scrollTop:hover {
+      opacity: 0.5;
+  }
+
+  .scrollTopIcon {
+      transform: rotate(90deg);
+      height: 5vh;
+      width: 5vh;
+  }
