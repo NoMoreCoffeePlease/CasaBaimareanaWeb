@@ -5,7 +5,6 @@ import firebase from '../../firebase/firebase';
 import { connect } from 'react-redux';
 import { RESET_DATA_SUCCESS } from '../../redux/dataActions';
 
-// TO DO: Requirements delayed, requirements for stages
 // TO DO: Mail confirmare
 
 function BookingStage2({startDate, endDate, adults, children, resetStartDate, resetEndDate, resetAdults, resetChildren, resetData, simpleValue, doubleValue, tripleValue, aptValue}) {
@@ -25,7 +24,7 @@ function BookingStage2({startDate, endDate, adults, children, resetStartDate, re
         city: '',
         country: '',
         postalCode: '',
-        paymentMethodCash: false,
+        paymentMethodCash: null,
         privacy: false,
         terms: false,
         startDate: startDate !== null ? new Date(startDate) : '',
@@ -39,36 +38,35 @@ function BookingStage2({startDate, endDate, adults, children, resetStartDate, re
     });
     
     console.log(state)
-    const [errorMessage, setErrorMessage] = useState('');
-
+    
     const formValid = () =>{
         if(state.firstName ==='' || state.lastName === '')
         {
-            setErrorMessage('Campurile nume si prenume sunt obligatorii');
-            return false;
+            return'Campurile nume si prenume sunt obligatorii';
+            
         }
         if(state.email === '')
         {
-            setErrorMessage('Campul email este obligatoriu');
-            return false;
+            return 'Campul email este obligatoriu';
+            
         }
         if(state.address==='')
         {
-            setErrorMessage('Campul adresa este obligatoriu');
-            return false;
+            return  'Campul adresa este obligatoriu';
+            
         }
         if(state.country ==='' || state.city==='' || state.postalCode === '')
         {
-            setErrorMessage('Campurile tara, oras si cod postal sunt obligatorii');
-            return false;
+            return 'Campurile tara, oras si cod postal sunt obligatorii';
         }
         if(!state.privacy || !state.terms)
         {
-            setErrorMessage('Trebuie sa acceptati termenii si conditiile');
-            return false;
+            return 'Trebuie sa acceptati termenii si conditiile'            
         }
-        console.log(state,errorMessage);
-        return true;
+        if (state.paymentMethodCash===null)
+            return 'Alege metoda de plată';
+
+        return 'success';
 
     }
 
@@ -157,9 +155,9 @@ function BookingStage2({startDate, endDate, adults, children, resetStartDate, re
                     placeholder='Cod Postal'
                     onChange={term7 => { setState(prevState => ({ ...prevState, postalCode: term7.target.value })); term7.persist(); }}
                 ></input> </div> <br></br>
-                <select className = 'paymentMethod' onChange={(option) => handleMethod(option)} >
-                <option value='initial'>Metoda de plata</option>
-                    <option value='cash'>Fizic, la check-in.</option>
+                <select className = 'paymentMethod' onChange={(e) => {handleMethod(e.target.value)}} >
+                    <option value='initial' selected >Metoda de plata</option>
+                    <option value='cash' >Fizic, la check-in.</option>
                     <option value='card'>Online, cu cardul.</option>
                 </select> <br></br>
                 <label className='formStatements'><input
@@ -182,8 +180,9 @@ function BookingStage2({startDate, endDate, adults, children, resetStartDate, re
                         >PASUL ANTERIOR</button>
                     <button className = 'submitButton' value='REZERVA' 
                         onClick={()=> {
-                            if (formValid()) {  onSubmitPress() ; }
-                            else alert (errorMessage);
+                            const message = formValid()
+                            if (message === "success") {  onSubmitPress() ; }
+                            else alert (message);
                         }}
                     >REZERVA</button>
                 

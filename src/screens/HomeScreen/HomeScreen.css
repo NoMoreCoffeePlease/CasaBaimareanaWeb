@@ -299,7 +299,7 @@
     width: 100vw;
     height: 70vh;
     background-color: #D6D6D6;
-    z-index: 3;
+    z-index:5;
 }
 
 .presCaptionContainer{
@@ -491,12 +491,12 @@
     z-index: 1000;
     cursor: pointer;
     transition: 0.3s;
-    opacity: 0.7;
+    opacity: 0.5;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   } 
 
   .scrollTop:hover {
-      opacity: 0.5;
+      opacity: 1;
   }
 
   .scrollTopIcon {

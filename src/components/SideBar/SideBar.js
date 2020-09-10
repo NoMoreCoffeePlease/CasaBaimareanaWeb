@@ -15,7 +15,6 @@ import ReviewModal from "../../screens/AboutUsModal/ReviewModal";
 import PrivacyModal from "../../screens/PrivacyModal/PrivacyModal";
 import CookiesModal from "../../screens/CookiesModal/CookiesModal";
 
-// TO DO: Click outside sidebar closes it
 export const SideBar = (props) => {
   const styles = {
     slideInLeft: {
@@ -28,12 +27,13 @@ export const SideBar = (props) => {
   const modalHandler = (bool) => {
     setShownModal(bool);
   };
+  
 
   return (
     <Router>
       {" "}
       <StyleRoot>
-      <HomeScreen modalHandler={props.modalHandler} isScrolled={isScrolled} />
+      <HomeScreen modalHandler={props.modalHandler} isScrolled={isScrolled} barHandler={props.barHandler} />
         {props.show ? (
           <div className="sideBar-frame" style={styles.slideInLeft} >
             <div onClick={() => props.barHandler(false)}>

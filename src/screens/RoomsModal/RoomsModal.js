@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory, BrowserRouter as Router, Route, Switch,Link } from "react-router-dom";
+import { useHistory, BrowserRouter as Router, Route, Switch,Link,match } from "react-router-dom";
 import RoomsHome from './RoomsHome';
 import RoomsSimple from './RoomsSimple';
 import RoomsDouble from './RoomsDouble';
@@ -9,8 +9,6 @@ import './RoomsModal.css';
 import {fadeIn} from 'react-animations';
 import Radium, {StyleRoot} from 'radium';
 import slideInRight from 'react-animations/lib/slide-in-right';
-
-// TO DO: Animations
 
 export default function RoomsModal(props) {
 
@@ -71,10 +69,8 @@ export default function RoomsModal(props) {
             </Route>
         </Switch>
         <div
-                  onClick={() => { 
-                    let urlToGo = window.location.href.split('/');
-                    urlToGo.pop();
-                    props.modalHandler(false); history.push(urlToGo.join('/').split(document.location.origin)[1])
+                  onClick={() => {
+                      history.goBack();
                 }}
             >
                 <img src={isClose?require('../../svg/close-black.svg'):require('../../svg/arrowBack-black.svg')} className='closeButton' alt="test" />

@@ -8,7 +8,7 @@ function myArrow({ type, onClick, isEdge }) {
     <div>
       <img
         src={require("../../svg/next-black.svg")}
-        alt
+        alt=""
         className="carouselBackButton"
       />
     </div>
@@ -16,7 +16,7 @@ function myArrow({ type, onClick, isEdge }) {
     <div>
       <img
         src={require("../../svg/next-black.svg")}
-        alt
+        alt=""
         className="carouselNextButton"
       />
     </div>
@@ -48,6 +48,7 @@ export default function CarouselComponent(props) {
                     active={isActivePage}
                     src={props.roomPics[index]}
                     className="paginationPic"
+                    alt=""
                   />
                 );
               })}

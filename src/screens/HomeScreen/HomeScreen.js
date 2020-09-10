@@ -4,10 +4,10 @@ import DateRange from '../../components/DataCalendar/DateRangeInput';
 import TextTransition, { presets } from "react-text-transition";
 import { useHistory } from 'react-router-dom';
 import MapSection from '../../components/GoogleMap/Map';
-import {slideInDown} from 'react-animations';
+import {slideInDown, slideOutUp} from 'react-animations';
 import Radium, {StyleRoot} from 'radium';
 
-// TO DO: Teste pe mai multe ecrane
+// TO DO: Multiple-screen challenge
 const TEXTS = [
     "Baimareana",
     "ta de vacanta",
@@ -129,8 +129,12 @@ const secondary = [{
 ]
 const styles= {
     slideInDown:{
-        animation: "x 0.27s",
+        animation: "x 0.7s",
         animationName: Radium.keyframes(slideInDown, "slideInDown"),
+    },
+    slideOutUp:{
+        animation: "x 0.27s",
+        animationName: Radium.keyframes(slideOutUp, "slideOutUp"),
     },
 };
 
@@ -150,12 +154,15 @@ export const HomeScreen = (props) => {
         onScroll={()=>{
             const top = document.getElementById('mainFrame');
             const scrollButton = document.getElementById('scrollTop');
-            if(top.scrollTop > 200)
+            if(top.scrollTop > 500)
                 scrollButton.style.display = 'flex';
             else{
                 scrollButton.style.display = 'none';
             }
-        }}>
+        }}
+        onClick={()=>props.barHandler(false)}
+        
+        >
             <div
                 className='datePickerContainer'
                 id='top'
@@ -329,7 +336,7 @@ export const HomeScreen = (props) => {
                 </div>
                 <div className='finalSeparator'></div>
             </div>
-            {/* TO DO: Back to top button. Scroll to about. */}
+ 
             <StyleRoot>
             <button
                 style={styles.slideInDown}

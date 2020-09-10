@@ -1,5 +1,5 @@
 import React, { state, useState, useEffect } from "react";
-import { useHistory, BrowserRouter as Router, Route, Switch,Link } from "react-router-dom";
+import { useHistory, BrowserRouter as Router, Route, Switch,Link, Redirect } from "react-router-dom";
 import firebase from "../../firebase/firebase";
 import { ADD_ROOM_NUMBERS } from "../../redux/dataActions";
 import { connect } from 'react-redux';
@@ -11,9 +11,8 @@ import RoomsApartment from '../RoomsModal/RoomsApartment';
 
 function BookingStage1(props) {
   const history = useHistory();
-  
-  const [simpleValue, setSimpleValue] = useState(0);
-  const [doubleValue, setDoubleValue] = useState(0);
+  const [simpleValue, setSimpleValue] = useState(props.simpleValue?props.simpleValue:0);
+  const [doubleValue, setDoubleValue] = useState(props.doubleValue?props.doubleValue:0);
   const [tripleValue, setTripleValue] = useState(0);
   const [availableRooms, setAvailableRooms] = useState({});
   const [aptValue, setAptValue] = useState(0);
@@ -42,9 +41,7 @@ function BookingStage1(props) {
   
   return (<div>
 
-    {/* TO DO: Fix links to room modals */}
-
-    <div className="componentContainer">
+     <div className="componentContainer">
      
       <div className="roomGrid">
         {availableRooms.simple ? (
@@ -64,31 +61,27 @@ function BookingStage1(props) {
               <p className="elementPrice">150 RON</p>
             </div>
             
-            <button className="bookingButton"
-              onClick={()=>  history.push('/rooms/simple')}
-            >
-             Detalii
-            </button>
+            
             <div className="counterContainer">
                 {simpleValue > 0 ?  <div
-                className="counterText"
+                className="counterText counterButton"
                 onClick={() => setSimpleValue(simpleValue - 1)}
               >
                 -
               </div> : <div
-                className="counterText"
+                className="counterText-disabled"
               >
                 -
               </div>}
              
               <span className="counterText">{simpleValue}</span>
               {simpleValue < availableRooms.simple ? <div
-                className="counterText"
+                className="counterText counterButton"
                 onClick={() => setSimpleValue(simpleValue + 1)}
               >
                 +
               </div> : <div
-                className="counterText"
+                className="counterText-disabled"
                 
               >
                 
@@ -113,33 +106,27 @@ function BookingStage1(props) {
             <div className="elementPrice-container">
               <p className="elementPrice">250 RON</p>
             </div>
-            <Link
-              style={{ textDecoration: "none", color: "black" }}
-                        to="/rooms/double"
-                    >
-            <button className="bookingButton">
-              Detalii
-            </button> </Link>
+            
             <div className="counterContainer">
             {doubleValue > 0 ?  <div
-                className="counterText"
+                className="counterText counterButton"
                 onClick={() => setDoubleValue(doubleValue - 1)}
               >
                 -
               </div> : <div
-                className="counterText"
+                className="counterText-disabled"
               >
                 -
               </div>}
              
               <span className="counterText">{doubleValue}</span>
               {doubleValue < availableRooms.double ? <div
-                className="counterText"
+                className="counterText counterButton"
                 onClick={() => setDoubleValue(doubleValue + 1)}
               >
                 +
               </div> : <div
-                className="counterText"
+                className="counterText-disabled"
                 
               >
                 +
@@ -163,33 +150,27 @@ function BookingStage1(props) {
             <div className="elementPrice-container">
               <p className="elementPrice">350 RON</p>
             </div>
-            <Link
-              style={{ textDecoration: "none", color: "black" }}
-                        to="/rooms/triple"
-                    >
-            <button className="bookingButton">
-              Detalii
-            </button> </Link>
+           
             <div className="counterContainer">
             {tripleValue > 0 ?  <div
-                className="counterText"
+                className="counterText counterButton"
                 onClick={() => setTripleValue(tripleValue - 1)}
               >
                 -
               </div> : <div
-                className="counterText"
+                className="counterText-disabled"
               >
                 -
               </div>}
              
               <span className="counterText">{tripleValue}</span>
               {tripleValue < availableRooms.triple ? <div
-                className="counterText"
+                className="counterText counterButton"
                 onClick={() => setTripleValue(tripleValue + 1)}
               >
                 +
               </div> : <div
-                className="counterText"
+                className="counterText-disabled"
                 
               >
                 +
@@ -213,21 +194,16 @@ function BookingStage1(props) {
             <div className="elementPrice-container">
               <p className="elementPrice">500 RON</p>
             </div>
-            <Link
-              style={{ textDecoration: "none", color: "black" }}
-                        to="/rooms/apartment"
-                    >
-            <button className="bookingButton">
-            Detalii
-            </button> </Link>
+            
+             
             <div className="counterContainer">
             {aptValue > 0 ?  <div
-                className="counterText"
+                className="counterText counterButton"
                 onClick={() => setAptValue(aptValue - 1)}
               >
                 -
               </div> : <div
-                className="counterText"
+                className="counterText-disabled"
                 
               >
                 -
@@ -235,12 +211,12 @@ function BookingStage1(props) {
              
               <span className="counterText">{aptValue}</span>
               {aptValue < availableRooms.apartment ? <div
-                className="counterText"
+                className="counterText counterButton"
                 onClick={() => setAptValue(aptValue + 1)}
               >
                 +
               </div> : <div
-                className="counterText"
+                className="counterText-disabled"
                 
               >
                 +
@@ -250,11 +226,11 @@ function BookingStage1(props) {
         ):null}
       </div>
 
-      <div className='bottomContainerBook  specialSpacing'>
-        {!((parseInt(props.adults)+(parseInt(props.children)))<=totalPlaceToOcuppy) &&
+      <div className='bottomContainerBook '>
+        {!((parseInt(props.adults)+(parseInt(props.children?props.children:0)))<=totalPlaceToOcuppy) &&
           <span className="selectMore">Nu ati ocupat destule camere.</span>}
         
-        <div className="buttonContainer">
+        <div className={!((parseInt(props.adults)+(parseInt(props.children?props.children:0)))<=totalPlaceToOcuppy)?"buttonContainer ":"buttonContainer specialSpacing"}>
         
         <button
           className="submitButton"
@@ -264,14 +240,19 @@ function BookingStage1(props) {
         >
           PASUL ANTERIOR
         </button>
-
+        <button className="submitButton"
+            onClick={()=>  {
+              props.historyHandler('/rooms');
+            }}>
+            Vezi camere
+            </button>
         <button
           className="submitButton"
           onClick={() => {
             props.addRoomNumbers(simpleValue, doubleValue, tripleValue, aptValue)
             history.push("/BookingStage02");
           }}
-          disabled={!((parseInt(props.adults)+(parseInt(props.children)))<=totalPlaceToOcuppy)}
+          disabled={!((parseInt(props.adults)+(parseInt(props.children?props.children:0)))<=totalPlaceToOcuppy)}
         >
           PASUL URMATOR
         </button>
@@ -286,8 +267,8 @@ function BookingStage1(props) {
 }
 
 const mapStatetoProps = (state) => {
-  const { adults, children} = state;
-  return { adults, children };
+  const { adults, children, simpleValue, doubleValue, tripleValue, aptValue} = state;
+  return { adults, children, simpleValue, doubleValue, tripleValue, aptValue };
 };
 
 const mapDispatchtoProps = dispatch => ({

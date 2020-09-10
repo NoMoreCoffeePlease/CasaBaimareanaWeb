@@ -16,18 +16,19 @@ import {
 } from "react-router-dom";
 import {fadeIn} from 'react-animations';
 import Radium, {StyleRoot} from 'radium';
+import {SideBar} from '../../components/SideBar/SideBar'
 
 // TO DO: Booking.com link
-// TO DO: Animations
 
  const BookingModal = (props) => {
-  // const [selectedStage, setSelectedStage] = useState(false);
+  const totalPlaceToOcuppy = props.simpleValue+props.doubleValue*2+props.tripleValue*3+props.aptValue*4;
   const styles= {
     fadeIn:{
         animation: "x 0.27s",
         animationName: Radium.keyframes(fadeIn, "fadeIn"),
     },
 };
+  const [focusedStage, setFocusedStage] = useState('');
   const [state, setState] = useState ({
     startDate: props.startDate !== null ? new Date(props.startDate) : '',
     endDate: props.endDate !== null ? new Date(props.endDate) : '',
@@ -41,23 +42,25 @@ import Radium, {StyleRoot} from 'radium';
 
   const history = useHistory();
 
+  const historyHandler = (path) => {
+    history.push(path);
+  }
+
   useEffect(() => {
     props.barHandler(false);
   }, [props]);
 
   if (props.show === false) return null;
 
-//  /* TO DO : Fix stageSelected and changing the font on text selectted *
-
   return (
     <div>
-      {/* {selectedStage === true ? <div className="stageSelected"> </div> : <div className="stageContainer"> </div>  } */}
+      
       <StyleRoot>
       <Router>
         <div className="ModalContainer"></div>
         <div className='Modal' style ={styles.fadeIn}>
             <div className='closeButtonContainer'
-                onClick={() => { props.modalHandler(false);history.push("/") }}
+                onClick={() => { props.modalHandler(false); history.push("/") }}
             >
                 {/* <img src={require('../../svg/close-black.svg')} className='closeButton' alt="test" /> */}
             </div>
@@ -73,7 +76,7 @@ import Radium, {StyleRoot} from 'radium';
                 > 
               
                 <div
-                    className="stageContainer"
+                    className={focusedStage==='/BookingStage00'?"stageContainer stageFocused":"stageContainer"}
                     
                 >
                     <span className="stage">Pasul 1</span>
@@ -82,11 +85,12 @@ import Radium, {StyleRoot} from 'radium';
                 
                 </Link>
                 <Link
+                className={(props.startDate!==undefined && props.endDate!==undefined && props.adults!==undefined)?'':"disabled"}
                 style={{ textDecoration: "none", color: "black" }}
                 to="/BookingStage01"
                 >
                 <div
-                    className="stageContainer"
+                    className={focusedStage==='/BookingStage01'?"stageContainer stageFocused":"stageContainer"}
                    
                 >
                     <span className="stage">Pasul 2</span>
@@ -94,11 +98,12 @@ import Radium, {StyleRoot} from 'radium';
                 </div>
                 </Link>
                 <Link
+                className={((props.startDate!==undefined && props.endDate!==undefined && props.adults!==undefined)&&(((parseInt(props.adults)+(parseInt(props.children?props.children:0)))<=totalPlaceToOcuppy)))?'':"disabled"}
                 style={{ textDecoration: "none", color: "black" }}
                 to="/BookingStage02"
                 >
                 <div
-                    className="stageContainer"
+                    className={focusedStage==='/BookingStage02'?"stageContainer stageFocused":"stageContainer"}
                    
                 >
                     <span className="stage">Pasul 3</span>
@@ -118,21 +123,30 @@ import Radium, {StyleRoot} from 'radium';
             />
           </div>
           </div>
-          <Switch>
-            <Route exact path="/BookingStage00" >
-              <BookingStage0 />
-            </Route>
-            <Route exact path="/BookingStage01"> 
-             <BookingStage1 />
-            </Route>
-            <Route exact path="/BookingStage02" >
-            <BookingStage2 />
-            </Route>
+          <Route render={({location})=>{
+            const {pathname, key} = location;
+            setFocusedStage(pathname);
+            return (
+              <Switch>
+              <Route exact path="/BookingStage00"  >
+                <BookingStage0 />
+              </Route>
+              <Route exact path="/BookingStage01"> 
+              <BookingStage1 modalHandler={props.modalHandler} historyHandler={historyHandler}/>
+              </Route>
+              <Route exact path="/BookingStage02" >
+              <BookingStage2 />
+              {/* <Route exact path="/rooms/simple">
+                <SideBar />
+              </Route> */}
+              </Route>
 
-            <Route exact path='/bookConfirm'> 
-              <ConfirmationModal modalHandler={props.modalHandler} />
-            </Route>
-          </Switch>
+              <Route exact path='/bookConfirm'> 
+                <ConfirmationModal modalHandler={props.modalHandler} />
+              </Route>
+            </Switch>
+              )}} />
+           
         </div>
         
       </Router></StyleRoot>

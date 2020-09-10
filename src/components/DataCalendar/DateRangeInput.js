@@ -18,10 +18,9 @@ const DateRange = ({ resetData,navigateToRoute, startDate, endDate, adults, chil
     focusedInput: null,
     startDate: (startDate===null||startDate===undefined)?undefined: new Date(startDate),
     endDate: (endDate===null || endDate===undefined)?undefined:new Date(endDate),
-    adults: adults,
-    children: children
+    adults: adults?adults:'',
+    children: children?children:''
   })
-  console.log(state);
   const [unavailableDates, setUnavailableDates] = useState();
   const fetchData = async()=>{
     const dates = []
@@ -42,6 +41,22 @@ const DateRange = ({ resetData,navigateToRoute, startDate, endDate, adults, chil
   useEffect(() => {
     fetchData();
   }, [])
+
+  const formValid = () =>{
+    if(state.startDate ===undefined || state.endDate === undefined || state.startDate ===null || state.endDate === null)
+    {
+        return'Completează datele sejurului tău!';
+        
+    }
+    if(state.adults === '' || state.adults === null || state.adults === undefined)
+    {
+        return 'Completează numărul de oaspeți';
+        
+    }   
+
+    return 'success';
+
+}
 
   // const onSubmitPress = () => {
   //   console.log(add)
@@ -133,11 +148,12 @@ const DateRange = ({ resetData,navigateToRoute, startDate, endDate, adults, chil
               autoComplete="off"
               className='Input'
               onChange={(term) => {
+                console.log('ADULTS', term.target.value)
                 setState(prevState => ({ ...prevState, adults: term.target.value }));
                 term.persist();
 
               }}
-              value={adults !== 0 ? adults : null}
+              value={state.adults}
             >
             </input></div>
           <div className='inputContainer'>
@@ -152,15 +168,20 @@ const DateRange = ({ resetData,navigateToRoute, startDate, endDate, adults, chil
                 setState(prevState => ({ ...prevState, children: term2.target.value }));
                 term2.persist();
               }}
-              value={children !== 0 ? children : null}
+              value={state.children}
             >
             </input>
 
           </div></div>
         <button className='Submit'
           onClick={() => {
-            addData(state.startDate, state.endDate, state.adults, state.children);
-            history.push(navigateToRoute);
+            const message=formValid();
+            if(message==='success') 
+            { 
+              addData(state.startDate, state.endDate, state.adults, state.children);
+              history.push(navigateToRoute);
+            }
+            else {alert(message); console.log(state)}
           }}>{text}
         </button>
       </div>

@@ -127,7 +127,7 @@
 }
 
 
-.stageSelected {
+.stageFocused {
     height: 10vh;
     width: 15vw;
     display: flex;
@@ -320,10 +320,13 @@ font-family: 'Baskerville Old Face';
 font-weight: bold;
 font-size: 1.4em;
 color: #d6a466;
-cursor:pointer;
 }
 
-.counterText:hover {
+.counterButton {
+    cursor:pointer;
+}
+
+.counterButton:hover {
   color: #b78548;
   
 }
@@ -357,6 +360,7 @@ pointer-events: none;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: 3vh;
 }
 
 .roomElement {
@@ -434,4 +438,19 @@ pointer-events: none;
     border-radius: 7px;
     z-index:2;
     padding: 1.3vw;
+}
+
+.disabled {
+    pointer-events: none;
+
+}
+
+.counterText-disabled {
+    opacity:0;
+    text-align: center;
+    width: 2vw;
+    font-family: 'Baskerville Old Face';
+    font-weight: bold;
+    font-size: 1.4em;
+    color: #d6a466;
 }
