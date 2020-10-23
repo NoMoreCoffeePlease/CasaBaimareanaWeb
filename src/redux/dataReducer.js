@@ -24,7 +24,7 @@ const initialState = {
 export default function dataReducer(state = initialState, action) {
   switch (action.type) {
     case FETCH_DATA_SUCCESS: {
-        console.log('payload',state,action.payload)
+      console.log("payload", state, action.payload);
       return Object.assign({}, state, {
         startDate: action.payload.startDate,
         endDate: action.payload.endDate,
@@ -33,7 +33,7 @@ export default function dataReducer(state = initialState, action) {
       });
     }
     case RESET_DATA_SUCCESS: {
-      return Object.assign({},state,{
+      return Object.assign({}, state, {
         startDate: initialState.resetStartDate,
         endDate: initialState.resetEndDate,
         adults: initialState.resetAdults,

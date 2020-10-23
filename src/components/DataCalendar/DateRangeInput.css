@@ -1,80 +1,81 @@
 .datePicker {
-    display: flex;
-    flex-direction: row;
-    /* align-items: flex-start; */
-    /* margin-top: 40vh; */
-    justify-content: center;
-    flex:1;
+  display: flex;
+  flex-direction: row;
+  /* align-items: flex-start; */
+  /* margin-top: 40vh; */
+  justify-content: center;
+  flex: 1;
   align-self: center;
   align-items: center;
   z-index: 5;
 }
 
 /* Dates font */
-.sc-AxirZ{
-    font-size: 1.25em;
+.sc-AxirZ {
+  font-size: 1.25em;
 }
 
 .Submit {
-    display: flex;
-    align-self: center;
-    background-color: #d6a466;
-    border-color: #b78548;
-    border-radius: 5px;
-    height: 5vh;
-    width: 15vw;
-    font-family: 'Baskerville Old Face';
-    font-size: 1.25em;
-    padding-left: 1vw;
-    padding-right:1vw;
-    align-items: center;
-    justify-content: center;
-    margin-left:1vw;
-    margin-right:1vw;
-    transition: 0.3s;
-    cursor:pointer;
+  display: flex;
+  align-self: center;
+  background-color: #d6a466;
+  border-color: #b78548;
+  border-radius: 5px;
+  height: 5vh;
+  width: 15vw;
+  font-family: "Baskerville Old Face";
+  font-size: 1.25em;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
 .Submit:hover {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
 .Input {
-    border-width: 0px;
-    font-family: 'Baskerville Old Face';
-    font-size:  1em;
-    width: 4vw;
-    height: 3vh;
-    cursor: pointer;
+  border-width: 0px;
+  font-family: "Baskerville Old Face";
+  font-size: 1em;
+  width: 4vw;
+  height: 3vh;
+  cursor: pointer;
 }
 
 .Input::placeholder {
-    color: #9c9fa1;
-    font-size: 0.875em;
+  color: #9c9fa1;
+  font-size: 0.875em;
 }
 
 .inputPeople {
-    display: flex;
-    flex-direction: row;
-    padding-left: 0.5vw;
-    padding-right: 1vw;
-    cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  padding-left: 0.5vw;
+  padding-right: 1vw;
+  cursor: pointer;
 }
 
 .inputLabel {
-    filter: invert(69%) sepia(7%) saturate(124%) hue-rotate(161deg) brightness(92%) contrast(84%);
-    padding-left: 0.2vw;
+  filter: invert(69%) sepia(7%) saturate(124%) hue-rotate(161deg)
+    brightness(92%) contrast(84%);
+  padding-left: 0.2vw;
 }
 
 .inputContainer {
-    margin-left: 0.5vw;
-    border: 1px solid #BCBEC0;
-    border-radius: 2px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    height: 4.8vh;
-    width: 8vw;
-    background-color: #ffffff;
+  margin-left: 0.5vw;
+  border: 1px solid #bcbec0;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 4.8vh;
+  width: 8vw;
+  background-color: #ffffff;
 }

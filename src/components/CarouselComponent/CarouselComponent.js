@@ -3,24 +3,24 @@ import Carousel from "react-elastic-carousel";
 import theme from "./CarouselComponent.css";
 
 function myArrow({ type, onClick, isEdge }) {
-
-  const pointer = (type === 'PREV' ? (
-    <div>
-      <img
-        src={require("../../svg/next-black.svg")}
-        alt=""
-        className="carouselBackButton"
-      />
-    </div>
-  ) : (
-    <div>
-      <img
-        src={require("../../svg/next-black.svg")}
-        alt=""
-        className="carouselNextButton"
-      />
-    </div>
-  ));
+  const pointer =
+    type === "PREV" ? (
+      <div>
+        <img
+          src={require("../../svg/next-black.svg")}
+          alt=""
+          className="carouselBackButton"
+        />
+      </div>
+    ) : (
+      <div>
+        <img
+          src={require("../../svg/next-black.svg")}
+          alt=""
+          className="carouselNextButton"
+        />
+      </div>
+    );
   return (
     <div onClick={onClick} disabled={isEdge}>
       {pointer}
@@ -30,7 +30,7 @@ function myArrow({ type, onClick, isEdge }) {
 
 export default function CarouselComponent(props) {
   return (
-    <div className='carouselMainContainer'>
+    <div className="carouselMainContainer">
       <Carousel
         renderArrow={myArrow}
         theme={theme}
@@ -57,12 +57,19 @@ export default function CarouselComponent(props) {
         }}
       >
         {props.roomPics.map((item) => {
-          return <div className="roomPic" style={{backgroundImage:'url('+ item +')'}}>
-            <div className='imageCaptionContainer'>
-              <p className='imageCaptionTitle'>Descriere</p>
-              <p className='imageCaptionSubtitle'>Descriere despre poza afisata. Lorem ipsum dolor sit amet</p>
+          return (
+            <div
+              className="roomPic"
+              style={{ backgroundImage: "url(" + item + ")" }}
+            >
+              <div className="imageCaptionContainer">
+                <p className="imageCaptionTitle">Descriere</p>
+                <p className="imageCaptionSubtitle">
+                  Descriere despre poza afisata. Lorem ipsum dolor sit amet
+                </p>
+              </div>
             </div>
-          </div>;
+          );
         })}
       </Carousel>
     </div>

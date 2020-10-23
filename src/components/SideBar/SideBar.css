@@ -1,136 +1,146 @@
 .sideBar-frame {
-    position: absolute;
-    width: 25vw;
-    height: 100vh;
-    left: 0px;
-    top: 0px;
-    background: rgba(2, 1, 0, 0.86); 
-    backdrop-filter: blur(4px);
-    z-index:1;
-    display:flex;
-    justify-content: space-evenly;
-    padding-right: 1vw;
+  position: absolute;
+  width: 25vw;
+  height: 100vh;
+  left: 0px;
+  top: 0px;
+  background: rgba(2, 1, 0, 0.86);
+  backdrop-filter: blur(4px);
+  z-index: 1;
+  display: flex;
+  justify-content: space-evenly;
+  padding-right: 1vw;
 }
 .sideBar-textFrame {
-    margin-top:5vh;
-    height: 70vh;
+  margin-top: 5vh;
+  height: 70vh;
 }
 .sideBar-text {
-    text-transform: capitalize;
-    font-family: 'Baskerville Old Face';
-    font-style: normal;
-    font-weight: normal;
-    font-size: 2.25em;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 4vh;
-    justify-content: space-evenly;
-    align-items: center;
-    text-align: center;
-    color: #000000;
-    list-style: none;
-    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(224deg) brightness(104%) contrast(101%);
-    cursor:pointer;
+  text-transform: capitalize;
+  font-family: "Baskerville Old Face";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 2.25em;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4vh;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+  list-style: none;
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(224deg)
+    brightness(104%) contrast(101%);
+  cursor: pointer;
 }
 
 .sideBar-text:hover {
-    filter: invert(69%) sepia(76%) saturate(299%) hue-rotate(345deg) brightness(89%) contrast(87%);
+  filter: invert(69%) sepia(76%) saturate(299%) hue-rotate(345deg)
+    brightness(89%) contrast(87%);
 }
 
 .sideBar-footer {
-    font-family: Baskerville Old Face;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 1.25em;
-    margin-bottom: 0.92vh;
-    display: flex;
-    flex-direction: column;
-    
-    align-items: right;
-    text-align: right;
+  font-family: Baskerville Old Face;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.25em;
+  margin-bottom: 0.92vh;
+  display: flex;
+  flex-direction: column;
 
-    color: #000000;
-    list-style:none ;
-    filter: invert(73%) sepia(41%) saturate(14%) hue-rotate(116deg) brightness(99%) contrast(94%);
-    cursor:pointer;
+  align-items: right;
+  text-align: right;
+
+  color: #000000;
+  list-style: none;
+  filter: invert(73%) sepia(41%) saturate(14%) hue-rotate(116deg)
+    brightness(99%) contrast(94%);
+  cursor: pointer;
 }
 
 .sideBar-footer:hover {
-    filter: invert(69%) sepia(76%) saturate(299%) hue-rotate(345deg) brightness(89%) contrast(87%);}
+  filter: invert(69%) sepia(76%) saturate(299%) hue-rotate(345deg)
+    brightness(89%) contrast(87%);
+}
 
 .sideBar-footerContainer {
-        position: absolute;
-        width: 12.5vw;
-        height: 10vh;
-        left: 9vw;
-        top: 75vh;
-    }
-
+  position: absolute;
+  width: 12.5vw;
+  height: 10vh;
+  left: 9vw;
+  top: 75vh;
+}
 
 .sideBar-book {
-    text-transform: capitalize;
-    font-family: Baskerville Old Face;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 3em;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 4vh;
-    justify-content: space-evenly;
-    align-items: center;
-    text-align: center;
-    color: #000000;
-    list-style: none;
-    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(224deg) brightness(104%) contrast(101%);
-    cursor:pointer;
+  text-transform: capitalize;
+  font-family: Baskerville Old Face;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 3em;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4vh;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+  list-style: none;
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(224deg)
+    brightness(104%) contrast(101%);
+  cursor: pointer;
 }
 
 .sideBar-book:hover {
-    filter: invert(69%) sepia(76%) saturate(299%) hue-rotate(345deg) brightness(89%) contrast(87%);}
+  filter: invert(69%) sepia(76%) saturate(299%) hue-rotate(345deg)
+    brightness(89%) contrast(87%);
+}
 
 .sideBar-select {
-    font-family: Baskerville Old Face;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 3em;
-    line-height: 3em;
-    display: flex;
-    align-items: center;
-    text-align: center;
+  font-family: Baskerville Old Face;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 3em;
+  line-height: 3em;
+  display: flex;
+  align-items: center;
+  text-align: center;
 
-    color: #D6A466;
+  color: #d6a466;
 
-    border: 1px solid #D6A466;
+  border: 1px solid #d6a466;
 }
 
 .closeButton {
-    position: absolute;
-    width: 3vw;
-    height: 3vw;
-    left: 3vh;
-    top: 3vh;
-    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(224deg) brightness(104%) contrast(101%);
-    cursor:pointer;
-    
+  position: absolute;
+  width: 3vw;
+  height: 3vw;
+  left: 3vh;
+  top: 3vh;
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(224deg)
+    brightness(104%) contrast(101%);
+  cursor: pointer;
 }
 
 .closeButton:hover {
-    filter: invert(97%) sepia(15%) saturate(7300%) hue-rotate(309deg) brightness(93%) contrast(79%);
+  filter: invert(97%) sepia(15%) saturate(7300%) hue-rotate(309deg)
+    brightness(93%) contrast(79%);
 }
 
 .fb_icon {
-    position: absolute;
-    width: 5vw;
-    height: 5vw;
-    left: 5vw;
-    top: 77vh;
-    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(224deg) brightness(104%) contrast(101%);
+  position: absolute;
+  width: 5vw;
+  height: 5vw;
+  left: 5vw;
+  top: 77vh;
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(224deg)
+    brightness(104%) contrast(101%);
 }
 
 .fb_icon:hover {
-    filter: invert(69%) sepia(76%) saturate(299%) hue-rotate(345deg) brightness(89%) contrast(87%);
+  filter: invert(69%) sepia(76%) saturate(299%) hue-rotate(345deg)
+    brightness(89%) contrast(87%);
 }
 
-.listResetStyle{
-    list-style-type: none;
+.listResetStyle {
+  list-style-type: none;
 }

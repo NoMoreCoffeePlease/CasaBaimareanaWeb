@@ -1,34 +1,29 @@
-import React from 'react';
-import {useHistory} from 'react-router-dom';
-import CarouselComponent from '../../components/CarouselComponent/CarouselComponent'
+import React from "react";
+import { useHistory } from "react-router-dom";
+import CarouselComponent from "../../components/CarouselComponent/CarouselComponent";
 // import SlideShow from 'react-image-show';
 
+const roomPics = [
+  require("../../svg/room.jfif"),
+  require("../../svg/room.jfif"),
+  require("../../svg/room.jfif"),
+  require("../../svg/room.jfif"),
+  require("../../svg/room.jfif"),
+  require("../../svg/room.jfif"),
+  require("../../svg/room.jfif"),
+];
 
-const roomPics =[
-    require('../../svg/room.jfif'),
-    require('../../svg/room.jfif'),
-    require('../../svg/room.jfif'),
-    require('../../svg/room.jfif'),
-    require('../../svg/room.jfif'),
-    require('../../svg/room.jfif'),
-    require('../../svg/room.jfif')
-]
+export default function RoomsApartment() {
+  const history = useHistory();
+  return (
+    <div className="roomsContainer">
+      <div className="roomsTitle-page">APARTAMENT</div>
 
-export default function RoomsApartment () {
-    const history = useHistory();
-    return <div className='roomsContainer'>
-        
-        <div className='roomsTitle-page'>APARTAMENT</div>
-        
-        <div className="roomsPhotos">
-
-<div className="roomCarouselContainer">
-<CarouselComponent roomPics={roomPics}/>
-</div>
-
-</div>
-       
-         
-       
+      <div className="roomsPhotos">
+        <div className="roomCarouselContainer">
+          <CarouselComponent roomPics={roomPics} />
+        </div>
+      </div>
     </div>
+  );
 }

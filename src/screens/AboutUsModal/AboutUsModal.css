@@ -1,15 +1,11 @@
 .aboutContainer {
-    width: 96vw;
-    height: 83vh;
-   z-index: 1;
+  width: 96vw;
+  height: 83vh;
+  z-index: 1;
 }
 
 .aboutTitle {
-    
-    color: white;
-    font-family: 'Baskerville Old Face';
-    font-size: 4em;
-    
+  color: white;
+  font-family: "Baskerville Old Face";
+  font-size: 4em;
 }
-
-

@@ -23,19 +23,22 @@ export const SideBar = (props) => {
     },
   };
   const [shownModal, setShownModal] = useState(true);
-  const [isScrolled, setIsScrolled]= useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const modalHandler = (bool) => {
     setShownModal(bool);
   };
-  
 
   return (
     <Router>
       {" "}
       <StyleRoot>
-      <HomeScreen modalHandler={props.modalHandler} isScrolled={isScrolled} barHandler={props.barHandler} />
+        <HomeScreen
+          modalHandler={props.modalHandler}
+          isScrolled={isScrolled}
+          barHandler={props.barHandler}
+        />
         {props.show ? (
-          <div className="sideBar-frame" style={styles.slideInLeft} >
+          <div className="sideBar-frame" style={styles.slideInLeft}>
             <div onClick={() => props.barHandler(false)}>
               <img
                 src={require("../../svg/close-black.svg")}
@@ -44,8 +47,7 @@ export const SideBar = (props) => {
               ></img>
             </div>
             <div className="sideBar-textFrame">
-              <ul className='listResetStyle'>
-                
+              <ul className="listResetStyle">
                 <li key="Camere">
                   <Link
                     className="sideBar-text"
@@ -67,9 +69,13 @@ export const SideBar = (props) => {
                 <li key="Home">
                   <span
                     className="sideBar-text"
-                    onClick = {()=> document.getElementById('aboutUs').scrollIntoView({behavior: 'smooth'})}
+                    onClick={() =>
+                      document
+                        .getElementById("aboutUs")
+                        .scrollIntoView({ behavior: "smooth" })
+                    }
                   >
-                    Despre noi                    
+                    Despre noi
                   </span>
                 </li>
                 <li key="Baia Mare">
@@ -113,7 +119,10 @@ export const SideBar = (props) => {
                                 </li> */}
               </ul>
             </div>
-            <a href="https://www.facebook.com/casa.baimareana.75" target="_blank">
+            <a
+              href="https://www.facebook.com/casa.baimareana.75"
+              target="_blank"
+            >
               <img
                 src={require("../../svg/facebook-black.svg")}
                 className="fb_icon"
@@ -121,10 +130,11 @@ export const SideBar = (props) => {
               ></img>
             </a>
             <div className="sideBar-footerContainer">
-              <ul className='listResetStyle'>
+              <ul className="listResetStyle">
                 <li key="anpc">
                   <a
-                    href="https://anpc.ro/" target="_blank"
+                    href="https://anpc.ro/"
+                    target="_blank"
                     className="sideBar-footer"
                     style={{ textDecoration: "none" }}
                     to="/anpc"
@@ -147,7 +157,7 @@ export const SideBar = (props) => {
                     style={{ textDecoration: "none" }}
                     to="/cookies"
                   >
-                    T{'&'}C
+                    T{"&"}C
                   </Link>
                 </li>
               </ul>
@@ -314,7 +324,7 @@ export const SideBar = (props) => {
             exact={true}
             component={() => {
               setShownModal(true);
-             
+
               return (
                 <ReviewModal
                   show={shownModal}
@@ -325,11 +335,11 @@ export const SideBar = (props) => {
             }}
           />
 
-        <Route
+          <Route
             key={"Privacy"}
             path={"/privacy"}
             exact={true}
-            component={() => {              
+            component={() => {
               setShownModal(true);
               return (
                 <PrivacyModal
@@ -341,11 +351,11 @@ export const SideBar = (props) => {
             }}
           />
 
-        <Route
+          <Route
             key={"Cookies"}
             path={"/cookies"}
             exact={true}
-            component={() => {              
+            component={() => {
               setShownModal(true);
               return (
                 <CookiesModal

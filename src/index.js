@@ -6,9 +6,8 @@ import { App } from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
 import { store } from "./redux/dataStore";
-import './fonts/BASKVILL.TTF';
-import './fonts/Candara.ttf';
-
+import "./fonts/BASKVILL.TTF";
+import "./fonts/Candara.ttf";
 
 ReactDOM.render(
   <Provider store={store}>

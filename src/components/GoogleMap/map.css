@@ -7,204 +7,196 @@ text-align: center;
 } */
 
 .google-map {
-width: 100%;
-height: 40vh;
+  width: 100%;
+  height: 40vh;
 }
 
-.row{
-    display:flex;
-    flex-direction: row;
-    align-items: center;
-    margin-top: -3vw;
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: -3vw;
 }
 
 .pin {
-display: flex;
-flex-direction: column;
-align-items: flex-end;
-height: 5vh;
-width: 5vw;
-color: var(--main-blue);
-margin-top:-5vh;
-margin-left:-1vw;
-
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  height: 5vh;
+  width: 5vw;
+  color: var(--main-blue);
+  margin-top: -5vh;
+  margin-left: -1vw;
 }
 
-
-.pinHeader{
-    display:flex;
-    align-items: center;
-    background-color: #D6A466;
-    height: 6vh;
-    width:17vw;
-    margin-left:-1vw;
-    padding: 1vw;
-    cursor:pointer;
+.pinHeader {
+  display: flex;
+  align-items: center;
+  background-color: #d6a466;
+  height: 6vh;
+  width: 17vw;
+  margin-left: -1vw;
+  padding: 1vw;
+  cursor: pointer;
 }
 
-.pinHeaderText{
-    font-size: 3.25em;
-    font-family: 'Baskerville Old Face'
+.pinHeaderText {
+  font-size: 3.25em;
+  font-family: "Baskerville Old Face";
 }
 
-.pinArrow{
-height: 15vh;
+.pinArrow {
+  height: 15vh;
 }
 
 .pin-text {
-font-size: 1.3em;
+  font-size: 1.3em;
 }
 
-.pinBody{
-    margin-top:-3vh;
-    width:16vw;
-    height: 15vh;
-    background-color: white;
-    border-radius: 15px;
-    padding: 1vh;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    z-index: 1;
-    margin-right: 1.5vw;
-    cursor:pointer;
+.pinBody {
+  margin-top: -3vh;
+  width: 16vw;
+  height: 15vh;
+  background-color: white;
+  border-radius: 15px;
+  padding: 1vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+  margin-right: 1.5vw;
+  cursor: pointer;
 }
 
-.pinBodyText{
-    font-size: 1.75em;
-    font-family: 'Baskerville Old Face'
+.pinBodyText {
+  font-size: 1.75em;
+  font-family: "Baskerville Old Face";
 }
 
-.pinFooter{
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    width:16vw;
-    height: 4vw;
-    background-color: #D6A466;
-    padding: 1vh;
-    padding-top: 2vh;
-    margin-top: -1vh;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
-    margin-right: 1.5vw;
-    cursor:pointer;
-    transition:0.3s;
+.pinFooter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16vw;
+  height: 4vw;
+  background-color: #d6a466;
+  padding: 1vh;
+  padding-top: 2vh;
+  margin-top: -1vh;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  margin-right: 1.5vw;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.pinFooterText{
-    font-size: 1.625em;
-    font-family: 'Baskerville Old Face'
+.pinFooterText {
+  font-size: 1.625em;
+  font-family: "Baskerville Old Face";
 }
 
 .pinFooter:hover {
-    opacity: 0.7;
+  opacity: 0.7;
 }
 
 .pinMainContainer {
-    display: flex;
-    flex-direction: row;
-    margin-top: 2vh;
-    
+  display: flex;
+  flex-direction: row;
+  margin-top: 2vh;
 }
 
 .locationIcon {
-    width: 10vh;
-    height: 10vh;
-    margin-right: 0.5vw;
+  width: 10vh;
+  height: 10vh;
+  margin-right: 0.5vw;
 }
 
-
-
 .simplePin {
-    width: 10vh;
-    height: 10vh;
-    filter: invert(97%) sepia(15%) saturate(7300%) hue-rotate(309deg) brightness(93%) contrast(79%);
-    margin-left:-5vh;
-    margin-top: -12vh;
-    transition: 0.4s;
-    cursor:pointer;
-    z-index: -10;
+  width: 10vh;
+  height: 10vh;
+  filter: invert(97%) sepia(15%) saturate(7300%) hue-rotate(309deg)
+    brightness(93%) contrast(79%);
+  margin-left: -5vh;
+  margin-top: -12vh;
+  transition: 0.4s;
+  cursor: pointer;
+  z-index: -10;
 }
 
 .simplePin:hover {
-    opacity:0.7;
+  opacity: 0.7;
 }
 
 @media screen and (min-width: 799px) {
-.google-map {
+  .google-map {
     height: 70vh;
-}
+  }
 
-.map-h2 {
+  .map-h2 {
     font-size: 1.3rem;
     font-weight: 400;
-}
+  }
 
-.pin {
+  .pin {
     width: fit-content;
-}
-
-
+  }
 }
 
 .secondaryPin-info {
-    width: fit-content;
-    z-index: 5000;
+  width: fit-content;
+  z-index: 5000;
 }
 
 .secondaryPin-body {
-    width:16vw;
-    height: min-content;
-    background-color: white;
-    border-radius: 15px;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin-top:-5vh;
-    padding: 3vh;
-    cursor:pointer;
-    margin-left:2vh;
+  width: 16vw;
+  height: min-content;
+  background-color: white;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-top: -5vh;
+  padding: 3vh;
+  cursor: pointer;
+  margin-left: 2vh;
 }
 
 .secondaryPin-title {
-    font-size: 2.25em;
-    font-family: 'Baskerville Old Face';
-    font-weight: bold;
-    margin-bottom: 0.5vh;
+  font-size: 2.25em;
+  font-family: "Baskerville Old Face";
+  font-weight: bold;
+  margin-bottom: 0.5vh;
 }
 
 .secondaryPin-address {
-    font-size: 1.5em;
-    font-family: 'Baskerville Old Face';
-    margin-bottom: 2vh;
+  font-size: 1.5em;
+  font-family: "Baskerville Old Face";
+  margin-bottom: 2vh;
 }
 
 .secondaryPin-mainContainer {
-    display: flex;
-    flex-direction: row;
-
+  display: flex;
+  flex-direction: row;
 }
 
 .secondaryPin-image {
-    width: 14vw;
-    height: 15vh;
+  width: 14vw;
+  height: 15vh;
 }
 
-
 .secondaryPin-icon {
-    width: 5vh;
-    height: 5vh;
-    margin-left:-2.5vh;
-    margin-top: -6vh;
-    transition: 0.4s;
-    cursor:pointer;
+  width: 5vh;
+  height: 5vh;
+  margin-left: -2.5vh;
+  margin-top: -6vh;
+  transition: 0.4s;
+  cursor: pointer;
 }
 
 .secondaryPin-icon:hover {
-    opacity: 0.7;
+  opacity: 0.7;
 }

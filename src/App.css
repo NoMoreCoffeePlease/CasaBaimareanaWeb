@@ -1,6 +1,6 @@
 .App {
- height: 100vh;
- width: 50vw;
+  height: 100vh;
+  width: 50vw;
 }
 
 .App-logo {
@@ -13,7 +13,6 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
 
 .App-header {
   background-color: #282c34;
@@ -30,22 +29,20 @@
   width: 3vw;
   height: 3vw;
   /* filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(224deg) brightness(104%) contrast(101%); */
-  
 }
 
-.menuIconContainer{
+.menuIconContainer {
   position: absolute;
   top: 3vh;
-  left:3vh;
+  left: 3vh;
   z-index: 1;
-  cursor:pointer;
-  
+  cursor: pointer;
 }
 
 .menuIcon:hover {
-  filter: invert(97%) sepia(15%) saturate(7300%) hue-rotate(309deg) brightness(93%) contrast(79%);
+  filter: invert(97%) sepia(15%) saturate(7300%) hue-rotate(309deg)
+    brightness(93%) contrast(79%);
 }
-
 
 .App-link {
   color: #61dafb;
@@ -60,7 +57,7 @@
   }
 }
 
-.span{
+.span {
   display: flex;
   height: 100%;
 }

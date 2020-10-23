@@ -1,341 +1,332 @@
 .Modal {
-    position: absolute;
-    top:2.5vh;
-    left: 2vw;
-    display: flex;    
-    width: 96vw;
-    height: 95vh;
-    flex-direction: column;
-    justify-content: space-around;
-    background: rgba(2, 1, 0, 0.85);
-    background-blend-mode: darken;
-    border: 5px solid #d6a466;
-    box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(4px);
-    filter: blur(0px);
-    border-radius: 7px;
-    z-index:2;
-    padding-top: 2.65vh;
+  position: absolute;
+  top: 2.5vh;
+  left: 2vw;
+  display: flex;
+  width: 96vw;
+  height: 95vh;
+  flex-direction: column;
+  justify-content: space-around;
+  background: rgba(2, 1, 0, 0.85);
+  background-blend-mode: darken;
+  border: 5px solid #d6a466;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+  filter: blur(0px);
+  border-radius: 7px;
+  z-index: 2;
+  padding-top: 2.65vh;
 }
 
 .ModalContainer {
-    position: absolute;
-    top:0;
-    left:0;
-    width: 100vw;
-    height: 100vh;
-    backdrop-filter: blur(4px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(4px);
 }
 
 .closeButton {
-    
-    width: 3vw;
-    height: 3vw;
-    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(224deg) brightness(104%) contrast(101%);
-    cursor:pointer;
+  width: 3vw;
+  height: 3vw;
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(224deg)
+    brightness(104%) contrast(101%);
+  cursor: pointer;
 }
 
-.closeButtonContainer{
-    position: absolute;
-    width: 3vw;
-    height: 3vw;
-    left: 3vh;
-    top: 3vh;
+.closeButtonContainer {
+  position: absolute;
+  width: 3vw;
+  height: 3vw;
+  left: 3vh;
+  top: 3vh;
 }
 
 .closeButton:hover {
-    filter: invert(97%) sepia(15%) saturate(7300%) hue-rotate(309deg) brightness(93%) contrast(79%);
+  filter: invert(97%) sepia(15%) saturate(7300%) hue-rotate(309deg)
+    brightness(93%) contrast(79%);
 }
 
-.bookingTitle {   
-    
-    color: white;
-    font-family: 'Baskerville Old Face';
-    font-size: 4em;
-    
+.bookingTitle {
+  color: white;
+  font-family: "Baskerville Old Face";
+  font-size: 4em;
 }
 
 .titleText {
-    color: white;
-    font-family: 'Baskerville Old Face';
-    font-size: 3em; 
-    margin-top: 0vh;
-    margin-bottom:0vh;
+  color: white;
+  font-family: "Baskerville Old Face";
+  font-size: 3em;
+  margin-top: 0vh;
+  margin-bottom: 0vh;
 }
 
 .subTitle {
-    justify-content: center;
-    display: flex;
-    width: 96vw;    
-    margin-bottom: 5vh;
-    margin-left:2vw;
-    margin-top: 2vh;
+  justify-content: center;
+  display: flex;
+  width: 96vw;
+  margin-bottom: 5vh;
+  margin-left: 2vw;
+  margin-top: 2vh;
 }
 
-.subTitleText  {
-    display: flex;
-    align-self: center;
-    color: white;
-    font-family: 'Baskerville Old Face';
-    font-size:  1.5em;
-    margin-bottom: 0vh;
+.subTitleText {
+  display: flex;
+  align-self: center;
+  color: white;
+  font-family: "Baskerville Old Face";
+  font-size: 1.5em;
+  margin-bottom: 0vh;
 }
-.bookHeader { 
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    width:100%;
-    margin-top: 0;
-    padding-bottom: 3vh;
+.bookHeader {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 0;
+  padding-bottom: 3vh;
 }
 
 .bookNavigator {
-    height: 10vh;
-    width: 45vw;
-    background-color: #d6a466;
-    border: 5px solid #b78548;
-    border-radius: 10px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-self: center;
-    margin-top: 2vh;
-    margin-left:1vw;
+  height: 10vh;
+  width: 45vw;
+  background-color: #d6a466;
+  border: 5px solid #b78548;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-self: center;
+  margin-top: 2vh;
+  margin-left: 1vw;
 }
 
 .stageContainer {
-    height: 10vh;
-    width: 15vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-
+  height: 10vh;
+  width: 15vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .stage {
-    font-family: 'Baskerville Old Face';
-    font-size:  1.5em;
-    
+  font-family: "Baskerville Old Face";
+  font-size: 1.5em;
 }
 
 .subStage {
-    font-family: 'Baskerville Old Face';
-    font-size:1.25em;
+  font-family: "Baskerville Old Face";
+  font-size: 1.25em;
 }
 
-
 .stageFocused {
-    height: 10vh;
-    width: 15vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    font-weight: bold;
+  height: 10vh;
+  width: 15vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  font-weight: bold;
 }
 
 .formContainer {
-    width: 100vw;
+  width: 100vw;
 }
 
 .formStyle {
-    width: 100%;
-    margin-top: 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  margin-top: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.row{
-    display:flex;
-    flex-direction: row;
+.row {
+  display: flex;
+  flex-direction: row;
 }
-
 
 .formTextInput {
-
-    margin-left: 2.5vw;
-    margin-bottom:1,5vh;
-    padding-left: 0.25vw;
-    padding-right: 0.25vw;
-    height: 3vh;
-    width: 12.5vw;
-    border-width: 0px;
-    border-bottom-width: 0.2vh;
-    border-color: #d6a466;
-    background-color:rgba(2, 1, 0, 0.01);
-    color: white;
-    font-family: 'Baskerville Old Face';
-    font-size: 1.25em;
+  margin-left: 2.5vw;
+  margin-bottom: 1, 5vh;
+  padding-left: 0.25vw;
+  padding-right: 0.25vw;
+  height: 3vh;
+  width: 12.5vw;
+  border-width: 0px;
+  border-bottom-width: 0.2vh;
+  border-color: #d6a466;
+  background-color: rgba(2, 1, 0, 0.01);
+  color: white;
+  font-family: "Baskerville Old Face";
+  font-size: 1.25em;
 }
 
 .formTextInput::placeholder {
-    color: whitesmoke;
-    opacity: 0.8;
-    
+  color: whitesmoke;
+  opacity: 0.8;
 }
 
 .formAddress {
-    width: 44vw;
-
+  width: 44vw;
 }
 
 .formEmail {
-    width: 14vw;
+  width: 14vw;
 }
 
 .formStatements {
-    color: white;
-    font-size: 1.375em;
-    font-family: 'Baskerville Old Face';
-    margin-left: 2.5vw;
+  color: white;
+  font-size: 1.375em;
+  font-family: "Baskerville Old Face";
+  margin-left: 2.5vw;
 }
 
 .submitButton {
-    display: flex;
-    align-self: center;
-    background-color: #d6a466;
-    border-color: #b78548;
-    border-radius: 5px;
-    height: 6.35vh;
-    width: 15vw;
-    font-family: 'Baskerville Old Face';
-    font-size: 1.25em;
-    padding-left: 1vw;
-    padding-right:1vw;
-    align-items: center;
-    justify-content: center;
-    margin-left:1vw;
-    margin-right:1vw;
-    transition: 0.3s;
-    cursor:pointer;
+  display: flex;
+  align-self: center;
+  background-color: #d6a466;
+  border-color: #b78548;
+  border-radius: 5px;
+  height: 6.35vh;
+  width: 15vw;
+  font-family: "Baskerville Old Face";
+  font-size: 1.25em;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
 .submitButton:hover {
-    opacity: 0.7;
+  opacity: 0.7;
 }
 
 .paymentMethod {
-    display: flex;
-    align-self: center;
-    background-color: #d6a466;
-    height: 5vh;
-    font-family: 'Baskerville Old Face';
-    font-size: 1.25em;
-    padding-left: 1vw;
-    margin-top:1vh;
-    border-width:0px;
-    border-style: none;
-    border-image: none;
-    cursor:pointer;
+  display: flex;
+  align-self: center;
+  background-color: #d6a466;
+  height: 5vh;
+  font-family: "Baskerville Old Face";
+  font-size: 1.25em;
+  padding-left: 1vw;
+  margin-top: 1vh;
+  border-width: 0px;
+  border-style: none;
+  border-image: none;
+  cursor: pointer;
 }
 
 .paymentMethod:hover {
-    opacity:0.7;
+  opacity: 0.7;
 }
 .componentContainer {
-    /* padding-bottom: 3vh; */
-    height: 62vh;
-    /* background-color: wheat; */
+  /* padding-bottom: 3vh; */
+  height: 62vh;
+  /* background-color: wheat; */
 }
 
 .SubmitStage {
-    background-color: #d6a466;
-    padding-left: 1vw;
-    padding-right: 1vw;
-    border-radius: 5px;
-    height: 5vh;
-    width: 9vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Baskerville Old Face';
-    margin: 1.3vw;
-    border-width: 10px;
-    border-color: #b78548;
-    cursor:pointer;
+  background-color: #d6a466;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  border-radius: 5px;
+  height: 5vh;
+  width: 9vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Baskerville Old Face";
+  margin: 1.3vw;
+  border-width: 10px;
+  border-color: #b78548;
+  cursor: pointer;
 }
 
 .SubmitStage:hover {
-    opacity:0.7;
+  opacity: 0.7;
 }
 
 .buttonContainer {
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    padding-left:1vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-left: 1vw;
 }
 
 .specialSpacing {
-    padding-top: 5vh;
+  padding-top: 5vh;
 }
 
 .roomGrid {
-    width: 70vw;
-    display: flex;
-    justify-content: space-between;
-    align-self: center;
-    margin-bottom: 5vh;
-    margin-top: 5vh;
+  width: 70vw;
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  margin-bottom: 5vh;
+  margin-top: 5vh;
 }
 
-.selectMore{
-    color:white;
-    font-family: 'Baskerville Old Face';
-    font-weight: bold;
-    font-size: 1.25em;
-    margin-bottom: 2vh;
+.selectMore {
+  color: white;
+  font-family: "Baskerville Old Face";
+  font-weight: bold;
+  font-size: 1.25em;
+  margin-bottom: 2vh;
 }
 .bottomContainerBook {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 
 .bookingButton {
-    align-self: center;
-    background-color: #d6a466;
-    border-color: #b78548;
-    border-radius: 5px;
-    height: 5vh;
-    width: 10vw;
-    font-family: 'Baskerville Old Face';
-    font-size: 1.25em;
-    align-items: center;
-    justify-content: center;
-    margin-left: 0.26vw;
-    margin-bottom:1vh;
+  align-self: center;
+  background-color: #d6a466;
+  border-color: #b78548;
+  border-radius: 5px;
+  height: 5vh;
+  width: 10vw;
+  font-family: "Baskerville Old Face";
+  font-size: 1.25em;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.26vw;
+  margin-bottom: 1vh;
 }
 
 .counterText {
-text-align: center;
-width: 2vw;
-font-family: 'Baskerville Old Face';
-font-weight: bold;
-font-size: 1.4em;
-color: #d6a466;
+  text-align: center;
+  width: 2vw;
+  font-family: "Baskerville Old Face";
+  font-weight: bold;
+  font-size: 1.4em;
+  color: #d6a466;
 }
 
 .counterButton {
-    cursor:pointer;
+  cursor: pointer;
 }
 
 .counterButton:hover {
   color: #b78548;
-  
 }
 
-.disableCounterText{
-    text-align: center;
-background-color: wheat;
-width: 2vw;
-pointer-events: none;
+.disableCounterText {
+  text-align: center;
+  background-color: wheat;
+  width: 2vw;
+  pointer-events: none;
 }
 
 .counterContainer {
@@ -343,114 +334,109 @@ pointer-events: none;
   flex: 1;
   flex-direction: row;
   margin-bottom: 1vh;
-   height: 2vh;
-   border-color: #b78548;
-   border-width: 5px;
-   border-radius: 5px;
+  height: 2vh;
+  border-color: #b78548;
+  border-width: 5px;
+  border-radius: 5px;
 }
 
-
-
 .roomElementBooking {
-    background-color: rgba(255,255,255,0.2);
-    width: 15vw;
-    border-radius: 5px;
-    height: 38vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 3vh;
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 15vw;
+  border-radius: 5px;
+  height: 38vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 3vh;
 }
 
 .roomElement {
-    background-color: rgba(255,255,255,0.2);
-    width: 10.4vw;
-    border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 10.4vw;
+  border-radius: 5px;
 }
 
 .roomImage {
-    width: 15vw;
-    height: 10.5vh;
-    border-radius: 5px;
+  width: 15vw;
+  height: 10.5vh;
+  border-radius: 5px;
 }
 
 .elementTitle-container {
-    width: 10.4vw;
+  width: 10.4vw;
 }
 
 .elementTitle {
-    text-align: center;
-    font-family: 'Baskerville Old Face';
-    font-weight: bold;
-    font-size: 1.5em;
-    color: white;
+  text-align: center;
+  font-family: "Baskerville Old Face";
+  font-weight: bold;
+  font-size: 1.5em;
+  color: white;
 }
 
 .elementSubtitle-container {
-    width: 14vw;
+  width: 14vw;
 }
 
 .elementSubtitle {
-    text-align: center;
-    font-family: 'Baskerville Old Face';
-    font-size:1em;
-    color: white;
+  text-align: center;
+  font-family: "Baskerville Old Face";
+  font-size: 1em;
+  color: white;
 }
 
 .elementPrice-container {
-    width: 10.4;
+  width: 10.4;
 }
-
 
 .test {
-    flex-direction: 'column';
+  flex-direction: "column";
 }
 .elementPrice {
-    text-align: center;
-    font-family: 'Baskerville Old Face';
-    font-weight: bold;
-    font-size:1.25em;
-    color: #d6a466;
-
+  text-align: center;
+  font-family: "Baskerville Old Face";
+  font-weight: bold;
+  font-size: 1.25em;
+  color: #d6a466;
 }
 
 .dateRangeInputPosition {
-    margin-top: 40vh;
+  margin-top: 40vh;
 }
 
 .bookingStage1Modal {
-    position: absolute;
-    top:2.5vh;
-    left: 2vw;
-    display: flex;    
-    width: 96vw;
-    height: 95vh;
-    flex-direction: column;
-    justify-content: space-between;
-    background: rgba(2, 1, 0, 0.85);
-    background-blend-mode: darken;
-    border: 5px solid #d6a466;
-    box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(4px);
-    filter: blur(0px);
-    border-radius: 7px;
-    z-index:2;
-    padding: 1.3vw;
+  position: absolute;
+  top: 2.5vh;
+  left: 2vw;
+  display: flex;
+  width: 96vw;
+  height: 95vh;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgba(2, 1, 0, 0.85);
+  background-blend-mode: darken;
+  border: 5px solid #d6a466;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+  filter: blur(0px);
+  border-radius: 7px;
+  z-index: 2;
+  padding: 1.3vw;
 }
 
 .disabled {
-    pointer-events: none;
-
+  pointer-events: none;
 }
 
 .counterText-disabled {
-    opacity:0;
-    text-align: center;
-    width: 2vw;
-    font-family: 'Baskerville Old Face';
-    font-weight: bold;
-    font-size: 1.4em;
-    color: #d6a466;
+  opacity: 0;
+  text-align: center;
+  width: 2vw;
+  font-family: "Baskerville Old Face";
+  font-weight: bold;
+  font-size: 1.4em;
+  color: #d6a466;
 }

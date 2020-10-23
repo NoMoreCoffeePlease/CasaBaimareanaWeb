@@ -1,215 +1,210 @@
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 96vw;
-    height: 95vh;
-    flex-direction: column;
-    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 96vw;
+  height: 95vh;
+  flex-direction: column;
 }
 
 .Modal {
-    position: absolute;
-    top:2.5vh;
-    left: 2vw;
-    display: flex;    
-    width: 96vw;
-    height: 95vh;
-    flex-direction: column;
-    justify-content: space-between;
-    background: rgba(2, 1, 0, 0.85);
-    background-blend-mode: darken;
-    border: 5px solid #d6a466;
-    box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(4px);
-    filter: blur(0px);
-    border-radius: 7px;
-    z-index:2;
-    padding: 1.3vw;
-    padding-top:0px;
+  position: absolute;
+  top: 2.5vh;
+  left: 2vw;
+  display: flex;
+  width: 96vw;
+  height: 95vh;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgba(2, 1, 0, 0.85);
+  background-blend-mode: darken;
+  border: 5px solid #d6a466;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+  filter: blur(0px);
+  border-radius: 7px;
+  z-index: 2;
+  padding: 1.3vw;
+  padding-top: 0px;
 }
 
 .ModalContainer {
-    position: absolute;
-    top:0;
-    left:0;
-    width: 100vw;
-    height: 100vh;
-    backdrop-filter: blur(4px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(4px);
 }
 
 .closeButton {
-    position: absolute;
-    width: 3vw;
-    height: 3vw;
-    left: 3vh;
-    top: 3vh;
-    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(224deg) brightness(104%) contrast(101%);
-    cursor:pointer;
+  position: absolute;
+  width: 3vw;
+  height: 3vw;
+  left: 3vh;
+  top: 3vh;
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(224deg)
+    brightness(104%) contrast(101%);
+  cursor: pointer;
 }
 
 .closeButton:hover {
-    filter: invert(97%) sepia(15%) saturate(7300%) hue-rotate(309deg) brightness(93%) contrast(79%);
+  filter: invert(97%) sepia(15%) saturate(7300%) hue-rotate(309deg)
+    brightness(93%) contrast(79%);
 }
 
 .roomBackButton {
-    width: 3vw;
-    height: 3vw;
-    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(224deg) brightness(104%) contrast(101%);  
-    transform: rotate(180deg);
-    cursor:pointer;
+  width: 3vw;
+  height: 3vw;
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(224deg)
+    brightness(104%) contrast(101%);
+  transform: rotate(180deg);
+  cursor: pointer;
 }
 
 .roomBackButton:hover {
-    filter: invert(97%) sepia(15%) saturate(7300%) hue-rotate(309deg) brightness(93%) contrast(79%);
+  filter: invert(97%) sepia(15%) saturate(7300%) hue-rotate(309deg)
+    brightness(93%) contrast(79%);
 }
 
 .roomNextButton {
-    width: 3vw;
-    height: 3vw;
-    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(224deg) brightness(104%) contrast(101%);  
-    cursor:pointer;
+  width: 3vw;
+  height: 3vw;
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(224deg)
+    brightness(104%) contrast(101%);
+  cursor: pointer;
 }
 
 .roomNextButton:hover {
-    filter: invert(97%) sepia(15%) saturate(7300%) hue-rotate(309deg) brightness(93%) contrast(79%);
+  filter: invert(97%) sepia(15%) saturate(7300%) hue-rotate(309deg)
+    brightness(93%) contrast(79%);
 }
 
 .roomsTitle {
-    color: white;
-    font-family: 'Baskerville Old Face';
-    font-size: 4em;
+  color: white;
+  font-family: "Baskerville Old Face";
+  font-size: 4em;
 }
 
 .firstTitle-spacing {
-    margin-left: 38.7vw;
+  margin-left: 38.7vw;
 }
 
 .roomsTitle-text {
-    color: white;
-    font-family: 'Baskerville Old Face';
-    font-size: 3em;
-    justify-content: center;
-    display: flex;
-    width: 95vw;
-    align-self: flex-start;
+  color: white;
+  font-family: "Baskerville Old Face";
+  font-size: 3em;
+  justify-content: center;
+  display: flex;
+  width: 95vw;
+  align-self: flex-start;
 }
 
 .roomsSubTitle {
- 
-    width: 96vw; 
+  width: 96vw;
 }
 
 .roomsSubTitle-text {
-  
-    color: white;
-    font-family: 'Baskerville Old Face';
-    font-size: 1.5em;
-    margin-bottom: 0vh;
-    text-align: center;
-    
- 
+  color: white;
+  font-family: "Baskerville Old Face";
+  font-size: 1.5em;
+  margin-bottom: 0vh;
+  text-align: center;
 }
 
 .roomsGrid {
-    display: flex;
-    justify-content: center;
-    vertical-align: baseline;
-    
+  display: flex;
+  justify-content: center;
+  vertical-align: baseline;
 }
 .roomsElement {
-    /* display: flex;
+  /* display: flex;
     align-items: center; */
-    flex-direction: column;
-    border: 0px solid #b78548;
-    box-sizing: border-box;
-    width: 20vw;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    backdrop-filter: blur(4px);
-    border-radius: 5px;
-    background-color:rgba(255, 255, 255, 0.6); 
-    /* margin: 3vh;
+  flex-direction: column;
+  border: 0px solid #b78548;
+  box-sizing: border-box;
+  width: 20vw;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  backdrop-filter: blur(4px);
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.6);
+  /* margin: 3vh;
     margin-bottom: 6vh; */
-    vertical-align: baseline;
-    display: flex;
-    justify-content: center;
-
+  vertical-align: baseline;
+  display: flex;
+  justify-content: center;
 }
 
 .roomsElement-title {
-    margin-top: 3vh;
-    text-align: center;
-    font-family: 'Baskerville Old Face';
-    font-size: 3em;
-    font-weight: bold;
+  margin-top: 3vh;
+  text-align: center;
+  font-family: "Baskerville Old Face";
+  font-size: 3em;
+  font-weight: bold;
 }
 
 .roomsElement-subTitle {
-    margin: 3vh;
-    font-family: 'Baskerville Old Face';
-    font-size: 1.5em;
-    text-align: center;
+  margin: 3vh;
+  font-family: "Baskerville Old Face";
+  font-size: 1.5em;
+  text-align: center;
 }
 
 .roomButton {
-    background-color: #d6a466;
-    border-color: #b78548;
-    border-radius: 5px;
-    height: 5vh;
-    width: 10vw;
-    font-family: 'Baskerville Old Face';
-    font-size: 1.25em;
-    align-items: center;
-    justify-content: center;
-    margin-left: 5vw; 
-    margin-bottom: 3.1vh;
-    transition: 0.3s;
-    cursor:pointer;
+  background-color: #d6a466;
+  border-color: #b78548;
+  border-radius: 5px;
+  height: 5vh;
+  width: 10vw;
+  font-family: "Baskerville Old Face";
+  font-size: 1.25em;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5vw;
+  margin-bottom: 3.1vh;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
 .roomButton:hover {
-    opacity: 0.7;
+  opacity: 0.7;
 }
 
 .roomRow {
-    margin-top: 15vh;
-    width: 85vw;
-    justify-content: space-between;
-    display: flex;
-    
+  margin-top: 15vh;
+  width: 85vw;
+  justify-content: space-between;
+  display: flex;
 }
 
 .roomsContainer {
-   
-     width: 93vw;
-    height: 83vh;  
-    
+  width: 93vw;
+  height: 83vh;
 }
 
 .roomsPhotos {
-   
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
 }
 
 .roomCarouselContainer {
-    margin-top: 20vh;
+  margin-top: 20vh;
 }
 
 .roomsTitle-page {
-    color: white;
-    font-family: 'Baskerville Old Face';
-    font-size: 4em;
-    margin-left: 15vw; 
+  color: white;
+  font-family: "Baskerville Old Face";
+  font-size: 4em;
+  margin-left: 15vw;
 }
 
 .switch-wrapper {
-    position: relative;
-  }
-   
-  .switch-wrapper > div {
-    position: absolute;
-  }
+  position: relative;
+}
+
+.switch-wrapper > div {
+  position: absolute;
+}
